@@ -13,7 +13,9 @@
 #   directory - Top directory to start search
 #
 
-HASH=$1
+HASH=$(sha1sum "$1")
+HASH=${HASH%% *}
+
 DIR=${2:-.}	# default is here, cwd
 
 # convert pathname into an absolute path
