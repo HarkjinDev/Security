@@ -3,8 +3,8 @@ import time
 import os
 import sys
 
-#./arpspoof2.py eth1 192.168.20.200 192.168.20.201
-#./arpspoof2.py [interface] [target_ip] [victim_ip]
+#./arpspoof.py eth1 192.168.20.200 192.168.20.201
+#./arpspoof.py [interface] [target_ip] [victim_ip]
 
 # start ip forward
 os.system('sysctl -w net.ipv4.ip_forward=1')
