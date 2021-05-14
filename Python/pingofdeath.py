@@ -14,6 +14,6 @@ for num in range(1,try_number+1):
     now_number += 1
 
 while True:
-    print("Attack Number Now : %d"%now_number)
+    print("Total Attack Number Now : %d"%now_number)
     print("Stop : Ctrl + C")
     time.sleep(100000)
