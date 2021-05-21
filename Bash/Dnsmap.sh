@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# This tool is the advanced of the command "host"
+# The first sector of output is checking the existence of the domain's host names (ex www, ftp)
+# The second sector of output is the IP address list of the host names
+
 if [ $# -ne 1 ] ; then
-	echo "Usage : $0 <domain name>"
+	echo "Usage : . Dnsmap.sh <domain name>"
 	exit 1
 fi
 
