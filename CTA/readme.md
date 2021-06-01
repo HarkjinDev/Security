@@ -1,3 +1,3 @@
 # CTA
 
-This repo is CTAs walkthrough
+This repo has CTAs walkthrough
