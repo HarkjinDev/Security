@@ -5,6 +5,7 @@ This repo has algorithm's basic concept and codes
 ***
 
 ## 시간 복잡도
+![TimeComplexity](/Algorithm/TimeComplexity.png)
 - 문제를 해결하는데 걸리는 시간과 입력의 함수 관계를 가리킨다.
 - 알고리즘의 시간복잡도는 주로 빅-오(Big-O)표기법을 사용하여 나타낸다.
 
