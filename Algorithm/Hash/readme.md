@@ -13,7 +13,7 @@
   2. 여러 키에 해당하는 주소가 동일할 경우 충돌을 해결하기 위한 별도 자료구조가 필요합니다. (충돌 해결 알고리즘)   
  
 ## Hash 용어 설명
-![hash_description](.hash_description)
+![hash_description](.hash_description.png)
 - 해쉬(Hash): 임의 값을 고정 길이로 변환하는 것을 의미합니다.
 - 해시 함수(Hash Function): 특정 연산을 이용하여 키 값을 받아서 value를 가진 공간의 주소로 바꾸어주는 함수를 의미합니다.
 - 해시 테이블(Hash Table): 해시 구조를 사용하는 데이터 구조입니다.
