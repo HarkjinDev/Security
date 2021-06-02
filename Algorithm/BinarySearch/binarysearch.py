@@ -36,5 +36,6 @@ def binary_search_recursion(arr, target, left=None, right=None):
 
 sys.setrecursionlimit(10000)
 
+# This is test part
 print("binary_search : ", binary_search(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "N", "O", "P"], "G"))
 print("binary_search_recursion : ", binary_search_recursion(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "N", "O", "P"], "G"))
