@@ -9,10 +9,13 @@ This repo has algorithm's basic concept and codes
 - 알고리즘의 시간복잡도는 주로 빅-오(Big-O)표기법을 사용하여 나타낸다.
 
 ### 리스트(list) 자료형과 메서드의 시간 복잡도
+![ListComplexity](./Algorithm/ListComplexity)   
 
 ### 집합(set) 자료형과 메소드의 시간 복잡도
+![SetComplexity](./Algorithm/SetComplexity)   
 
 ### 딕셔너리(dictionary) 자료형과 메소드의 시간 복잡도
+![Dictionary](./Algorithm/DictionaryComplexity)   
 
 ### 자료형에 따른 시간 복잡도
 - List 자료형은 삽입, 제거, 탐색, 포함 여부 확인 모두 O(n)에 해당하는 시간 복잡도를 가지고 있습니다.
