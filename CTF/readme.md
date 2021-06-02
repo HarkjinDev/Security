@@ -1,3 +1,3 @@
 # CTF(Capture The Flag)
 
-This repo has CTAs walkthrough
+This repo has CTFs walkthrough
