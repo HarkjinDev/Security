@@ -1,5 +1,3 @@
 # netstat
 
-<pre><code>
-netstat -antup
-</pre></code>
+<pre><code>netstat -antup</pre></code>
