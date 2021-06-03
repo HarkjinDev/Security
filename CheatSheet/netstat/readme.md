@@ -1,4 +1,6 @@
 # netstat
 
-> netstat -antup
+<code>
+netstat -antup
+</code>
 
