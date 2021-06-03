@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This is gpg's advanced tool to get output easily.
+
 # USAGE
 # . gpg_crack [wordlist_file] [decrypt_file] [output_file]
 
