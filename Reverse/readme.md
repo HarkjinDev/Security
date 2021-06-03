@@ -70,8 +70,6 @@
 
 ## 어셈블리 문법
 
-![AssemblyGrammar](/Reverse/AssemblyGrammar.png)
-
 - (윈도우) Intel 문법 : Opcode (Destination) (Source)  
 
   `gdb> set disassembly-flavor intel`
@@ -80,6 +78,7 @@
 
   `gdb> set disassembly-flavor att`
 
+![AssemblyGrammar](/Reverse/AssemblyGrammar.png)
 
 
 ## 어셈블리 형식
