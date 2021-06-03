@@ -1,12 +1,12 @@
 #!/bin/bash
-
+# Description:
 # This is gpg's advanced tool to get output easily.
 
-# USAGE
-# . gpg_crack [wordlist_file] [decrypt_file] [output_file]
+# Usage:
+# gpg_crack.sh <wordlist_file> <decrypt_file> <output_file>
 
 if [ $# -lt 3 ] ; then
-        echo "Usage : gpg_crack [wordlist_file] [decrypt_file] [output_file] "
+        echo "Usage : gpg_crack.sh <wordlist_file> <decrypt_file> <output_file> "
         exit 1
 fi 
 
