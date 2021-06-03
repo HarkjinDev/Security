@@ -1,7 +1,7 @@
 # Reverse
 ## 시스템 CPU 구조
 
-[CPUStructure](/Reverse/CPUStructure.png)
+![CPUStructure](/Reverse/CPUStructure.png)
 
 
 ## 연산 장치(ALU:Arithmetic and Logic Unit)
@@ -58,7 +58,7 @@
 
 ## 시스템 메모리 구조
 
-[MemoryStructure](/Reverse/MemoryStructure.png)
+![MemoryStructure](/Reverse/MemoryStructure.png)
 
 - 스택(Stack)  : 후입선출(LIFO:Last-In, First Out) 방식에 의해 정보를 관리
 - 힙(Heap) : 프로그램의 실행 중 필요한 기억 장소를 할당하기 위해 운영체제에 예약되어 있는 기억 장소영역. 데이터를 저장하기 위해 기억 장소를 요청하면 운영체제는 힙에 존재하는 기억 장소를 프로그램에 할당. 기억 장치가 더 이상 필요 없으면 할당 받았던 기억 장소를 운영체제에 반납, 운영체제에서는 반납된 기억 장소를 다시 힙에 돌려줌. 
@@ -70,7 +70,7 @@
 
 ## 어셈블리 문법
 
-[AssemblyGrammar](/Reverse/AssemblyGrammar.png)
+![AssemblyGrammar](/Reverse/AssemblyGrammar.png)
 
 - (윈도우) Intel 문법 : Opcode (Destination) (Source)  
 
