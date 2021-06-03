@@ -19,9 +19,9 @@ do
         echo "$x" | gpg --passphrase-fd 0 \
                         -q --batch --no-tty \
                         --allow-multiple-messages \
+                        --ignore-mdc-error \
                         --output $OUTPUT \
-                        --decrypt \
-                        $DECRYPT
+                        --decrypt $DECRYPT
         if [ $? -eq 0 ] ; then
                 echo "========== Decrypt Result ============"
                 echo "[+] GPG passphrase is : {$x}"
