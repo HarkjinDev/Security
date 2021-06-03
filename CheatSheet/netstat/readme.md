@@ -1,5 +1,5 @@
 # netstat
 
-<code>
+<pre><code>
 netstat -antup
-</code>
+</pre></code>
