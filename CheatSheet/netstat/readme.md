@@ -1,0 +1,4 @@
+# netstat
+
+> netstat -antup
+
