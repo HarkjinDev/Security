@@ -1,8 +1,13 @@
+# Description:
+# This is ping of death tools(aka. POD) which is sending malformed or oversized packets using a simple ping command.
+# This will keep going unless you stop(Ctrl+C)
+
+# Usage:
+# pingofdeath.py <target_ip> <attack try number>
+
 import os
 import sys
 import time
-
-# pingofdeath.py [target_ip] [attack try number]
 
 target = sys.argv[1]
 try_number = int(sys.argv[2])
