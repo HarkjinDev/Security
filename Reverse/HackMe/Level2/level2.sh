@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Description:
+# This is Remote Exploit tool to get level3's password
+
 export TERM=xterm
 export LANG=en_US.UTF-8
 export IP1=192.168.10.240
