@@ -6,10 +6,12 @@
 - Remote backdoor
 
 ***
-
-`[level4@ftz level4]$ cat hint`
+```
+[level4@ftz level4]$ cat hint
 
 누군가 /etc/xinetd.d/에 백도어를 심어놓았다.!
+```
+
 ```
 [level4@ftz level4]$ ls -al /etc/xinetd.d
 drwxr-xr-x    2 root     root         4096 Aug 19  2014 .
@@ -94,7 +96,7 @@ id
 my-pass
 ```
 
-This is not working, cuz this level's concept is remote backdoor
+This is not working, cuz this level's concept is remote backdoor.
 
 so you need to use nc(netcat) command in remote
 
