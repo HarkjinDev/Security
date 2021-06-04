@@ -1,4 +1,4 @@
-# This is the editor.s of restore code
+# This is the restore code of editor.s
 
 #include <sys/types.h>
 #include <unistd.h>
