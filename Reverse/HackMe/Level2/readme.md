@@ -1,5 +1,11 @@
 # Level2
 
+## This level's goal
+
+- run the command in vi/vim editor
+
+***
+
 `[level2@ftz level2]$ cat hint`
 
 텍스트 파일 편집 중 쉘의 명령을 실행시킬 수 있다는데...
