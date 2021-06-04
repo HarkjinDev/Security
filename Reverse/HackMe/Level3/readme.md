@@ -1,5 +1,11 @@
 # Level3
 
+This level's goal:
+
+- system('CMD') vulnerability
+
+***
+
 `[level3@ftz level3]$ cat hint`
 
 다음 코드는 **autodig**의 소스이다.
