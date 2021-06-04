@@ -1,3 +1,5 @@
+# This is /usr/bin/editor's assembly code
+
 0x08048360 <main+0>:    push   %ebp
 0x08048361 <main+1>:    mov    %esp,%ebp
 0x08048363 <main+3>:    sub    $0x8,%esp
