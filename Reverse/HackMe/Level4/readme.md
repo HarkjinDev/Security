@@ -73,7 +73,7 @@ my-pass
 
 This is not working, cuz this level's concept is remote backdoor.
 
-so you need to use nc(netcat) or telent command in remote
+so you need to use nc(netcat) or telnet command in remote
 
 ```
 ┌──(root💀kali)-[~]
