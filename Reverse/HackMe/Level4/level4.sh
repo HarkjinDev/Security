@@ -1,6 +1,6 @@
 #!/bin/bash
 # Description:
-# This is Remote Exploit tool to get level4's password
+# This is Remote Exploit tool to get level5's password
 
 export TERM=xterm
 export LANG=en_US.UTF8
