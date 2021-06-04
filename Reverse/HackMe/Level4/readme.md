@@ -94,7 +94,9 @@ id
 my-pass
 ```
 
-This is not working, cuz you need to use nc(netcat) command in remote
+This is not working, cuz this level's concept is remote backdoor
+
+so you need to use nc(netcat) command in remote
 
 ```
 ┌──(root💀kali)-[~]
