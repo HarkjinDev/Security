@@ -1,3 +1,5 @@
+# This is the editor.s of restore code
+
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdlib.h>
