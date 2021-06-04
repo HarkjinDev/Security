@@ -2,7 +2,7 @@
 
 ## This level's goal
 
-- run the command in vi/vim editor
+- Run the command in vi/vim editor
 
 ***
 
