@@ -48,6 +48,8 @@ tcp        0      0 0.0.0.0:79              0.0.0.0:*               LISTEN
 ls: /home/level4/tmp/backdoor: No such file or directory
 ```
 
+There is no backdoor file, so you need to make a backdoor that you can exploit
+
 ```
 [level4@ftz tmp]$ cat backdoor.c
 #include <stdlib.h>
