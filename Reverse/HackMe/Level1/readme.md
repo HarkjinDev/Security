@@ -1,5 +1,11 @@
 # Level1
 
+This level's goal:
+
+- SetUID
+
+***
+
 `[level1@ftz level1]$ ls -l`  
 total 12  
 -rw-r--r--    1 root     root           47 Apr  4  2000 hint  
