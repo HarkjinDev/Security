@@ -32,7 +32,9 @@ Level2 권한에 setuid가 걸린 파일을 찾는다.
 [level1@ftz level1]$ /bin/ExecuteMe
 ```
 
-`[level2@ftz level2]$ bash`
+```
+[level2@ftz level2]$ bash
+```
 
 ```
 [level2@ftz level2]$ my-pass
