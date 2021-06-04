@@ -10,15 +10,18 @@
 `data = list(map(int,sys.stdin.readline().split()))`
 
 ### 임의의 개수의 정수 n줄 입력받아 2차원 리스트에 저장할 때
+```
 data = []   
 n = int(sys.stdin.readline())
 for i in range(n):
-data.append(list(map(int,sys.stdin.readline().split())))
-
+    data.append(list(map(int,sys.stdin.readline().split())))
+```
 
 ### 문자열 n줄을 입력받아 리스트 저장
-`n = int(sys.stdin.readline())   
-data = [sys.stdin.readline().strip() for i in range(n)]`
+```
+n = int(sys.stdin.readline())
+data = [sys.stdin.readline().strip() for i in range(n)]
+```
 
 ### 두 인수 입력 받기
 `a, b = input().split()`   
