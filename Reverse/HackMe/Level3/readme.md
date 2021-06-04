@@ -1,6 +1,6 @@
 # Level3
 
-This level's goal:
+This level's goal
 
 - system('CMD') vulnerability
 
