@@ -9,12 +9,10 @@ void sig_func(int signo)
         printf("Can't use ctrl+c\n");
 }
 
-
-main()
-{
-
+int main()
+{     
         int input;
-
+        
         system("cat hint");
         getchar();
         system("clear");
