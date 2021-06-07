@@ -29,6 +29,7 @@ You need to make /bin/wrong.txt with root
 ```
 [level7@ftz level7]$ su root
 Password:
+
 [root@ftz level7]$ cat << EOF > /bin/wrong.txt
 > Incorrect Password
 > EOF
@@ -117,6 +118,7 @@ Incorrect Password
 ```
 [level7@ftz level7]$ su root
 Password:
+
 [root@ftz level7]$ gdb /bin/level7
 (gdb) disass main
 (gdb) x/s 0x80485d7
