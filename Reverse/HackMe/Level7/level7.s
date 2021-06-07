@@ -34,7 +34,6 @@
 0x080484bb <main+103>:  call   0x8048384 <printf>
 0x080484c0 <main+108>:  add    $0x10,%esp
 0x080484c3 <main+111>:  sub    $0xc,%esp
----Type <return> to continue, or q <return> to quit---
 0x080484c6 <main+114>:  push   $0x0
 0x080484c8 <main+116>:  call   0x8048394 <exit>
 0x080484cd <main+121>:  sub    $0xc,%esp
