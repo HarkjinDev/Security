@@ -4,12 +4,12 @@
 0x080484f9 <main+1>:    mov    %esp,%ebp
 0x080484fb <main+3>:    sub    $0x8,%esp
 0x080484fe <main+6>:    sub    $0xc,%esp
-0x08048501 <main+9>:    push   $0x80486f2
+0x08048501 <main+9>:    push   $0x80486f2   // cat hint
 0x08048506 <main+14>:   call   0x8048384 <system>
 0x0804850b <main+19>:   add    $0x10,%esp
 0x0804850e <main+22>:   call   0x8048354 <getchar>
 0x08048513 <main+27>:   sub    $0xc,%esp
-0x08048516 <main+30>:   push   $0x80486fb
+0x08048516 <main+30>:   push   $0x80486fb   // clear
 0x0804851b <main+35>:   call   0x8048384 <system>
 0x08048520 <main+40>:   add    $0x10,%esp
 0x08048523 <main+43>:   sub    $0xc,%esp
@@ -49,7 +49,7 @@
 0x080485ab <main+179>:  call   0x80483c4 <printf>
 0x080485b0 <main+184>:  add    $0x10,%esp
 0x080485b3 <main+187>:  sub    $0x8,%esp
-0x080485b6 <main+190>:  push   $0x80484e0
+0x080485b6 <main+190>:  push   $0x80484e0   // <sig_func>
 0x080485bb <main+195>:  push   $0x2
 0x080485bd <main+197>:  call   0x8048374 <signal>
 0x080485c2 <main+202>:  add    $0x10,%esp
@@ -60,7 +60,7 @@
 0x080485d5 <main+221>:  sub    $0x8,%esp
 0x080485d8 <main+224>:  lea    0xfffffffc(%ebp),%eax
 0x080485db <main+227>:  push   %eax
-0x080485dc <main+228>:  push   $0x80488c3
+0x080485dc <main+228>:  push   $0x80488c3   // "%d"
 0x080485e1 <main+233>:  call   0x8048394 <scanf>
 0x080485e6 <main+238>:  add    $0x10,%esp
 0x080485e9 <main+241>:  cmpl   $0x1,0xfffffffc(%ebp)
