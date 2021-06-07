@@ -1,30 +1,28 @@
 // This is the restore code of level5.s
 
-#include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-#define PERM 0x180
-
-int main()
+main()
 {
+        char tmpfile[] = "/tmp/level5.tmp";
         int fd;
-        char nextPass[] = "next password : what the hell\n";
-        char *tempfile = "/tmp/level5.tmp;
 
-        fd = create(tempFile, PERM);
-        if(fd < 0)
+        fd = creat(tmpfile, 0x180);
+        if (fd < 0)
         {
-                printf("Can not create a temporary file.\n");
-                remove(tempFile);
+                printf("Can not creat a temporary file.\n");
+                remove(tmpfile);
                 exit(0);
         }
         else
         {
-                write(fd, nextPass, strlen(nextPass));
+                write(fd, "next password : what the hell", 0x1f);
                 close(fd);
-                remove(tempFile);
+                remove(tmpfile);
         }
         return 0;
 }
