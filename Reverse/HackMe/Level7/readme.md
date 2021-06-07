@@ -3,7 +3,7 @@
 ## This level's goal
 
 - Cryptography
-- printf() function
+- printf() and sprintf() function
 
 ***
 
