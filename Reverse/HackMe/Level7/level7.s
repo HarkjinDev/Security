@@ -1,3 +1,5 @@
+// This is /usr/bin/level5's assembly code
+
 0x08048454 <main+0>:    push   %ebp
 0x08048455 <main+1>:    mov    %esp,%ebp
 0x08048457 <main+3>:    sub    $0x8,%esp
