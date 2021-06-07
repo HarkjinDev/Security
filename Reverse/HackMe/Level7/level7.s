@@ -10,15 +10,15 @@
 0x08048467 <main+19>:   push   $0x64
 0x08048469 <main+21>:   call   0x8048344 <malloc>	    // malloc(0x64)
 0x0804846e <main+26>:   add    $0x10,%esp
-0x08048471 <main+29>:   mov    %eax,0xfffffffc(%ebp)  // str = malloc(0x64)
+0x08048471 <main+29>:   mov    %eax,0xfffffffc(%ebp)    // str = malloc(0x64)
 0x08048474 <main+32>:   sub    $0xc,%esp
 0x08048477 <main+35>:   push   $0x80485c0	            //	"Insert The Password : "
 0x0804847c <main+40>:   call   0x8048384 <printf>
 0x08048481 <main+45>:   add    $0x10,%esp
 0x08048484 <main+48>:   sub    $0x4,%esp
-0x08048487 <main+51>:   pushl  0x8049744 		          // 3) stdin ""
+0x08048487 <main+51>:   pushl  0x8049744              // 3) stdin ""
 0x0804848d <main+57>:   push   $0x64  			          // 2) 0x64
-0x0804848f <main+59>:   pushl  0xfffffffc(%ebp)	      // 1) str
+0x0804848f <main+59>:   pushl  0xfffffffc(%ebp)       // 1) str
 0x08048492 <main+62>:   call   0x8048354 <fgets>      // fgets(str, 0x64, stin);
 0x08048497 <main+67>:   add    $0x10,%esp
 0x0804849a <main+70>:   sub    $0x4,%esp
