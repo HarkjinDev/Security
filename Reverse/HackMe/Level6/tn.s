@@ -34,7 +34,6 @@
 0x08048570 <main+120>:  add    $0x10,%esp
 0x08048573 <main+123>:  sub    $0xc,%esp
 0x08048576 <main+126>:  push   $0x80487e0
-
 0x0804857b <main+131>:  call   0x80483c4 <printf>
 0x08048580 <main+136>:  add    $0x10,%esp
 0x08048583 <main+139>:  sub    $0xc,%esp
@@ -70,7 +69,6 @@
 0x080485f2 <main+250>:  push   $0x80488c6
 0x080485f7 <main+255>:  call   0x8048384 <system>
 0x080485fc <main+260>:  add    $0x10,%esp
-
 0x080485ff <main+263>:  cmpl   $0x2,0xfffffffc(%ebp)
 0x08048603 <main+267>:  jne    0x8048615 <main+285>
 0x08048605 <main+269>:  sub    $0xc,%esp
