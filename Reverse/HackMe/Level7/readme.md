@@ -16,31 +16,20 @@
 2. 상상력을 총동원하라.
 3. 2진수를 10진수를 바꿀 수 있는가?
 4. 계산기 설정을 공학용으로 바꾸어라.
-
-```
-```
-[level7@ftz level7]$ /bin/level7
-Insert The Password : 1234
-cat: /bin/wrong.txt: No such file or directory
-```
-
-You need to make /bin/wrong.txt with root
-
-```
-[level7@ftz level7]$ su root
-Password:
-
-[root@ftz level7]$ cat << EOF > /bin/wrong.txt
-> Incorrect Password
-> EOF
-[root@ftz level7]$ exit
 ```
 
 ```
 [level7@ftz level7]$ /bin/level7
 Insert The Password : 1234
 Incorrect Password
+--_--_- --____- ---_-__ --__-_-
 ```
+
+"--_--_- --____- ---_-__ --__-_-" is the binary sign
+
+"--_--_- --____- ---_-__ --__-_-" is 1101101 1100001 1110100 1100101 in binary
+
+and it means "109 97 116 101" in Decimal
 
 ```
 [level7@ftz level7]$ export LANG=C
@@ -115,14 +104,13 @@ Incorrect Password
 
 ```
 
-```
-[level7@ftz level7]$ su root
-Password:
+so, 1101101 1100001 1110100 1100101 is "mate"
 
-[root@ftz level7]$ gdb /bin/level7
-(gdb) disass main
-(gdb) x/s 0x80485d7
-0x80485d7 <_IO_stdin_used+51>:   "mate"
-(gdb) x/s 0x80485e0
-0x80485e0 <_IO_stdin_used+60>:   "\nCongratulation! next password is \"break the world\".\n\n"
 ```
+[level7@ftz level7]$ /bin/level7
+Insert The Password : mate
+
+Congratulation! next password is "break the world".
+```
+
+
