@@ -31,14 +31,10 @@ main()
         printf("\n접속하고 싶은 bbs를 선택하세요 : ");
         scanf("%d", input);
 
-        if (input == 1)
-                system("telnet 203.245.15.76");
-        if (input == 2)
-                system("telnet 203.238.129.97");
-        if (input == 3)
-                system("telnet 210.120.128.180");
-        if (input != 1 && input !=2 && !=3)
-                printf("잘못 입력하셨습니다. 접속을 종료합니다.\n");
+        if (input == 1) system("telnet 203.245.15.76");
+        if (input == 2) system("telnet 203.238.129.97");
+        if (input == 3) system("telnet 210.120.128.180");
+        if (input != 1 && input !=2 && !=3) printf("잘못 입력하셨습니다. 접속을 종료합니다.\n");
         
         return 0;
 }
