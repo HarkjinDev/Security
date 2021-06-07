@@ -104,7 +104,7 @@ and it means "109 97 116 101" in Decimal
 
 ```
 
-So, 1101101 1100001 1110100 1100101 is "mate"
+So, "109 97 116 101" means "mate"
 
 ```
 [level7@ftz level7]$ /bin/level7
