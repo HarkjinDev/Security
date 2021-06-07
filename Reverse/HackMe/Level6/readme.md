@@ -38,6 +38,7 @@ total 100
 -rw-r-----    1 root     level6         36 Mar 24  2000 password
 drwxrwxr-x    2 root     level6       4096 Jan 14  2009 tmp
 -rwxr-x---    1 root     level6      14910 Mar  5  2003 tn
+
 [level6@ftz level6]$ cat .bashrc
 # .bashrc
 
@@ -50,8 +51,10 @@ fi
 export PS1="[\u@\h \W]\$ "
 ./tn
 logout
+
 [level6@ftz level6]$ file tn
 tn: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), for GNU/Linux 2.2.5, dynamically linked (uses shared libs), not stripped
+
 [level6@ftz level6]$ cat password
 Level7 password is "come together".
 ```
