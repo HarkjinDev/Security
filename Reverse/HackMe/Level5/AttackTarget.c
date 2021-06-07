@@ -1,4 +1,7 @@
+// This will make the link 5pass.txt file when /tmp/level5.tmp will be creating
+
 #include <unistd.h>
+
 int main()
 {
         int i;
