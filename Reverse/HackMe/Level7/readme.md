@@ -114,3 +114,13 @@ Incorrect Password
 
 ```
 
+```
+[level7@ftz level7]$ su root
+Password:
+[root@ftz level7]$ gdb /bin/level7
+(gdb) disass main
+(gdb) x/s 0x80485d7
+0x80485d7 <_IO_stdin_used+51>:   "mate"
+(gdb) x/s 0x80485e0
+0x80485e0 <_IO_stdin_used+60>:   "\nCongratulation! next password is \"break the world\".\n\n"
+```
