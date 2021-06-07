@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-# /usr/bin/level5 will make /tmp/level5.tmp
+// /usr/bin/level5 will make /tmp/level5.tmp
 
 int main(void)
 {
