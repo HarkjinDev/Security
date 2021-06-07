@@ -1,3 +1,4 @@
+# This is tn's assembly code
 
 0x080484f8 <main+0>:    push   %ebp
 0x080484f9 <main+1>:    mov    %esp,%ebp
