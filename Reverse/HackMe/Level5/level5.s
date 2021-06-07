@@ -1,4 +1,4 @@
-# This is /usr/bin/level5's assembly code
+// This is /usr/bin/level5's assembly code
 
 0x0804842c <main+0>:    push   %ebp
 0x0804842d <main+1>:    mov    %esp,%ebp
