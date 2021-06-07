@@ -1,4 +1,4 @@
-// This is conversion of binary sign to binary code and decimal and ascii code
+// This is conversion of the singal code to binary and decimal and ascii code
 // and get the level8's password
 
 #include <stdio.h>
