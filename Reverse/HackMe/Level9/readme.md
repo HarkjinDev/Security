@@ -40,9 +40,6 @@ main(){
 you cannot debug cuz level9 have only execute permission.
 so, you need to make your another file and complie and debug
 ```
-[level9@ftz tmp]$ ls -l /usr/bin/bof
--rws--x---    1 level10  level9      12111  8¿ù 19  2014 /usr/bin/bof
-
 [level9@ftz tmp]$ cat bof.c
 
 #include <stdio.h>
@@ -56,14 +53,15 @@ main(){
 
         printf("It can be overflow : ");
         fgets(buf,40,stdin);
-
+        
+        # show the buffer memory address
         printf("&buf=0x%x, &buf2=0x%x, distance=0x000000%x / %d byte\n",buf, buf2, buf2-buf, buf2-buf);
 
         if ( strncmp(buf2, "go", 2) == 0 )
         {
-                printf("Good Skill!\n");
-        setreuid( 3010, 3010 );
-        system("/bin/bash");
+            printf("Good Skill!\n");
+            setreuid( 3010, 3010 );
+            system("/bin/bash");
         }
 
 }
