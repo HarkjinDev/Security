@@ -69,7 +69,8 @@ level10  19520  4531  0 15:09 pts/0    00:00:00 grep level10
 key        shmid      owner      perms      bytes      nattch     status
 0x00001d6a 0          root      666        1028       0
 ```
-
+0x00001d6a means 7530 in decimal (this is the key in the hint)   
+you need to make a file to get share memory(the value of key is 7530)
 ```
 [level10@ftz tmp]$ cat shm.c
 #include <stdio.h>
@@ -94,7 +95,8 @@ int main()
 
         // shmat() : Attach the created share memory
         shm_addr = shmat(shm_id, (void *)0, 0);
-
+        
+        // memcpy() : Copy the value of memory
         memcpy(buf, shm_addr, BUFFSIZE);
         printf("%s", buf);
 
