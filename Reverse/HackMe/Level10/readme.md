@@ -3,6 +3,7 @@
 ## This level's goal
 
 - Share memory
+- shmget(), shmat(), shmdt() function
 
 ***
 
