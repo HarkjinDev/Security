@@ -22,12 +22,12 @@
 0x08048492 <main+62>:   call   0x8048354 <fgets>      // fgets(str, 0x64, stin);
 0x08048497 <main+67>:   add    $0x10,%esp
 0x0804849a <main+70>:   sub    $0x4,%esp
-0x0804849d <main+73>:   push   $0x4				         // 3) 0x4
-0x0804849f <main+75>:   push   $0x80485d7		       // 2) "mate"
+0x0804849d <main+73>:   push   $0x4     // 3) 0x4
+0x0804849f <main+75>:   push   $0x80485d7     // 2) "mate"
 0x080484a4 <main+80>:   pushl  0xfffffffc(%ebp)       // 1) str
 0x080484a7 <main+83>:   call   0x8048364 <strncmp>    // strncmp(str, "mate", 0x4)
 0x080484ac <main+88>:   add    $0x10,%esp
-0x080484af <main+91>:   test   %eax,%eax	         // strncmp == 0
+0x080484af <main+91>:   test   %eax,%eax    // strncmp == 0
 0x080484b1 <main+93>:   jne    0x80484cd <main+121>   // if not jump to 121
 0x080484b3 <main+95>:   sub    $0xc,%esp
 0x080484b6 <main+98>:   push   $0x80485e0		          // "\nCongratulation! next password is \"break the world\".\n\n"
