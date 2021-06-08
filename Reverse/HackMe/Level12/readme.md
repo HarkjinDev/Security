@@ -21,4 +21,5 @@ int main( int argc, char *argv[] )
         printf( str );
 }
 ```
-The hint seems FSB
+The hint seems the vulnerability of FSB and BOF   
+I will exploit FSB
