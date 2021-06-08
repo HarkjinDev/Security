@@ -36,3 +36,5 @@ I will exploit with FSB
 [level11@ftz level11]$ ./attackme
 Segmentation fault
 ```
+
+This seems that Segmentation falut will be printed if there is no argument and then the argv[1] is the value of garbage.
