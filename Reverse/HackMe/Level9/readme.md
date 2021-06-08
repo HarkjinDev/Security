@@ -10,6 +10,7 @@
 [level9@ftz level9]$ cat hint
 
 다음은 /usr/bin/bof의 소스이다.
+(This is /usr/bin/bof's source)
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,6 +34,7 @@ main(){
 }
 
 이를 이용하여 level10의 권한을 얻어라.
+(Use this to get level10's privilege)
 
 [level9@ftz tmp]$ ls -l /usr/bin/bof
 -rws--x---    1 level10  level9      12111  8¿ù 19  2014 /usr/bin/bof
