@@ -10,6 +10,7 @@
 [level4@ftz level4]$ cat hint
 
 누군가 /etc/xinetd.d/에 백도어를 심어놓았다.!
+(Someone planted a backdoor in /etc/xinetd.d/)
 ```
 
 ```
