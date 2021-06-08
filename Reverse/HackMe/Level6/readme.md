@@ -24,6 +24,7 @@ hint - 인포샵 bbs의 텔넷 접속 메뉴에서 많이 사용되던 해킹 �
 
 ```
 hint - 인포샵 bbs의 텔넷 접속 메뉴에서 많이 사용되던 해킹 방법이다.
+(hint - This is a hacking method that was often used in the telnet access menu of infoshop bbs.)
 
 <CTRL + C>
 
