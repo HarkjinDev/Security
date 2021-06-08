@@ -1,3 +1,5 @@
+// This is /usr/bin/bof's code for debug
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -16,8 +18,8 @@ main(){
         if ( strncmp(buf2, "go", 2) == 0 )
         {
                 printf("Good Skill!\n");
-        setreuid( 3010, 3010 );
-        system("/bin/bash");
+                setreuid( 3010, 3010 );
+                system("/bin/bash");
         }
 
 }
