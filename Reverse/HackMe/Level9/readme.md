@@ -38,6 +38,7 @@ main(){
 -rws--x---    1 level10  level9      12111  8¿ù 19  2014 /usr/bin/bof
 ```
 you cannot debug cuz level9 have only execute permission.
+
 so, you need to make your another file and complie and debug
 ```
 [level9@ftz tmp]$ cat bof.c
