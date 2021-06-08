@@ -16,6 +16,7 @@ drwxrwxr-x    2 root     level1       4096 Jun  3 11:58 tmp
 [level1@ftz level1]$ cat hint
 
 Level2 권한에 setuid가 걸린 파일을 찾는다.
+(Find the file with setuid in level2 user)
 ```
 
 ```
