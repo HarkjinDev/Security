@@ -17,7 +17,7 @@
 0x08048481 <main+45>:   add    $0x10,%esp
 0x08048484 <main+48>:   sub    $0x4,%esp
 0x08048487 <main+51>:   pushl  0x8049744              // 3) stdin ""
-0x0804848d <main+57>:   push   $0x64      // 2) 0x64
+0x0804848d <main+57>:   push   $0x64            // 2) 0x64
 0x0804848f <main+59>:   pushl  0xfffffffc(%ebp)       // 1) str
 0x08048492 <main+62>:   call   0x8048354 <fgets>      // fgets(str, 0x64, stin);
 0x08048497 <main+67>:   add    $0x10,%esp
