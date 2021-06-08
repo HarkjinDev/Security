@@ -66,5 +66,19 @@ level9:$1$vkY6sSlG$6RyUXtNMEVGsfY7Xf0wps.:11040:0:99999:7:-1:-1:134549524
 level9:$1$vkY6sSlG$6RyUXtNMEVGsfY7Xf0wps.:11040:0:99999:7:-1:-1:134549524
 level9:$1$vkY6sSlG$6RyUXtNMEVGsfY7Xf0wps.:11040:0:99999:7:-1:-1:134549524
 level9:$1$vkY6sSlG$6RyUXtNMEVGsfY7Xf0wps.:11040:0:99999:7:-1:-1:134549524
+
+[level8@ftz level8]$ cat /etc/rc.d/found.txt | sort -u | grep -v '^$' > tmp/password.txt
+
+[level8@ftz level8]$ cat tmp/password.txt
+level9:$1$vkY6sSlG$6RyUXtNMEVGsfY7Xf0wps.:11040:0:99999:7:-1:-1:134549524
 ```
 
+you can use with john the ripper or xhydra or so on.
+
+```
+┌──(root💀kali)-[~]
+└─# john /Hackme/level8_password.txt --show
+level9:apple:11040:0:99999:7:-1:-1:134549524
+
+1 password hash cracked, 0 left
+```
