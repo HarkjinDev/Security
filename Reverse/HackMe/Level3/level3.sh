@@ -14,7 +14,6 @@ export LOG1="level3.log"
 
 attack() {
     sleep 2; echo "$PASS1"
-    sleep 1; echo "hostname"
     sleep 1; echo "$CMD1"
     sleep 1; echo "exit"
 }
