@@ -14,7 +14,7 @@ level5.tmp 라는 이름의 임시파일을 생성한다.
 (/usr/bin/level5 makes level5.tmp in /tmp)
 
 이를 이용하여 level6의 권한을 얻어라.
-(Get the level6's permission with using this)
+(Get the level6's privilege with using this)
 ```
 
 ```
