@@ -35,5 +35,4 @@ I will exploit with FSB
 ```
 [level11@ftz level11]$ ./attackme
 Segmentation fault
-
 ```
