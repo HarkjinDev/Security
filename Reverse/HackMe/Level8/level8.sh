@@ -15,7 +15,6 @@ export PASS_FILE=/tmp/password.txt
 
 attack() {
         sleep 3; echo "$PASS1"
-        sleep 1; echo "hostname"
         sleep 1; echo "$CMD1"
         sleep 1; echo "exit"
 }
