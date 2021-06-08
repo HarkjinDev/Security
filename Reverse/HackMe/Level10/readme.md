@@ -61,3 +61,51 @@ level10  19519  4531  0 15:09 pts/0    00:00:00 ps -ef
 level10  19520  4531  0 15:09 pts/0    00:00:00 grep level10
 ```
 /home/level10/program/level10 seems to be executed once and finished in the form of a normal process (not demon mode)
+
+```
+[level10@ftz level10]$ ipcs
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status
+0x00001d6a 0          root      666        1028       0
+```
+
+```
+[level10@ftz tmp]$ cat shm.c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+
+#define BUFFSIZE 1024
+#define KEY 7530
+
+int main()
+{
+        int shm_id;
+        void *shm_addr=(void *)0;
+        char buf[BUFFSIZE];
+
+        // shmget() : Creates share memory
+        // key_t key : the key variable for reading share memory
+        // (int size) : memory size
+        // 0666 : share memory permission
+        shm_id = shmget(KEY, BUFFSIZE, 0666);
+
+        // shmat() : Attach the created share memory
+        shm_addr = shmat(shm_id, (void *)0, 0);
+
+        memcpy(buf, shm_addr, BUFFSIZE);
+        printf("%s", buf);
+
+        // shmdt() : Detach the connected share memory
+        shmdt(shm_addr);
+
+        return 0;
+}
+
+[level10@ftz tmp]$ cat shm.c
+
+멍멍: level11의 패스워드는?
+구타: what!@#$?
+```
