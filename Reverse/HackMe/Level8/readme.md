@@ -10,7 +10,9 @@
 [level8@ftz level8]$ cat hint
 
 level9의 shadow 파일이 서버 어딘가에 숨어있다.
+(The level9's shadow file is hidden somewhere on the server)
 그 파일에 대해 알려진 것은 용량이 "2700"이라는 것 뿐이다.
+(All we only know about the file is the size "2700")
 ```
 
 ```
