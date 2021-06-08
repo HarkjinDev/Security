@@ -11,7 +11,7 @@ export USER1=level8
 export PASS1="break the world"
 export LOG1=level8.log
 export CMD1="cat /etc/rc.d/found.txt | sort -u | grep -v '^$'"
-export PASS_FILE=/tmp/password.txt
+export PASS_FILE=/tmp/level8_password.txt
 
 attack() {
         sleep 3; echo "$PASS1"
