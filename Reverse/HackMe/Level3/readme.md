@@ -8,7 +8,7 @@ This level's goal
 
 `[level3@ftz level3]$ cat hint`
 
-다음 코드는 **autodig**의 소스이다.
+다음 코드는 **autodig**의 소스이다.   
 (This code is autodig's source)
 ```c
 #include <stdio.h>
@@ -33,15 +33,15 @@ system( cmd );
 }
 ```
 
-이를 이용하여 level4의 권한을 얻어라.
-(Get level4's permission with using this)
+이를 이용하여 level4의 권한을 얻어라.   
+(Get level4's privilege with using this)
 
 more hints.
 
-1) 동시에 여러 명령어를 사용하려면?
+1) 동시에 여러 명령어를 사용하려면?   
 (how to use several commands at the same itme?)
 
-2) 문자열 형태로 명령어를 전달하려면?
+2) 문자열 형태로 명령어를 전달하려면?   
 (how to pass the command of string?) 
 ***
 
