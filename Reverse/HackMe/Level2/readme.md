@@ -10,6 +10,7 @@
 [level2@ftz level2]$ cat hint
 
 텍스트 파일 편집 중 쉘의 명령을 실행시킬 수 있다는데...
+(while you editing, you may execute shell command.....)
 ```
 ```
 [level2@ftz level2]$ find / -user level3 -perm -4000 2>/dev/null
