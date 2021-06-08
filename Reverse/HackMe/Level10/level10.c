@@ -8,8 +8,8 @@
 #include <sys/ipc.h>
 #include <sys/shm.h>
 
-char *text;
 int shmid;
+char *text;
 
 int main( void ) {
 
