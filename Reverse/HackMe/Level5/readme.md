@@ -11,8 +11,10 @@
 
 /usr/bin/level5 프로그램은 /tmp 디렉토리에
 level5.tmp 라는 이름의 임시파일을 생성한다.
+(/usr/bin/level5 makes level5.tmp in /tmp)
 
 이를 이용하여 level6의 권한을 얻어라.
+(Get the level6's permission with using this)
 ```
 
 ```
