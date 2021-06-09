@@ -85,6 +85,10 @@ Breakpoint 1, 0x080484bf in main ()
 0xbfffdec0:     0x41414141      0x41414141      0x41414141      0x41414141
 0xbfffded0:     0x41414141      0x41414141      0x41414141      0x41414141
 0xbfffdee0:     0x4200af00      0x42130a14      0xbfffdf08      0x42015574
+(gdb) x/x 0xbfffdf08
+0xbfffdf08:     0x00000000
+(gdb) x/x 0x42015574
+0x42015574 <__libc_start_main+228>:     0x58ebc189
 ```
 
 -----Memory Structure-----   
