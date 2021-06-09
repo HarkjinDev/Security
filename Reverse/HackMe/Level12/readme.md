@@ -60,6 +60,10 @@ Breakpoint 1, 0x080484bf in main ()
 0xbffff588:     0x00000000
 (gdb) x/s 0x42015574
 0x42015574 <__libc_start_main+228>:      "\211ÁëX1É\213\203\204#"
+(gdb) continue
+Continuing.
+AAAAAAAA
+Program exited with code 011.
 ```
 
 -----Memory Structure-----   
