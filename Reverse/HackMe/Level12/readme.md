@@ -8,6 +8,7 @@
 
 ```
 [level12@ftz level12]$ cat hint
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
