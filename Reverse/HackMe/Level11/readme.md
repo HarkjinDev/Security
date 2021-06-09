@@ -88,3 +88,36 @@ int main()
 
 ```
 
+```
+[level11@ftz level11]$ gdb attackme
+(gdb) disass main
+Dump of assembler code for function main:
+0x08048470 <main+0>:    push   %ebp
+0x08048471 <main+1>:    mov    %esp,%ebp
+0x08048473 <main+3>:    sub    $0x108,%esp
+0x08048479 <main+9>:    sub    $0x8,%esp
+0x0804847c <main+12>:   push   $0xc14
+0x08048481 <main+17>:   push   $0xc14
+0x08048486 <main+22>:   call   0x804834c <setreuid>
+0x0804848b <main+27>:   add    $0x10,%esp
+0x0804848e <main+30>:   sub    $0x8,%esp
+0x08048491 <main+33>:   mov    0xc(%ebp),%eax
+0x08048494 <main+36>:   add    $0x4,%eax
+0x08048497 <main+39>:   pushl  (%eax)
+0x08048499 <main+41>:   lea    0xfffffef8(%ebp),%eax
+0x0804849f <main+47>:   push   %eax
+0x080484a0 <main+48>:   call   0x804835c <strcpy>
+0x080484a5 <main+53>:   add    $0x10,%esp
+0x080484a8 <main+56>:   sub    $0xc,%esp
+0x080484ab <main+59>:   lea    0xfffffef8(%ebp),%eax
+0x080484b1 <main+65>:   push   %eax
+0x080484b2 <main+66>:   call   0x804833c <printf>
+0x080484b7 <main+71>:   add    $0x10,%esp
+0x080484ba <main+74>:   leave
+0x080484bb <main+75>:   ret
+0x080484bc <main+76>:   nop
+0x080484bd <main+77>:   nop
+0x080484be <main+78>:   nop
+0x080484bf <main+79>:   nop
+```
+
