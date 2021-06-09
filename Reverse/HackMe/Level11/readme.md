@@ -53,7 +53,7 @@ AAAA bffffc3a bfffdb80 1
 AAAA bffffc37 bfffde00 1 41414141
 ```
 
-AAAA means 41414141
+41414141(means AAAA) was printed in fourth that you can exploit in here.
 
 I will make the shell code(egg.c) and getenv.c(To get SUPERDK's address)
 
