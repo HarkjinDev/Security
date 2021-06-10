@@ -34,7 +34,7 @@ main(int argc, char *argv[])
 
 The hint seems like BOF. I will debug the attackme at the first to get information.
 
-the attackme has only execute permission in this level, so I need to copy that first for debug.
+The attackme has only execute permission in this level, so I need to copy that first for debug.
 
 ```
 [level13@ftz level13]$ cp attackme tmp/
