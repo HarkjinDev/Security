@@ -137,7 +137,7 @@ if(FD_ISSET(fileno(stdin),&fds))
 ```
 The point is that you need to input deadbeef in the check to get sh.
 
-In the hint, I understood string[count] will be --count if input is 0x08.
+In the hint, I understood string[count] will be --count if the input is 0x08.
 
 So, I will move string[]'s pointer and then input deafbeef in the check.
 
