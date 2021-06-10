@@ -197,10 +197,12 @@ Continuing.
 Program received signal SIGSEGV, Segmentation fault.
 0xffffe002 in ?? ()
 ```
-0x418 = 1048 byte, which is char buf[1024] in the hint.
+0x418 = 1048 bytes, which is char buf[1024] in the hint.
 
-In first run debug, I input AAAAAAAA(4141414141414141, 8byte) and could see the 0x01234567(canary) before SFP(4byte) RET(4byte).
+So, the memory is 1024bytes + dummy(12bytes) + stack gruad(4bytes) + dummay(8bytes) + SFP(4bytes) + RET(4bytes)
+
+In first run debug, I input AAAAAAAA(4141414141414141, 8bytes) and could see the 0x01234567(canary) before SFP(4bytes) RET(4bytes).
 
 In second run debug, I input Ax1048 (which can be overflow) and colud see that there is no canary and the result of buffer overflow.
 
-so, the attackme in this level has a stack guard and I will exploit with by-pass stack guard.
+As a result of the debug, the attackme in this level has a stack guard and I will exploit with by-pass stack guard.
