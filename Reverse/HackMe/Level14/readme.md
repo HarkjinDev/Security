@@ -21,7 +21,8 @@
 #include <unistd.h>
 
 main()
-{ int crap;
+{ 
+  int crap;
   int check;
   char buf[20];
   fgets(buf,45,stdin);
@@ -31,4 +32,53 @@ main()
      system("/bin/sh");
    }
 }
+
+[level14@ftz level14]$ gdb -q attackme
+(gdb) disass main
+0x08048493 <main+3>:    sub    $0x38,%esp
 ```
+
+0x38 means 56 bytes, and I need to get more information of memory size.
+
+```
+[level14@ftz tmp]$ cat distance.c
+
+#include <stdio.h>
+#include <unistd.h>
+
+int main()
+{
+        int crap;
+        int check;
+        char buf[20];
+
+        fgets(buf,45,stdin);
+        if(check == 0xdeadbeef)
+        {
+                setreuid(3095,3095);
+                system("/bin/sh");
+        }
+        printf("Input is : %s\n &buf : %p\n &check: %p\n &crap : %p\n", buf, buf, &check, &crap);
+}
+
+[level14@ftz tmp]$ gcc distance.c -o distance
+[level14@ftz tmp]$ ./distance
+AAAA
+Input is : AAAA
+
+&buf :   0xbffff8a0
+&check:  0xbffff8c8
+&crap :  0xbffff8cc
+```
+
+As above, I can understand the memory size.
+
+Between buff and check : 0xbffff8c8 - 0xbffff8a0 = 0x00000028 (40 bytes)   
+Between chek and crap  : 0xbffff8cc - 0xbffff8c8 = 0x00000004 (4bytes)
+
+char buf(20 bytes) + dummy(20bytes) + check(4bytes) + crap(4bytes) + dummy(8bytes) + SFP(4bytes) + RET(4bytes)
+
+
+
+
+
