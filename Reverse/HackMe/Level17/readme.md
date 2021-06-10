@@ -29,9 +29,9 @@ main()
 }
 ```
 
-The hint seems almost same as level15 and level16, but I need to change printit() to egg shell code to exploit this level.
+The hint seems almost same as level16, but I need to change printit() to egg shell code to exploit this level.
 
-In level15 and level16, we could understand the memory size.
+In level16, we could understand the memory size.
 
 buf(20bytes) + dummy(20bytes) + \*printit(4bytes,0xbffff048) + crap(4bytes,0xbffff04c) + dummy(8bytes) + SPF(4bytes) + RET(4bytes).
 
