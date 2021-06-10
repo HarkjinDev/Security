@@ -26,7 +26,7 @@ main()
 0x08048443 <main+3>:    sub    esp,0x28
 ```
 
-0x28 means 40bytes, so then 40bytes + SFO(4bytes) + RET(4bytes)
+0x28 means 40bytes, so then 40bytes + SFP(4bytes) + RET(4bytes)
 
 ```
 [level19@ftz level19]$ cp attackme tmp/
