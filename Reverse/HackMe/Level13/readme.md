@@ -202,3 +202,5 @@ Program received signal SIGSEGV, Segmentation fault.
 In first run debug, I input AAAAAAAA(4141414141414141, 8byte) and could see the 0x01234567(canary) before SFP(4byte) RET(4byte).
 
 In second run debug, I input Ax1048 (which can be overflow) and colud see that there is no canary and the result of buffer overflow.
+
+so, the attackme in this level has a stack guard and I will exploit with by-pass stack guard.
