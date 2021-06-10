@@ -1,7 +1,7 @@
 # Level18
 
 ## This level's goal
--
+- Pointer
 
 ***
 
