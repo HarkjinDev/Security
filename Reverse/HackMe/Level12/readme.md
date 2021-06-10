@@ -201,7 +201,9 @@ my-pass
 Level13 Password is "have no clue".
 ```
 
-0xbffff6d4   
+The result of getegg(to get egg, shell code) is 0xbffff6d4   
 bf ff f6 d4      
 d4 f6 ff bf   
-\xd4\xf6\xff\xbf
+will be \xd4\xf6\xff\xbf
+
+So then the attack code will be dummy string(268 bytes) + shell code's address(\xd4\xf6\xff\xbf)
