@@ -1,7 +1,7 @@
 # Level17
 
 ## This level's goal
-- Function pointer modulation
+- Function pointer modulation with the shell code
 
 ***
 
