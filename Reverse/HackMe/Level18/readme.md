@@ -135,7 +135,7 @@ if(FD_ISSET(fileno(stdin),&fds))
   }
 }
 ```
-The point is that you need to input deadbeef in the check.
+The point is that you need to input deadbeef in the check to get sh.
 
 In the hint, I understood string[count] will be --count if input is 0x08.
 
