@@ -36,7 +36,7 @@ AAAA %x %x %x %x
 AAAA 4f 4212ecc0 4207a750 41414141
 ```
 
-4f means 79 in decimal, it seeams that I could exploit iu fourth.
+4f means 79 in decimal, it seeams that I could exploit in fourth.
 
 ```
 [level20@ftz level20]$ gdb tmp/attackme
