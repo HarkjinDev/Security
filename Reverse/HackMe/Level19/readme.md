@@ -13,7 +13,8 @@
 [level19@ftz level19]$ cat hint
 
 main()
-{ char buf[20];
+{ 
+  char buf[20];
   gets(buf);
   printf("%s\n",buf);
 }
