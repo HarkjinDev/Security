@@ -56,6 +56,12 @@ Idx Name          Size      VMA       LMA       File off  Algn
 
  18 .dtors        00000008  08049594  08049594  00000594  2**2
                   CONTENTS, ALLOC, LOAD, DATA
+
+[level20@ftz tmp]$ gdb -q attackme
+(gdb) p 0xfc8e - 0x28
+$1 = 64614
+(gdb) p 0x1bfff - 0xfc8e
+$2 = 50033
 ```
 
 __DOTR-List's address is 0x08049594 which I will exploit with this.
