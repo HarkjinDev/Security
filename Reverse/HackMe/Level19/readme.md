@@ -103,8 +103,8 @@ For the chaining method, PPR's address(pop-pop-ret) is 804849d.
 As a result, the attack code will be 44 bytes dummy stirngs + setreuid address + PPR address + ruid + euid + system address + dummy(4bytes) + /bin/sh address.
 setreuid address = 0x420d7920   
 PPR address = 0x804849d   
-ruid and euid = 0x0000C1C
-system address = 0x4203f2c0
+ruid and euid = 0x0000C1C   
+system address = 0x4203f2c0   
 /bin/sh address = 0x42127ea4
 
 ```
