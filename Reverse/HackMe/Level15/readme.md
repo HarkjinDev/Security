@@ -28,7 +28,7 @@ main()
 }
 ```
 
-This level seems like level14, thre is difference of check's pointer.
+This level seems like level14, but there is the difference of check's pointer.
 
 ```
 [level15@ftz tmp]$ cat distance.c
@@ -55,7 +55,7 @@ Input is :
  &crap  : 0xbffff3cc
 ```
 
-buf(20bytes) + dummy(20bytes) + \*check(4bytes) + crap(4bytes) + dummy(8bytes) + SFP(4bytes) + RET(4bytes)
+As above, buf(20bytes) + dummy(20bytes) + \*check(4bytes) + crap(4bytes) + dummy(8bytes) + SFP(4bytes) + RET(4bytes)
 
 ```
 [level15@ftz level15]$ gdb -q tmp/attackme
