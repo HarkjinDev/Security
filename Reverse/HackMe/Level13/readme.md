@@ -32,6 +32,10 @@ main(int argc, char *argv[])
 }
 ```
 
+The hint seems like BOF. I will debug the attackme at the first to get information.
+
+the attackme has only execute permission in this level, so I need to copy that first for debug.
+
 ```
 [level13@ftz level13]$ cp attackme tmp/
 [level13@ftz level13]$ gdb -q tmp/attackme
@@ -199,7 +203,7 @@ Program received signal SIGSEGV, Segmentation fault.
 ```
 0x418 = 1048 bytes, which is char buf[1024] in the hint.
 
-So, the memory is 1024bytes + dummy(12bytes) + stack gruad(4bytes) + dummay(8bytes) + SFP(4bytes) + RET(4bytes)
+So, the memory is 1024bytes + dummy(12bytes) + stack gruad(4bytes) + dummay(8bytes) + SFP(4bytes) + RET(4bytes).
 
 In first run debug, I input AAAAAAAA(4141414141414141, 8bytes) and could see the 0x01234567(canary) before SFP(4bytes) RET(4bytes).
 
