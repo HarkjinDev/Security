@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-This level's code seems like level1 but there is the difference of buffer size.
+This level's code seems like level1 but there is the difference of buffer' small size.
 
 If you use the shell code (ex. 25bytes) will be problem but I will use with env variable I used in level1.
 
