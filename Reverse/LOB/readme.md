@@ -2,10 +2,10 @@
 
 www.hackerschool.org
 
-## Basic rules
-1. single boot is prohibited
-2. root exploit is prohibited
-3. LD_PRELOAD is prohibited in /bin/my-pass
+## Basic Rules
+1. Do not use local root exploit
+2. Do not use L_PRELOAD to my-pass
+3. Do not use single boot
 
 ## Check Level-up
 /bin/my-pass
