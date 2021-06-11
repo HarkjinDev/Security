@@ -48,13 +48,15 @@ Starting program: /home/gate/gremlin
 You cannot debug germlin cuz of the privilege, so you need to copy that for debug.
 
 ```
+[gate@localhost gate]$ cp gremlin gremlin2
+[gate@localhost gate]$ gdb -q gremlin2
 (gdb) set disass intel
 (gdb) disass main
 0x8048433 <main+3>:     sub    %esp,0x100
 0x804846e <main+62>:    lea    %eax,[%ebp-256]
 ```
 
-the buffer is 256 without dummy, so the memory seems 256bytes + SFP(4byts) + RET(4bytes).
+The buffer is 256 without dummy, so the memory seems 256bytes + SFP(4byts) + RET(4bytes).
 
 The point is that you need to overflow buf and SFP (260bytes) and then exploit RET with the shell code.
 
