@@ -56,7 +56,7 @@ You cannot debug germlin cuz of the privilege, so you need to copy that for debu
 0x804846e <main+62>:    lea    %eax,[%ebp-256]
 ```
 
-The buffer is 256 without dummy, so the memory seems 256bytes + SFP(4byts) + RET(4bytes).
+The buffer is 256 bytes without dummy, so the memory seems 256bytes + SFP(4byts) + RET(4bytes).
 
 The point is that you need to overflow buf and SFP (260bytes) and then exploit RET with the shell code.
 
