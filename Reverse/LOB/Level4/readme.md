@@ -49,7 +49,8 @@ main(int argc, char *argv[])
 ```
 
 In the code, there are two conditions.
-1. the egghunter seems that you cannot use env variable. (cannot use RTL method)
+1. the egghunter seems that you cannot use env variable. (cannot use RTL method).   
+   this means you need to input the shell code in the buffer and return that.
 2. the retrun address's first byte should be "0xbf"
 
 ```
