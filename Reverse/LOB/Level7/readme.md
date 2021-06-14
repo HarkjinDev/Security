@@ -1,16 +1,18 @@
 # Level7
 
 # This level's goal
--
+- LEVEL7 (darkelf -> orge) : check argv[0]
 
 ***
 
 ```
 [darkelf@localhost darkelf]$ bash2
+
 [darkelf@localhost darkelf]$ ls -l
 total 20
 -rwsr-sr-x    1 orge     orge        12700 Mar  1  2010 orge
 -rw-r--r--    1 root     root          800 Mar 29  2010 orge.c
+
 [darkelf@localhost darkelf]$ cat orge.c
 /*
         The Lord of the BOF : The Fellowship of the BOF
