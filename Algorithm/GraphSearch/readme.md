@@ -1,6 +1,6 @@
 # GraphSearch
 
-## Adjacency Materix(인접 행렬)
+## Adjacency Materix(인접 행렬) - O(N+E)
 ![adjacency_materix](/Algorithm/GraphSearch/adjacency_materix.png)
 - 인접행렬은 그래프의 노드를 2차원 배열로 만든 것
 - 완성된 배열의 모양은 1, 2, 3, 4, 5, 6의 정점을 연결하는 노드에 다른 노드들이 인접 정점이라면 1, 아니면 0을 넣음
@@ -11,7 +11,7 @@
   1) 모든 정점에 대해 간선 정보를 대입해야 하므로 O(n²) 의 시간복잡도가 소요
   2) 무조건 2차원 배열이 필요하기에 필요 이상의 공간이 낭비
 
-## Adjacency List(인접 리스트)
+## Adjacency List(인접 리스트) - O(N²)
 ![adjacency_list](/Algorithm/GraphSearch/adjacency_list.png)
 - 그래프의 노드들을 리스트로 표현한것
 - 주로 정점의 리스트 배열을 만들어 관계를 설정해줌으로써 구현
@@ -33,8 +33,8 @@
   1) 해가 없는 경로가 깊을 경우 탐색시간이 오래 걸릴 수 있음
   2) 얻어진 해가 최단 경로가 된다는 보장이 없음
 - DFS 구현 방법
-  1) 인접 행렬 : O(N+E)
-  2) 인접 리스트 : O(N²)
+  1) 인접 행렬 : 
+  2) 인접 리스트 : 
 
 ## BFS(Breadth Frist Search, 너비 우선 탐색)
 - 루트 노드나 임의의 노드에서 시작하여 인접한 노드를 먼저 모두 확인한 후 다음 depth를 탐색
