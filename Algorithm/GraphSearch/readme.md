@@ -23,3 +23,6 @@
 - BFS 구현 방법
   1) 인접 행렬
   2) 인접 리스트
+
+## DFS vs BFS
+![graphsearch](/Algorithm/GraphSearch/graphsearch.gif)
