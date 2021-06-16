@@ -1,6 +1,8 @@
 ## Skills
 - Cisco Router and Switch
-- Python(Flask)
+- Penetration Test
+- Network Traffic Security
+- Python Server Programming(Flask)
 - AWS(Gamelift,Dynamodb,EC2)
 - Unreal Engine
 - Kubernetes
