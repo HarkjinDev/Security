@@ -45,3 +45,10 @@ ex) split(:) : 으로 나누기
 ### 줄바꿈 없이 출력
 `print(...., end=' ')`
 
+### NxM 값 받아서 2차원 배열 생성
+```
+N, M = map(int, stdin.readline().split())
+
+stack = [[0]*N for _ in range(M)]
+```
+
