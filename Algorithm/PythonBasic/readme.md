@@ -9,6 +9,9 @@
 ### 임의의 개수 입력 받기
 `data = list(map(int,sys.stdin.readline().split()))`
 
+### 공백/개행 없이 입력 받기
+`a = int(sys.stdin.readline().strip())`
+
 ### 임의의 개수의 정수 n줄 입력받아 2차원 리스트에 저장할 때
 ```
 data = []   
