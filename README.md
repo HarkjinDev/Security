@@ -7,7 +7,8 @@
 - Unreal Engine
 
 ## Projects
-- Mobile Game(Fishing Spot)
+- Mobile Game(Fishing Spot)   
+  담당 : 서버, 메뉴 UI 및 로직 제작
 
 ## Certificate
 - Engineer Information Security(정보보안기사) - 2016.06.24
