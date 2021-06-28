@@ -5,7 +5,6 @@
 - Python Server Programming(Flask)
 - AWS(Gamelift,Dynamodb,EC2)
 - Unreal Engine
-- Kubernetes
 
 ## Projects
 - Mobile Game(Fishing Spot)
