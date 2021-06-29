@@ -1,4 +1,4 @@
-# LOB (The Lord fo the BOF)
+# LOB (The Lord for the BOF)
 
 www.hackerschool.org
 
