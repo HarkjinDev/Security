@@ -48,3 +48,24 @@
 - 최단거리 : BFS가 유리
 - 검색 대상이 크다면 : DFS 고려
 - 검색 대상이 크지 않고, 대상이 별로 멀지 않다면 : BFS 고려
+
+## 코딩테스트
+### DFS와 BFS
+- https://www.acmicpc.net/problem/1260
+- 그래프를 DFS로 탐색한 결과와 BFS로 탐색한 결과를 출력하는 프로그램을 작성하시오. 
+- 단, 방문할 수 있는 정점이 여러 개인 경우에는 정점 번호가 작은 것을 먼저 방문하고, 더 이상 방문할 수 있는 점이 없는 경우 종료한다. 정점 번호는 1번부터 N번까지이다.
+- https://github.com/HarkjinDev/Security/blob/main/Algorithm/GraphSearch/BAEKJOON_1260.py
+### 데스나이트
+- https://www.acmicpc.net/problem/16948
+- 게임을 좋아하는 큐브러버는 체스에서 사용할 새로운 말 "데스 나이트"를 만들었다. 
+- 데스 나이트가 있는 곳이 (r, c)라면, (r-2, c-1), (r-2, c+1), (r, c-2), (r, c+2), (r+2, c-1), (r+2, c+1)로 이동할 수 있다.
+- 크기가 N×N인 체스판과 두 칸 (r1, c1), (r2, c2)가 주어진다. 데스 나이트가 (r1, c1)에서 (r2, c2)로 이동하는 최소 이동 횟수를 구해보자. 체스판의 행과 열은 0번부터 시작한다.
+- 데스 나이트는 체스판 밖으로 벗어날 수 없다.
+- https://github.com/HarkjinDev/Security/blob/main/Algorithm/GraphSearch/BAEKJOON_16948.py
+### 미로 탐색
+- https://www.acmicpc.net/problem/2178
+- N×M크기의 배열로 표현되는 미로가 있다.
+- 미로에서 1은 이동할 수 있는 칸을 나타내고, 0은 이동할 수 없는 칸을 나타낸다. 
+- 이러한 미로가 주어졌을 때, (1, 1)에서 출발하여 (N, M)의 위치로 이동할 때 지나야 하는 최소의 칸 수를 구하는 프로그램을 작성하시오. 
+- 한 칸에서 다른 칸으로 이동할 때, 서로 인접한 칸으로만 이동할 수 있다.
+- https://github.com/HarkjinDev/Security/blob/main/Algorithm/GraphSearch/BAEKJOON_2178.py
