@@ -34,5 +34,8 @@ To get the notice for mobile game when a user enter the game.
 ```
 
 ## API Gateway
-### Create Method
+### Create REST API
+- /GetNotice
+### Create POST Method
+
 
