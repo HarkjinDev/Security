@@ -211,3 +211,25 @@ ON A.ANIMAL_ID = B.ANIMAL_ID
 WHERE A.SEX_UPON_INTAKE != B.SEX_UPON_OUTCOME
 ORDER BY A.ANIMAL_ID
 ```
+
+## String, Date
+### 루시와 엘라 찾기 (Level2)
+- https://programmers.co.kr/learn/courses/30/lessons/59046
+- 동물 보호소에 들어온 동물 중 이름이 Lucy, Ella, Pickle, Rogan, Sabrina, Mitty인 동물의 아이디와 이름, 성별 및 중성화 여부를 조회하는 SQL 문을 작성해주세요.
+- 이때 결과는 아이디 순으로 조회해주세요.
+```sql
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS
+WHERE NAME IN ("Lucy", "Ella", "Pickle", "Rogan", "Sabrina", "Mitty")
+ORDER BY ANIMAL_ID
+```
+### 이름에 el이 들어가는 동물 찾기 (Level2)
+- https://programmers.co.kr/learn/courses/30/lessons/59047
+- 동물 보호소에 들어온 동물 이름 중, 이름에 "EL"이 들어가는 개의 아이디와 이름을 조회하는 SQL문을 작성해주세요. 
+- 이때 결과는 이름 순으로 조회해주세요. 단, 이름의 대소문자는 구분하지 않습니다.
+```sql
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE NAME LIKE "%EL%" AND ANIMAL_TYPE = "Dog"
+ORDER BY NAME
+```
