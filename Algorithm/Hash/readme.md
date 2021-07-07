@@ -23,3 +23,25 @@
 ## 해시 충돌
 - Chaining 기법 : Open Hashing 기법 중 하나, 해시테이블 저장공간 외에 공간을 더 추가해서 사용하는 방법입니다. 충돌이 발생시, 링크드 리스트로 데이터를 추가로 뒤에 연결시키는 방법입니다.
 - Linear Probing 기법 : Close Hashing 기법 중 하나, 해시 테이블 저장공간 안에서 충돌 문제를 해결하는 방법입니다. 충돌이 일어나면, 해당 hash value(hash address)의 다음 index부터 맨 처음 나오는 빈 공간에 저장하는 기법입니다. (저장 공간 활용도의 증가)
+
+## 코딩 테스트
+
+### 완주하지 못한 선수 (Level1)
+- https://programmers.co.kr/learn/courses/30/lessons/42576
+- 마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 완주한 선수들의 이름이 담긴 배열 completion이 주어질 때, 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성해주세요.
+- https://github.com/HarkjinDev/Security/blob/main/Algorithm/Hash/hash_level1.py
+
+### 전화번호 목록 (Level2)
+- https://programmers.co.kr/learn/courses/30/lessons/42577
+- 전화번호부에 적힌 전화번호를 담은 배열 phone_book 이 solution 함수의 매개변수로 주어질 때, 어떤 번호가 다른 번호의 접두어인 경우가 있으면 false를 그렇지 않으면 true를 return 하도록 solution 함수를 작성해주세요.
+- https://github.com/HarkjinDev/Security/blob/main/Algorithm/Hash/hash_level2_1.py
+
+### 위장 (Level2)
+- https://programmers.co.kr/learn/courses/30/lessons/42578
+- 스파이가 가진 의상들이 담긴 2차원 배열 clothes가 주어질 때 서로 다른 옷의 조합의 수를 return 하도록 solution 함수를 작성해주세요.
+- https://github.com/HarkjinDev/Security/blob/main/Algorithm/Hash/hash_level2_2.py
+
+### 베스트앨범 (Level3)
+- https://programmers.co.kr/learn/courses/30/lessons/42579
+- 노래의 장르를 나타내는 문자열 배열 genres와 노래별 재생 횟수를 나타내는 정수 배열 plays가 주어질 때, 베스트 앨범에 들어갈 노래의 고유 번호를 순서대로 return 하도록 solution 함수를 완성하세요.
+- https://github.com/HarkjinDev/Security/blob/main/Algorithm/Hash/hash_level3.py
