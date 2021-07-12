@@ -1,5 +1,5 @@
 ## Skills
-- Cisco Router and Switch
+- IPS, VPN, Firewall, NAC, WAF, NMS
 - Penetration Test
 - Network Traffic Security
 - Python Server Programming(Flask)
