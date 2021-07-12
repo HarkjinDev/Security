@@ -14,7 +14,7 @@ To get the notice for mobile game when a user enter the game.
 - Key : no(string)
 ### Put Items
 - no : Number
-- message : notice
+- message : Notice
 ![Dynamodb](/AWS_Serverless_RESTAPI/Dynamodb.png)
 
 ## Lambda
