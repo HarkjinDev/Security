@@ -3,7 +3,7 @@
 - Penetration Test
 - Network Traffic Security
 - Python Server Programming(Flask)
-- AWS(Gamelift,Dynamodb,EC2)
+- AWS(Gamelift,Dynamodb,API Gateway, EC2)
 - Unreal Engine
 
 ## Projects
