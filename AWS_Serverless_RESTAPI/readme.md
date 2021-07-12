@@ -16,6 +16,11 @@ To get the notice for mobile game when a user enter the game.
 - no : 1
 - message : Welcome to FishingSpot!
 
+## API Gateway
+### Create REST API
+- /GetNotice
+### Create POST Method
+
 ## Lambda
 ### Create Lambda
 ### Create and connect IAM for dynamoDB
@@ -32,10 +37,3 @@ To get the notice for mobile game when a user enter the game.
     "pathParameters": null
 }
 ```
-
-## API Gateway
-### Create REST API
-- /GetNotice
-### Create POST Method
-
-
