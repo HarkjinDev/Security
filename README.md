@@ -13,7 +13,7 @@
   Game URL : 
 - Vulnerability Analysis(주요통신기반시설 기술적 취약점 분석/평가 스크립트 제작)   
   https://github.com/HarkjinDev/Security/tree/main/VulnerabilityAnalysis
-- RDP Vulnerability (RDP 취약점 분석 연구)
+- RDP Vulnerability (RDP 취약점 분석 연구)   
   https://github.com/HarkjinDev/Security/tree/main/Write-up/RDP
 
 ## Certificate
