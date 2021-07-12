@@ -13,6 +13,8 @@ To get the notice for mobile game when a user enter the game.
 - Table Name : Fishing_Notice
 - Key : no(string)
 ### Put Items
+- no : Number
+- message : notice
 ![Dynamodb](/AWS_Serverless_RESTAPI/Dynamodb.png)
 
 ## API Gateway
