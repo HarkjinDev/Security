@@ -17,14 +17,6 @@ To get the notice for mobile game when a user enter the game.
 - message : notice
 ![Dynamodb](/AWS_Serverless_RESTAPI/Dynamodb.png)
 
-## API Gateway
-### Create REST API
-- /GetNotice
-### Create POST Method
-![Gateway](/AWS_Serverless_RESTAPI/Gateway1.png)
-### Deploy Post Method
-![Deploy](/AWS_Serverless_RESTAPI/Deploy1.png)
-
 ## Lambda
 ### Create Lambda
 ```python
@@ -70,3 +62,15 @@ def lambda_handler(event, context):
     "pathParameters": null
 }
 ```
+![Test1](/AWS_Serverless_RESTAPI/Test1.png)
+
+## API Gateway
+### Create REST API
+- /GetNotice
+### Create POST Method
+![Gateway](/AWS_Serverless_RESTAPI/Gateway1.png)
+### Deploy Post Method
+![Deploy](/AWS_Serverless_RESTAPI/Deploy1.png)
+
+## Result - Test
+![Result](/AWS_Serverless_RESTAPI/Result.png)
