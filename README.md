@@ -9,6 +9,8 @@
 ## Projects
 - Mobile Game(Fishing Spot)   
   담당 : API 서버, 서브기능 메뉴 UI 및 로직 제작
+- Vulnerability Analysis(주요통신기반시설 기술적 취약점 분석/평가 스크립트 제작)   
+  https://github.com/HarkjinDev/Security/tree/main/VulnerabilityAnalysis
 
 ## Certificate
 - Engineer Information Security(정보보안기사) - 2016.06.24
