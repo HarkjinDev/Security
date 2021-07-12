@@ -53,6 +53,8 @@ def lambda_handler(event, context):
     }
 ```
 ### Create and connect IAM for dynamoDB
+![IAM1](/AWS_Serverless_RESTAPI/IAM1.png)
+![IAM2](/AWS_Serverless_RESTAPI/IAM2.png)
 ### Test Function
 ```
 {
