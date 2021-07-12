@@ -22,7 +22,7 @@ To get the notice for mobile game when a user enter the game.
 ### Create POST Method
 ![Gateway](/AWS_Serverless_RESTAPI/Gateway1.png)
 ### POST deploy
-![Depoly](/Security/AWS_Serverless_RESTAPI/Depoly.png)
+![Deploy](/AWS_Serverless_RESTAPI/Deploy1.png)
 
 ## Lambda
 ### Create Lambda
