@@ -20,8 +20,9 @@ To get the notice for mobile game when a user enter the game.
 ### Create REST API
 - /GetNotice
 ### Create POST Method
+![Gateway](/AWS_Serverless_RESTAPI/Gateway1.png)
 ### POST deploy
-![depoly](/Security/AWS_Serverless_RESTAPIdepoly.png)
+![Depoly](/Security/AWS_Serverless_RESTAPI/Depoly.png)
 
 ## Lambda
 ### Create Lambda
