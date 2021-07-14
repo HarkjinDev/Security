@@ -83,6 +83,23 @@ cluster.name: graylog
 ```
 ### 4. Graylog Server 설치
 ```
-[root@centrepo whchoi]# rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-3.0-repository_latest.rpm
-[root@centrepo whchoi]# yum -y install graylog-server
+[root@linux ~]# rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-3.0-repository_latest.rpm
+[root@linux ~]# yum -y install graylog-server
+```
+계정 패스워드 암호화 및 설정 파일 수정
+```
+[root@linux ~]# echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
+Enter Password: admin
+8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+```
+```
+[root@linux200 ~]# pwgen -N 1 -s 96
+n2NJ5r1CS652LaqI3rAgnXmvXfMhPVZAQPcOc9HzyYaRVmRUxStb5tOV3eI3bsktSEWl3PrEvw4d8egoqSSOn3HxK7g5joGS
+```
+```
+[root@linux200 ~]# vi /etc/graylog/server/server.conf 
+root_timezone = Asia/Seoul
+elasticsearch_shards = 1
+password_secret = n2NJ5r1CS652LaqI3rAgnXmvXfMhPVZAQPcOc9HzyYaRVmRUxStb5tOV3eI3bsktSEWl3PrEvw4d8egoqSSOn3HxK7g5joGS
+root_password_sha2 = 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
 ```
