@@ -66,10 +66,18 @@ type=rpm-md
 ```
 [root@linux ~]# vi /etc/elasticsearch/elasticsearch.yml 
 cluster.name: graylog
-network.host: 192.168.20.200
-http.port: 9200
 ```
 서비스 기동
 ```
 [root@linux ~]# systemctl enable --now elasticsearch
+```
+동작 점검
+```
+[root@linux200 ~]# curl -XGET 'http://localhost:9200'
+  "cluster_name" : "graylog",
+```
+```
+[root@linux ~]# curl -XGET 'http://localhost:9200/_cluster/health?pretty=true'
+  "cluster_name" : "graylog",
+  "status" : "green",
 ```
