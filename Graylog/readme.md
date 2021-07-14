@@ -82,6 +82,7 @@ cluster.name: graylog
   "status" : "green",
 ```
 ### 4. Graylog Server 설치
+패키지 설치
 ```
 [root@linux ~]# rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-3.0-repository_latest.rpm
 [root@linux ~]# yum -y install graylog-server
