@@ -81,7 +81,7 @@ cluster.name: graylog
   "cluster_name" : "graylog",
   "status" : "green",
 ```
-### 4. Graylog Server 설치
+### 4. Graylog 설치
 패키지 설치
 ```
 [root@linux ~]# rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-3.0-repository_latest.rpm
@@ -107,4 +107,9 @@ root_password_sha2 = 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab44
 서비스 기동
 ```
 [root@linux ~]# systemctl enable --now graylog-server
+```
+### 5. Graylog 설정
+Graylog 접속
+```
+[root@linux ~]# firefox http://localhost:9000 &
 ```
