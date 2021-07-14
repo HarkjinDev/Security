@@ -16,18 +16,18 @@
 ## Graylog 설치
 ### 1. 필요 패키지 설치
 ```
-yum install epel-release -y
+[root@linux ~]# yum install epel-release -y
 ```
 ```
-yum install wget pwgen -y
+[root@linux ~]# yum install wget pwgen -y
 ```
 ```
-yum install java-1.8.0-openjdk-headless.x86_64 -y
+[root@linux ~]# yum install java-1.8.0-openjdk-headless.x86_64 -y
 ```
 
 ### 2. MongoDB 설치 및 기동
 ```
-[root@linux ~]# cat /etc/yum.repos.d/mongodb.repo 
+[root@linux ~]# vi /etc/yum.repos.d/mongodb.repo 
 [mongodb-org-4.0]
 name = MongoDB Repository
 baseurl = https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/
@@ -36,8 +36,30 @@ enabled = 1
 gpgkey = https://www.mongodb.org/static/pgp/server-4.0.asc
 ```
 ```
-yum install mongodb-org -y
+[root@linux ~]# yum install mongodb-org -y
 ```
 ```
-systemctl enable --now mongod
+[root@linux ~]# systemctl enable --now mongod
 ```
+
+### 3. Elasticsearch 설치 및 기동
+GPG키 임포트
+```
+[root@linux ~]# rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+```
+패키지 설치
+```
+[root@linux ~]# vi /etc/yum.repos.d/elasticsearch.repo 
+[elasticsearch-6.x]
+name=Elasticsearch repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/oss-6.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+```
+```
+[root@linux ~]# yum install elasticsearch-oss -y
+```
+
