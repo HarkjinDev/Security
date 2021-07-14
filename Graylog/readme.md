@@ -103,3 +103,7 @@ elasticsearch_shards = 1
 password_secret = n2NJ5r1CS652LaqI3rAgnXmvXfMhPVZAQPcOc9HzyYaRVmRUxStb5tOV3eI3bsktSEWl3PrEvw4d8egoqSSOn3HxK7g5joGS
 root_password_sha2 = 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
 ```
+서비스 기동
+```
+[root@linux ~]# systemctl enable --now graylog-server
+```
