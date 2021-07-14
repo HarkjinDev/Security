@@ -14,5 +14,30 @@
 - Graylog server - 다양한 Input에서 발생하는 로그를 구문 분석하며, 해당 로그들을 처리할 수 있는 웹 인터페이스를 제공하는 서버
 
 ## Graylog 설치
+### 1. 필요 패키지 설치
+```
+yum install epel-release -y
+```
+```
+yum install wget pwgen -y
+```
+```
+yum install java-1.8.0-openjdk-headless.x86_64 -y
+```
 
-
+### 2. MongoDB 설치 및 기동
+```
+[root@linux ~]# cat /etc/yum.repos.d/mongodb.repo 
+[mongodb-org-4.0]
+name = MongoDB Repository
+baseurl = https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/
+gpgcheck = 1
+enabled = 1
+gpgkey = https://www.mongodb.org/static/pgp/server-4.0.asc
+```
+```
+yum install mongodb-org -y
+```
+```
+systemctl enable --now mongod
+```
