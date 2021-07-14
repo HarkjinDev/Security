@@ -81,3 +81,8 @@ cluster.name: graylog
   "cluster_name" : "graylog",
   "status" : "green",
 ```
+### 4. Graylog Server 설치
+```
+[root@centrepo whchoi]# rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-3.0-repository_latest.rpm
+[root@centrepo whchoi]# yum -y install graylog-server
+```
