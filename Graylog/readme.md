@@ -6,7 +6,7 @@
 - 리눅스 기반의 설치가 가능하며, 로그가 많은 경우 시스템의 메모리 및 Disk IO를 적절히 지원한다면 매우 유용한 로그 분석 솔루션이다.
 
 ## Graylog Server Architecture
-![Graylog_Architecture](/Garylog/Graylog_Architecture.png)
+![Graylog_Architecture](/Graylog/Garylog_Architecture.png)
 
 ## Graylog 구성 요소
 - MongoDB - 구성정보, 메타정보 저장용으로 사용되는 DB
