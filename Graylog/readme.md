@@ -42,7 +42,7 @@ gpgkey = https://www.mongodb.org/static/pgp/server-4.0.asc
 [root@linux ~]# systemctl enable --now mongod
 ```
 
-### 3. Elasticsearch 설치 및 기동
+### 3. Elasticsearch 설치 및 설정
 GPG키 임포트
 ```
 [root@linux ~]# rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
@@ -62,4 +62,13 @@ type=rpm-md
 ```
 [root@linux ~]# yum install elasticsearch-oss -y
 ```
-
+설정 파일 수정
+```
+[root@linux ~]# vi /etc/elasticsearch/elasticsearch.yml 
+cluster.name: graylog
+network.host: 192.168.20.200
+http.port: 9200
+```
+```
+[root@linux ~]# systemctl enable --now elasticsearch
+```
