@@ -73,7 +73,7 @@ cluster.name: graylog
 ```
 동작 점검
 ```
-[root@linux200 ~]# curl -XGET 'http://localhost:9200'
+[root@linux ~]# curl -XGET 'http://localhost:9200'
   "cluster_name" : "graylog",
 ```
 ```
@@ -97,7 +97,7 @@ Enter Password: admin
 n2NJ5r1CS652LaqI3rAgnXmvXfMhPVZAQPcOc9HzyYaRVmRUxStb5tOV3eI3bsktSEWl3PrEvw4d8egoqSSOn3HxK7g5joGS
 ```
 ```
-[root@linux200 ~]# vi /etc/graylog/server/server.conf 
+[root@linux ~]# vi /etc/graylog/server/server.conf 
 root_timezone = Asia/Seoul
 elasticsearch_shards = 1
 password_secret = n2NJ5r1CS652LaqI3rAgnXmvXfMhPVZAQPcOc9HzyYaRVmRUxStb5tOV3eI3bsktSEWl3PrEvw4d8egoqSSOn3HxK7g5joGS
