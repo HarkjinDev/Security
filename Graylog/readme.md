@@ -69,6 +69,7 @@ cluster.name: graylog
 network.host: 192.168.20.200
 http.port: 9200
 ```
+서비스 기동
 ```
 [root@linux ~]# systemctl enable --now elasticsearch
 ```
