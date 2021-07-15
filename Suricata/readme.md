@@ -145,7 +145,7 @@ reference-config-file: /etc/suricata/reference.config
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
 ```
-- Attacker 테스트
+- Attacker 정상 테스트
 ```
 ┌──(root💀kali)-[~]
 └─# ping -c 3 192.168.20.134
@@ -155,4 +155,9 @@ reference-config-file: /etc/suricata/reference.config
 
 ┌──(root💀kali)-[~]
 └─# firefox http://192.168.20.134 &
+```
+- Suricata 로그 확인 : Attacker의 정상 request 이므로 특별한 로그는 없음.
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/fast.log 
 ```
