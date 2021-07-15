@@ -15,6 +15,8 @@
   https://github.com/HarkjinDev/Security/tree/main/VulnerabilityAnalysis
 - RDP Vulnerability (RDP 취약점 분석 연구)   
   https://github.com/HarkjinDev/Security/tree/main/Write-up/RDP
+- Suricata IDS를 활용한 DOS/DDOS 공격 Snort 탐지 연구
+  https://github.com/HarkjinDev/Security/tree/main/Suricata
 
 ## Certificate
 - Engineer Information Security(정보보안기사) - 2016.06.24
