@@ -66,7 +66,7 @@ HOME_NET: "[192.168.20.0/24]"
 └─# tail -f /var/log/suricata/eve.json
 ```
 
-## Suricata Rule 업데이트
+## Suricata Rule
 - Rule 업데이트
 ```
 ┌──(root💀ids)-[~]
@@ -84,4 +84,22 @@ HOME_NET: "[192.168.20.0/24]"
 ```
 ┌──(root💀ids)-[~]
 └─# suricata -T
+```
+- Rule 활성화
+```
+┌──(root💀ids)-[~]
+└─# suricata-update enable-source oisf/trafficid
+```
+- 활성화 된 Rule List
+```
+┌──(root💀ids)-[~]
+└─# suricata-update list-enabled-sources
+Enabled sources:
+  - et/open
+  - oisf/trafficid
+```
+- Rule 비활성화
+```
+┌──(root💀ids)-[~]
+└─# suricata-update disable-source oisf/trafficid
 ```
