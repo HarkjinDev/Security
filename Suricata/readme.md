@@ -177,7 +177,7 @@ reference-config-file: /etc/suricata/reference.config
 ```
 
 ## Ping of Death 공격 및 로그
-- Suritaca rule 생성 및 적용
+- Suricata rule 생성 및 적용
 ```
 ┌──(root💀ids)-[~/]
 └─# vi /etc/suricata/rules/local.rules
