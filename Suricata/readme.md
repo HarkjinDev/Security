@@ -109,7 +109,7 @@ Enabled sources:
 └─# suricata-update remove-source oisf/trafficid 
 ```
 
-## Suritaca Log 실습
+## Suritaca Log 실습 (Paros Website spy)
 - Suritaca 설정
 ```
 ┌──(root💀ids)-[~]
@@ -161,13 +161,27 @@ reference-config-file: /etc/suricata/reference.config
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/fast.log 
 ```
+- Attacker Paros spider(Firefox는 local proxy 활성화)
+```
+┌──(root💀kali)-[~]
+└─# paros &
+
+┌──(root💀kali)-[~]
+└─# firefox 192.168.20.134 &
+```
+- Suricata 로그 확인
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/fast.log 
+[**] [1:2016184:6] ET WEB_SERVER ColdFusion administrator access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 192.168.20.100:38971 -> 192.168.20.134:80
+```
 
 ## Ping of Death 공격 로그
 - Suritaca rule 생성 및 적용
 ```
 ┌──(root💀ids)-[~/]
 └─# vi /etc/suricata/rules/local.rules
-alert icmp any any -> $HOME_NET any (msg: "PING Alret"; sid:1000001; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"## Ping of Death ##"; content:"|5858585858|"; sid:1000001; rev:1;)
 
 ┌──(root💀ids)-[~/]
 └─# vi /etc/suricata/suricata.yaml
@@ -178,17 +192,14 @@ rule-files:
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
 ```
-- Attacker Ping of death 공격 (참고 : https://github.com/HarkjinDev/Security/blob/main/Python/pingofdeath.py )
+- Attacker Ping of death 공격
 ```
 ┌──(root💀kali)-[~]
-└─# python pingofdeath.py 192.168.20.134 100
+└─# hping3 -1 --rand-source 192.168.20.134 -d 50 --flood  
 ```
 - 로그 확인
 ```
 ┌──(root💀ids)-[~/]
 └─# tail -f /var/log/suricata/fast.log 
-07/15/2021-17:13:09.546283  [**] [1:1000001:1] PING Alret [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.50:8 -> 192.168.20.134:0
-07/15/2021-17:13:09.546404  [**] [1:1000001:1] PING Alret [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.134:0 -> 192.168.20.50:0
-07/15/2021-17:13:11.876573  [**] [1:1000001:1] PING Alret [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.134:11 -> 192.168.20.50:1
-07/15/2021-17:13:11.876593  [**] [1:1000001:1] PING Alret [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.134:11 -> 192.168.20.50:1
+07/15/2021-17:48:55.358027  [**] [1:1000001:1] ## Ping of Death ## [**] [Classification: (null)] [Priority: 3] {ICMP} 42.46.244.26:8 -> 192.168.20.134:0
 ```
