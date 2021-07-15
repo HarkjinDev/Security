@@ -161,3 +161,16 @@ reference-config-file: /etc/suricata/reference.config
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/fast.log 
 ```
+
+## Ping of Death 공격 로그 확인
+```
+┌──(root💀ids)-[~/]
+└─# vi /etc/suricata/rules/local.rules
+alert icmp any any -> $HOME_NET any (msg: "PING Alret"; sid:1000001; rev:1;)
+
+┌──(root💀ids)-[~/]
+└─# vi /etc/suricata/suricata.yaml
+rule-files:
+  - suricata.rules
+  - local.rules
+```
