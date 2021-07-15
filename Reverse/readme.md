@@ -1,4 +1,4 @@
-# Reverse
+# Reverse Engineering
 ## 시스템 CPU 구조
 
 ![CPUStructure](/Reverse/CPUStructure.png)
