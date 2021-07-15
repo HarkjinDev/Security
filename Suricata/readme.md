@@ -42,5 +42,4 @@ HOME_NET: "[192.168.20.0/24]"
 
 ┌──(root💀ids)-[~]
 └─# systemctl enable --now suricata
-
 ```
