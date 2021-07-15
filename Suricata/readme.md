@@ -43,3 +43,25 @@ HOME_NET: "[192.168.20.0/24]"
 ┌──(root💀ids)-[~]
 └─# systemctl enable --now suricata
 ```
+
+## Suricata 로그 확인
+- suricata.log : 기동 정보 파일
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/suricata.log
+```
+- stats.log : 통계 정보 파일
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/stats.log
+```
+- fast.log : 규칙에 해당되는 기록을 남기는 파일
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/fast.log
+```
+- eve.json : EVE JSON 파일
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/eve.json
+```
