@@ -140,4 +140,7 @@ reference-config-file: /etc/suricata/reference.config
 
 ┌──(root💀ids)-[~]
 └─# cp /var/lib/suricata/rules/suricata.rules /etc/suricata/rules/  
+
+┌──(root💀ids)-[~]
+└─# systemctl restart suricata
 ```
