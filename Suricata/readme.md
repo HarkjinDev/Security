@@ -110,6 +110,7 @@ Enabled sources:
 ```
 
 ## Suritaca Log 실습
+- Suritaca 설정
 ```
 ┌──(root💀ids)-[~]
 └─# vi /etc/suricata/suricata.yaml 
@@ -143,4 +144,15 @@ reference-config-file: /etc/suricata/reference.config
 
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
+```
+- Attacker 테스트
+```
+┌──(root💀kali)-[~]
+└─# ping -c 3 192.168.20.134
+
+┌──(root💀kali)-[~]
+└─# nmap -p 22 192.168.20.134
+
+┌──(root💀kali)-[~]
+└─# firefox http://192.168.20.134 &
 ```
