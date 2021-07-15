@@ -65,3 +65,23 @@ HOME_NET: "[192.168.20.0/24]"
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/eve.json
 ```
+
+## Suricata Rule 업데이트
+- Rule 업데이트
+```
+┌──(root💀ids)-[~]
+└─# suricata-update
+
+┌──(root💀ids)-[~]
+└─# suricata-update update-sources
+```
+- Rule List
+```
+┌──(root💀ids)-[~]
+└─# suricata-update list-sources 
+```
+- Rule Test
+```
+┌──(root💀ids)-[~]
+└─# suricata -T
+```
