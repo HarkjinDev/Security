@@ -109,7 +109,7 @@ Enabled sources:
 └─# suricata-update remove-source oisf/trafficid 
 ```
 
-## Suritaca Log 실습 (Paros Website spy)
+## Paros webproxy 로그
 - Suritaca 설정
 ```
 ┌──(root💀ids)-[~]
@@ -176,7 +176,7 @@ reference-config-file: /etc/suricata/reference.config
 [**] [1:2016184:6] ET WEB_SERVER ColdFusion administrator access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 192.168.20.100:38971 -> 192.168.20.134:80
 ```
 
-## Ping of Death 공격 로그
+## Ping of Death 공격 및 로그
 - Suritaca rule 생성 및 적용
 ```
 ┌──(root💀ids)-[~/]
@@ -186,7 +186,6 @@ alert icmp any any -> $HOME_NET any (msg:"## Ping of Death ##"; content:"|585858
 ┌──(root💀ids)-[~/]
 └─# vi /etc/suricata/suricata.yaml
 rule-files:
-  - suricata.rules
   - local.rules
   
 ┌──(root💀ids)-[~]
