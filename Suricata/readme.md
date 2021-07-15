@@ -103,3 +103,8 @@ Enabled sources:
 ┌──(root💀ids)-[~]
 └─# suricata-update disable-source oisf/trafficid
 ```
+- Rule Source 제거
+```
+┌──(root💀ids)-[~]
+└─# suricata-update remove-source oisf/trafficid 
+```
