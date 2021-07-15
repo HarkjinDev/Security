@@ -108,3 +108,36 @@ Enabled sources:
 ┌──(root💀ids)-[~]
 └─# suricata-update remove-source oisf/trafficid 
 ```
+
+## Suritaca Log 실습
+```
+┌──(root💀ids)-[~]
+└─# vi /etc/suricata/suricata.yaml 
+rule-files:
+  - suricata.rules
+  - app-layer-events.rules
+  - decoder-events.rules
+  - dhcp-events.rules
+  - dnp3-events.rules
+  - dns-events.rules
+  - files.rules
+  - http-events.rules
+  - ipsec-events.rules
+  - kerberos-events.rules
+  - modbus-events.rules
+  - nfs-events.rules
+  - ntp-events.rules
+  - smb-events.rules
+  - smtp-events.rules
+  - stream-events.rules
+  - tls-events.rules
+
+classification-file: /etc/suricata/classification.config
+reference-config-file: /etc/suricata/reference.config
+
+┌──(root💀ids)-[~]
+└─# cp /var/lib/suricata/rules/classification.config /etc/suricata/
+
+┌──(root💀ids)-[~]
+└─# cp /var/lib/suricata/rules/suricata.rules /etc/suricata/rules/  
+```
