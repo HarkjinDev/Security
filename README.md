@@ -11,12 +11,16 @@
   담당 : API 서버, 서브 기능 메뉴 UI 및 로직 제작   
   AWS Serverless API : https://github.com/HarkjinDev/Security/tree/main/AWS_Serverless_RESTAPI   
   Game URL : 
+- Wargame challenge
+  FTZ(Hackme) : https://github.com/HarkjinDev/Security/tree/main/Reverse/HackMe
+  LOB(The lord of BOF) : https://github.com/HarkjinDev/Security/tree/main/Reverse/LOB
 - Vulnerability Analysis(주요통신기반시설 기술적 취약점 분석/평가 스크립트 제작)   
   https://github.com/HarkjinDev/Security/tree/main/VulnerabilityAnalysis
 - RDP Vulnerability (RDP 취약점 분석 연구)   
   https://github.com/HarkjinDev/Security/tree/main/Write-up/RDP
 - Suricata IDS를 활용한 DOS/DDOS 공격 Snort 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/Suricata
+
 
 ## Certificate
 - Engineer Information Security(정보보안기사) - 2016.06.24
