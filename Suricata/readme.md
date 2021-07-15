@@ -162,7 +162,8 @@ reference-config-file: /etc/suricata/reference.config
 └─# tail -f /var/log/suricata/fast.log 
 ```
 
-## Ping of Death 공격 로그 확인
+## Ping of Death 공격 로그
+- Suritaca rule 생성 및 적용
 ```
 ┌──(root💀ids)-[~/]
 └─# vi /etc/suricata/rules/local.rules
@@ -173,4 +174,21 @@ alert icmp any any -> $HOME_NET any (msg: "PING Alret"; sid:1000001; rev:1;)
 rule-files:
   - suricata.rules
   - local.rules
+  
+┌──(root💀ids)-[~]
+└─# systemctl restart suricata
+```
+- Attacker Ping of death 공격 (참고 : https://github.com/HarkjinDev/Security/blob/main/Python/pingofdeath.py )
+```
+┌──(root💀kali)-[~]
+└─# python pingofdeath.py 192.168.20.134 100
+```
+- 로그 확인
+```
+┌──(root💀ids)-[~/]
+└─# tail -f /var/log/suricata/fast.log 
+07/15/2021-17:13:09.546283  [**] [1:1000001:1] PING Alret [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.50:8 -> 192.168.20.134:0
+07/15/2021-17:13:09.546404  [**] [1:1000001:1] PING Alret [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.134:0 -> 192.168.20.50:0
+07/15/2021-17:13:11.876573  [**] [1:1000001:1] PING Alret [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.134:11 -> 192.168.20.50:1
+07/15/2021-17:13:11.876593  [**] [1:1000001:1] PING Alret [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.134:11 -> 192.168.20.50:1
 ```
