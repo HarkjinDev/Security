@@ -277,6 +277,7 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe
 # OS Command Injection
 alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection URI ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Ui"; sid:3000031; rev:1;)
 alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection Request Header ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Hi"; sid:3000032; rev:1;)
+
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
 ```
@@ -301,6 +302,9 @@ alert tcp any any -> $HOME_NET any (msg:"## SQL Injection USER in URI ##"; flow:
 alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SLEEP ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"SLEEP|28|"; nocase; http_uri; pcre:"/\bSELECT.*?\bSLEEP\x28/Ui"; sid:3000043; rev:1;)
 alert tcp any any -> $HOME_NET any (msg:"## SQL Injection INFOMATION SCHEMA ##"; flow:established,to_server; content:"information_schema"; nocase; http_uri; sid:3000044; rev:1;)
 alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"FROM"; nocase; http_uri; pcre:"/SELECT\b.*FROM/Ui"; sid:3000045; rev:1;)
+
+┌──(root💀ids)-[~]
+└─# systemctl restart suricata
 ```
 - SQL Injection (Union)   
 ![SQL_Injection_Union](/Suricata/SQL_Injection_Union.png)
@@ -320,6 +324,9 @@ alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:
 # XSS
 alert tcp any any -> $HOME_NET any (msg:"## XSS URI ##"; flow:established,to_server; content:"</script>"; nocase; http_uri; sid:3000051; rev:1;)
 alert tcp any any -> $HOME_NET any (msg:"## XSS POST ##"; flow:established,to_server; content:"%3c%2fscript%3e"; nocase; http_client_body; sid:3000052; rev:1;)
+
+┌──(root💀ids)-[~]
+└─# systemctl restart suricata
 ```
 - XSS(Reflected)   
 ![XXS](/Suricata/XXS.png)
