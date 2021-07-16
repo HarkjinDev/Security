@@ -202,3 +202,25 @@ rule-files:
 └─# tail -f /var/log/suricata/fast.log 
 07/15/2021-17:48:55.358027  [**] [1:1000001:1] ## Ping of Death ## [**] [Classification: (null)] [Priority: 3] {ICMP} 42.46.244.26:8 -> 192.168.20.134:0
 ```
+
+## XMAS Scanning 로그
+- Suricata rule 생성 및 적용
+```
+┌──(root💀ids)-[~/]
+└─# vi /etc/suricata/rules/local.rules
+alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:2017032605; rev:1;)
+
+┌──(root💀ids)-[~]
+└─# systemctl restart suricata
+```
+- XMAS Scanning
+```
+┌──(root💀kali)-[~/]
+└─# nmap -sX -p 21 192.168.20.134
+```
+- 로그 확인
+```
+┌──(root💀ids)-[~/
+└─# tail -f /var/log/suricata/fast.log 
+07/16/2021-10:07:11.674008  [**] [1:2017032605:1] ## SCAN XMAS ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:40697 -> 192.168.20.134:21
+```
