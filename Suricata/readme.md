@@ -247,7 +247,7 @@ alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:20
 [**] [1:2017032605:1] ## SCAN XMAS ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:40697 -> 192.168.20.134:21
 ```
 
-## WEB 공격 로그
+## WEB(Waf) 공격 로그
 - Suricata rule 생성 및 적용
 ```
 ┌──(root💀ids)-[~]
