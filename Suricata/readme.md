@@ -268,19 +268,47 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe
 └─# tail -f /var/log/suricata/fast.log 
 [**] [1:2017032609:1] ## WAF - wafw00f ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:51744 -> 192.168.20.134:80
 ```
+
 ## OS Command Injection 공격
 - Suricata rule 생성 및 적용
-
+```
+┌──(root💀ids)-[~]
+└─# vi /etc/suricata/rules/local.rules  
+# OS Command Injection
+alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection URI ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Ui"; sid:3000031; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection Request Header ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Hi"; sid:3000032; rev:1;)
+┌──(root💀ids)-[~]
+└─# systemctl restart suricata
+```
 - OS Command Injection
 
 - Suricata 로그 확인
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/fast.log                                                                 
+[**] [1:3000032:1] ## OS Command Injection Request Header ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.134:80 -> 192.168.20.50:42166
+```
 
-## SQL Injection 공격
+## SQL Injection (Union) 공격
 - Suricata rule 생성 및 적용
-
+```
+┌──(root💀ids)-[~]
+└─# vi /etc/suricata/rules/local.rules 
+# SQL Injection
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection UNION SELECT ##"; flow:established,to_server; content:"UNION"; nocase; http_uri; content:"SELECT"; nocase; http_uri; pcre:"/UNION.+SELECT/Ui"; sid:3000041; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection USER in URI ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"USER"; nocase; http_uri; pcre:"/SELECT[^a-z].+USER/Ui"; sid:3000042; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SLEEP ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"SLEEP|28|"; nocase; http_uri; pcre:"/\bSELECT.*?\bSLEEP\x28/Ui"; sid:3000043; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection INFOMATION SCHEMA ##"; flow:established,to_server; content:"information_schema"; nocase; http_uri; sid:3000044; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"FROM"; nocase; http_uri; pcre:"/SELECT\b.*FROM/Ui"; sid:3000045; rev:1;)
+```
 - SQL Injection
 
 - Suricata 로그 확인
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/fast.log                                                                 
+[**] [1:3000041:1] ## SQL Injection UNION SELECT ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:42146 -> 192.168.20.134:80
+```
 
 ## XSS Injection 공격
 - Suricata rule 생성 및 적용
@@ -288,3 +316,6 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe
 - XSS Injection
 
 - Suricata 로그 확인
+
+
+
