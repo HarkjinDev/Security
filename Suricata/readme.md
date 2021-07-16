@@ -269,6 +269,12 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe
 └─# tail -f /var/log/suricata/fast.log 
 [**] [1:2017032609:1] ## WAF - wafw00f ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:51744 -> 192.168.20.134:80
 ```
+## OS Command Injection 공격
+- Suricata rule 생성 및 적용
+
+- OS Command Injection
+
+- Suricata 로그 확인
 
 ## SQL Injection 공격
 - Suricata rule 생성 및 적용
@@ -277,3 +283,9 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe
 
 - Suricata 로그 확인
 
+## XSS Injection 공격
+- Suricata rule 생성 및 적용
+
+- XSS Injection
+
+- Suricata 로그 확인
