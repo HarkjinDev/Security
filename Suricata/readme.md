@@ -203,6 +203,28 @@ rule-files:
 [**] [1:1000001:1] ## Ping of Death ## [**] [Classification: (null)] [Priority: 3] {ICMP} 42.46.244.26:8 -> 192.168.20.134:0
 ```
 
+## ICMP Flooding 공격 및 로그
+- Suricata rule 생성 및 적용
+```
+┌──(root💀ids)-[~]
+└─# vi /etc/suricata/rules/local.rules                                                                                                 
+alert icmp any any -> $HOME_NET any (msg:"## ICMP Flooding ##"; itype:8; threshold:type both, track by_dst, count 100, seconds 2; sid:2017032607; rev:1;)
+
+┌──(root💀ids)-[~]
+└─# systemctl restart suricata
+```
+- ICMP Flooding 공격
+```
+┌──(root💀kali)-[~/]
+└─# hping3 -1 192.168.20.134 --flood
+```
+- Suricata 로그 확인
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/fast.log 
+[**] [1:2017032607:1] ## ICMP Flooding ## [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.50:8 -> 192.168.20.134:0
+```
+
 ## XMAS Scanning 로그
 - Suricata rule 생성 및 적용
 ```
@@ -230,7 +252,8 @@ alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:20
 ```
 ┌──(root💀ids)-[~]
 └─# vi /etc/suricata/rules/local.rules                                                                                                 
-alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "information_schema"; http_uri; nocase; sid:2017032609; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"## ICMP Flooding ##"; itype:8; threshold:type both, track by_dst, count 100, seconds 2; sid:2017032607; rev:1;)
+alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe"; nocase; http_uri; sid:2017032609; rev:1;)
 
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
@@ -246,3 +269,11 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "informat
 └─# tail -f /var/log/suricata/fast.log 
 [**] [1:2017032609:1] ## WAF - wafw00f ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:51744 -> 192.168.20.134:80
 ```
+
+## SQL Injection 공격
+- Suricata rule 생성 및 적용
+
+- SQL Injection
+
+- Suricata 로그 확인
+
