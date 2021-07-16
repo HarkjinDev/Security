@@ -173,7 +173,7 @@ reference-config-file: /etc/suricata/reference.config
 ```
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/fast.log 
-[**] [1:2016184:6] ET WEB_SERVER ColdFusion administrator access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 192.168.20.100:38971 -> 192.168.20.134:80
+[**] ET WEB_SERVER ColdFusion administrator access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 192.168.20.100:38971 -> 192.168.20.134:80
 ```
 
 ## Ping of Death 공격 및 로그
@@ -196,11 +196,11 @@ rule-files:
 ┌──(root💀kali)-[~]
 └─# hping3 -1 --rand-source 192.168.20.134 -d 50 --flood  
 ```
-- 로그 확인
+- Suricata 로그 확인
 ```
 ┌──(root💀ids)-[~/]
 └─# tail -f /var/log/suricata/fast.log 
-07/15/2021-17:48:55.358027  [**] [1:1000001:1] ## Ping of Death ## [**] [Classification: (null)] [Priority: 3] {ICMP} 42.46.244.26:8 -> 192.168.20.134:0
+[**] [1:1000001:1] ## Ping of Death ## [**] [Classification: (null)] [Priority: 3] {ICMP} 42.46.244.26:8 -> 192.168.20.134:0
 ```
 
 ## XMAS Scanning 로그
@@ -218,11 +218,11 @@ alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:20
 ┌──(root💀kali)-[~/]
 └─# nmap -sX -p 21 192.168.20.134
 ```
-- 로그 확인
+- Suricata 로그 확인
 ```
 ┌──(root💀ids)-[~/
 └─# tail -f /var/log/suricata/fast.log 
-07/16/2021-10:07:11.674008  [**] [1:2017032605:1] ## SCAN XMAS ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:40697 -> 192.168.20.134:21
+[**] [1:2017032605:1] ## SCAN XMAS ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:40697 -> 192.168.20.134:21
 ```
 
 ## WEB 공격 로그
@@ -240,9 +240,9 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "informat
 ┌──(root💀kali)-[~/]
 └─# wafw00f http://192.168.20.134
 ```
-- 로그 확인
+- Suricata 로그 확인
 ```
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/fast.log 
-07/16/2021-10:11:32.367981  [**] [1:2017032609:1] ## WAF - wafw00f ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:51744 -> 192.168.20.134:80
+[**] [1:2017032609:1] ## WAF - wafw00f ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:51744 -> 192.168.20.134:80
 ```
