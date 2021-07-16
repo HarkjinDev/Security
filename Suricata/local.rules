@@ -1,3 +1,5 @@
+# /etc/suricata/rules/local.rules
+
 # Ping of Death
 alert icmp any any -> $HOME_NET any (msg:"## Ping of Death ##"; content:"|5858585858|"; sid:1000001; rev:1;)
 
