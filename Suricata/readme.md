@@ -281,6 +281,7 @@ alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection Request Header 
 └─# systemctl restart suricata
 ```
 - OS Command Injection
+![SQL_OS_Command_Injection](/Suricata/SQL_OS_Command_Injection.png)
 
 - Suricata 로그 확인
 ```
@@ -302,6 +303,7 @@ alert tcp any any -> $HOME_NET any (msg:"## SQL Injection INFOMATION SCHEMA ##";
 alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"FROM"; nocase; http_uri; pcre:"/SELECT\b.*FROM/Ui"; sid:3000045; rev:1;)
 ```
 - SQL Injection (Union)
+![SQL_Injection_Union](/Suricata/SQL_Injection_Union.png)
 
 - Suricata 로그 확인
 ```
@@ -320,6 +322,7 @@ alert tcp any any -> $HOME_NET any (msg:"## XSS URI ##"; flow:established,to_ser
 alert tcp any any -> $HOME_NET any (msg:"## XSS POST ##"; flow:established,to_server; content:"%3c%2fscript%3e"; nocase; http_client_body; sid:3000052; rev:1;)
 ```
 - XSS(Reflected)
+![XXS](/Suricata/XXS.png)
 
 - Suricata 로그 확인
 ```
