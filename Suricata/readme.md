@@ -224,3 +224,25 @@ alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:20
 └─# tail -f /var/log/suricata/fast.log 
 07/16/2021-10:07:11.674008  [**] [1:2017032605:1] ## SCAN XMAS ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:40697 -> 192.168.20.134:21
 ```
+
+## WEB 공격 로그
+- Suricata rule 생성 및 적용
+```
+┌──(root💀ids)-[~]
+└─# vi /etc/suricata/rules/local.rules                                                                                                 
+alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "information_schema"; http_uri; nocase; sid:2017032609; rev:1;)
+
+┌──(root💀ids)-[~]
+└─# systemctl restart suricata
+```
+- wafw00f Attack
+```
+┌──(root💀kali)-[~/]
+└─# wafw00f http://192.168.20.134
+```
+- 로그 확인
+```
+┌──(root💀ids)-[~]
+└─# tail -f /var/log/suricata/fast.log 
+07/16/2021-10:11:32.367981  [**] [1:2017032609:1] ## WAF - wafw00f ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:51744 -> 192.168.20.134:80
+```
