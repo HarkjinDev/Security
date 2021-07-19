@@ -59,3 +59,4 @@ alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:
 # XSS
 alert tcp any any -> $HOME_NET any (msg:"## XSS URI ##"; flow:established,to_server; content:"</script>"; nocase; http_uri; sid:1000001; rev:1;)
 alert tcp any any -> $HOME_NET any (msg:"## XSS POST ##"; flow:established,to_server; content:"%3c%2fscript%3e"; nocase; http_client_body; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET 80 (msg:"## XSS Attack ##"; content:"/?s="; http_uri; pcre:"/.*<script>.*alert.*<\/script>/iUR"; sid:1000001; rev:1;)
