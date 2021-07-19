@@ -1,28 +1,61 @@
 # /etc/suricata/rules/local.rules
 
+# ICMP 
+alert icmp any any -> $HOME_NET any (msg:"TEST: ICMP TEST"; sid:1000001; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"TEST: ICMP TEST"; classtype:icmp-event; sid:1000001; rev:2;)
+alert icmp any any -> $HOME_NET any (msg:"TEST: *NIX ICMP TEST"; content:"|10 11 12 13 14 15 16 17|"; sid:1000001; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"TEST: WINDOWS ICMP TEST"; content:"|61 62 63 64 65 66 67 68|"; sid:1000001; rev:1;)
+
+# FTP
+alert tcp any any -> $HOME_NET 21 (msg:"TEST: FTP TEST"; content:"USER"; sid:1000001; rev:1;)
+alert tcp $HOME_NET 21 -> any any (msg:"TEST: FTP Login success"; content:"successful"; sid:1000001; rev:1;)
+alert tcp $HOME_NET 21 -> any any (msg:"TEST: FTP Login success"; content:"230 Login successful."; sid:1000001; rev:1;)
+alert tcp $HOME_NET 21 -> any any (msg:"TEST: vsFTPd TEST"; content:"vsFTPd"; nocase; classtype:misc-activity; sid:1000001; rev:1;)
+
+# TELNET
+alert tcp $HOME_NET 23 -> any any (msg:"TEST: TELNET TEST"; content:"login:"; nocase; classtype:misc-activity; sid:1000001; rev:1;)
+alert tcp $HOME_NET 23 -> any any (msg:"TEST: TELNET TEST"; content:"Last login:"; nocase; classtype:misc-activity; sid:1000001; rev:1;)
+
 # Ping of Death
 alert icmp any any -> $HOME_NET any (msg:"## Ping of Death ##"; content:"|5858585858|"; sid:1000001; rev:1;)
-
-# XMAS Scan
-alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:2017032605; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"## Ping of Death ##"; itype:8; icode:0; content:"|5858585858585858|"; threshold:type limit, track by_dst, count 5, seconds 5; sid:1000001; rev:1;)
 
 # ICMP Flooding
-alert icmp any any -> $HOME_NET any (msg:"## ICMP Flooding ##"; itype:8; threshold:type both, track by_dst, count 100, seconds 2; sid:2017032607; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"## ICMP Flooding ##"; itype:8; threshold:type both, track by_dst, count 100, seconds 2; sid:1000001; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"## ICMP Flooding ##"; itype:8; icode:0; threshold:type threshold, track by_src, count 5, seconds 5; sid:1000001; rev:1;)
+
+# SYN Flooding
+alert tcp any any -> $HOME_NET any (msg:"## Syn Flooding ##"; flow:stateless; flags:S,12; threshold:type limit, track by_dst, count 5, seconds 5; sid:1000001; rev:1;
+
+# UDP Flooding
+alert udp any any -> $HOME_NET any (msg:"## UDP Flooding ##"; threshold:type limit, track by_dst, count 5, seconds 5; sid:1000001; rev:1;
+
+# TCP Half Open Scan
+alert tcp any any -> $HOME_NET any (msg:"## SCAN TCP Half Open ##"; flags:S,12; flow:to_server,not_established; sid:1000001; rev:2;)
+
+# XMAS Scan
+alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:1000001; rev:1;)
+
+# Null Scan
+alert tcp any any -> $HOME_NET any (msg:"## SCAN NULL ##"; flags:0,12; sid:1000001; rev:1;)
+
+# Fin Scan
+alert tcp any any -> $HOME_NET any (msg:"## SCAN FIN ##"; flags:F,12; flow:not_established; sid:1000001; rev:1;)
 
 # WEB Proxy(wafw00f)
-alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe"; nocase; http_uri; sid:2017032609; rev:1;)
+alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe"; nocase; http_uri; sid:1000001; rev:1;)
 
 # OS Command Injection
-alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection URI ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Ui"; sid:3000031; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection Request Header ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Hi"; sid:3000032; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection URI ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Ui"; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection Request Header ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Hi"; sid:1000001; rev:1;)
 
 # SQL Injection
-alert tcp any any -> $HOME_NET any (msg:"## SQL Injection UNION SELECT ##"; flow:established,to_server; content:"UNION"; nocase; http_uri; content:"SELECT"; nocase; http_uri; pcre:"/UNION.+SELECT/Ui"; sid:3000041; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## SQL Injection USER in URI ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"USER"; nocase; http_uri; pcre:"/SELECT[^a-z].+USER/Ui"; sid:3000042; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SLEEP ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"SLEEP|28|"; nocase; http_uri; pcre:"/\bSELECT.*?\bSLEEP\x28/Ui"; sid:3000043; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection UNION SELECT ##"; flow:established,to_server; content:"UNION"; nocase; http_uri; content:"SELECT"; nocase; http_uri; pcre:"/UNION.+SELECT/Ui"; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection USER in URI ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"USER"; nocase; http_uri; pcre:"/SELECT[^a-z].+USER/Ui"; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SLEEP ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"SLEEP|28|"; nocase; http_uri; pcre:"/\bSELECT.*?\bSLEEP\x28/Ui"; sid:1000001; rev:1;)
 alert tcp any any -> $HOME_NET any (msg:"## SQL Injection INFOMATION SCHEMA ##"; flow:established,to_server; content:"information_schema"; nocase; http_uri; sid:3000044; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"##  SQL Injection SELECT FROM ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"FROM"; nocase; http_uri; pcre:"/SELECT\b.*FROM/Ui"; sid:3000045; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"FROM"; nocase; http_uri; pcre:"/SELECT\b.*FROM/Ui"; sid:1000001; rev:1;)
 
 # XSS
-alert tcp any any -> $HOME_NET any (msg:"## XSS URI ##"; flow:established,to_server; content:"</script>"; nocase; http_uri; sid:3000051; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## XSS POST ##"; flow:established,to_server; content:"%3c%2fscript%3e"; nocase; http_client_body; sid:3000052; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## XSS URI ##"; flow:established,to_server; content:"</script>"; nocase; http_uri; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## XSS POST ##"; flow:established,to_server; content:"%3c%2fscript%3e"; nocase; http_client_body; sid:1000001; rev:1;)
