@@ -47,6 +47,7 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe
 
 # WEB Directory Listing
 alert tcp $HOME_NET 80 -> any any (msg:"## Directory Listing ##"; content: "Index of /"; nocase; sid:1000001; rev:1;
+alert tcp $HOME_NET 80 -> any any (msg:"## Directory Listing ##"; content:"index of /"; nocase; http_server_body; within:90; classtype:web-application-activity; sid:1000001; rev:1;)
 
 # OS Command Injection
 alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection URI ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Ui"; sid:1000001; rev:1;)
