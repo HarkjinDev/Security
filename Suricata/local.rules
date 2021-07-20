@@ -59,6 +59,7 @@ alert tcp any any -> $HOME_NET any (msg:"## SQL Injection USER in URI ##"; flow:
 alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SLEEP ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"SLEEP|28|"; nocase; http_uri; pcre:"/\bSELECT.*?\bSLEEP\x28/Ui"; sid:1000001; rev:1;)
 alert tcp any any -> $HOME_NET any (msg:"## SQL Injection INFOMATION SCHEMA ##"; flow:established,to_server; content:"information_schema"; nocase; http_uri; sid:3000044; rev:1;)
 alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"FROM"; nocase; http_uri; pcre:"/SELECT\b.*FROM/Ui"; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET 80 (msg:"## SQL Injection ##"; content:"username="; http_client_body; pcre:"/1.*(%27|%3B|%29)(%27|%3B|%29)?waitfor.*0%3A0%3A15.*--$/PRi"; classtype:web-application-attack; sid:2021072003; rev:1;)
 
 # XSS
 alert tcp any any -> $HOME_NET any (msg:"## XSS URI ##"; flow:established,to_server; content:"</script>"; nocase; http_uri; sid:1000001; rev:1;)
