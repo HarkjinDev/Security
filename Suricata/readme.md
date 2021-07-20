@@ -208,7 +208,7 @@ rule-files:
 ```
 ┌──(root💀ids)-[~]
 └─# vi /etc/suricata/rules/local.rules                                                                                                 
-alert icmp any any -> $HOME_NET any (msg:"## ICMP Flooding ##"; itype:8; threshold:type both, track by_dst, count 100, seconds 2; sid:2017032607; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"## ICMP Flooding ##"; itype:8; threshold:type both, track by_dst, count 100, seconds 2; sid:1000001; rev:1;)
 
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
@@ -222,7 +222,7 @@ alert icmp any any -> $HOME_NET any (msg:"## ICMP Flooding ##"; itype:8; thresho
 ```
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/fast.log 
-[**] [1:2017032607:1] ## ICMP Flooding ## [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.50:8 -> 192.168.20.134:0
+[**] [1:1000001:1] ## ICMP Flooding ## [**] [Classification: (null)] [Priority: 3] {ICMP} 192.168.20.50:8 -> 192.168.20.134:0
 ```
 
 ## XMAS Scanning 로그
@@ -230,7 +230,7 @@ alert icmp any any -> $HOME_NET any (msg:"## ICMP Flooding ##"; itype:8; thresho
 ```
 ┌──(root💀ids)-[~/]
 └─# vi /etc/suricata/rules/local.rules
-alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:2017032605; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:1000001; rev:1;)
 
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
@@ -244,7 +244,7 @@ alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:20
 ```
 ┌──(root💀ids)-[~/
 └─# tail -f /var/log/suricata/fast.log 
-[**] [1:2017032605:1] ## SCAN XMAS ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:40697 -> 192.168.20.134:21
+[**] [1:1000001:1] ## SCAN XMAS ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:40697 -> 192.168.20.134:21
 ```
 
 ## WEB(Waf) 공격 로그
@@ -252,7 +252,7 @@ alert tcp any any -> $HOME_NET any (msg:"## SCAN XMAS ##"; flags: FPU,12; sid:20
 ```
 ┌──(root💀ids)-[~]
 └─# vi /etc/suricata/rules/local.rules                                                                                                 
-alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe"; nocase; http_uri; sid:2017032609; rev:1;)
+alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe"; nocase; http_uri; sid:1000001; rev:1;)
 
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
@@ -266,7 +266,7 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe
 ```
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/fast.log 
-[**] [1:2017032609:1] ## WAF - wafw00f ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:51744 -> 192.168.20.134:80
+[**] [1:1000001:1] ## WAF - wafw00f ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:51744 -> 192.168.20.134:80
 ```
 
 ## OS Command Injection 공격 로그
@@ -275,8 +275,8 @@ alert tcp any any -> $HOME_NET 80 (msg:"## WAF - wafw00f ##"; content: "/cmd.exe
 ┌──(root💀ids)-[~]
 └─# vi /etc/suricata/rules/local.rules  
 # OS Command Injection
-alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection URI ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Ui"; sid:3000031; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection Request Header ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Hi"; sid:3000032; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection URI ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Ui"; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection Request Header ##"; pcre:"/(ls|dir|cat|head|tail|vi|type|chmod|)\x20.*[\x2f\x5c]/Hi"; sid:1000001; rev:1;)
 
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
@@ -288,7 +288,7 @@ alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection Request Header 
 ```
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/fast.log                                                                 
-[**] [1:3000032:1] ## OS Command Injection Request Header ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.134:80 -> 192.168.20.50:42166
+[**] [1:1000001:1] ## OS Command Injection Request Header ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.134:80 -> 192.168.20.50:42166
 ```
 
 ## SQL Injection (Union) 공격 로그
@@ -297,11 +297,11 @@ alert tcp any any -> $HOME_NET any (msg:"## OS Command Injection Request Header 
 ┌──(root💀ids)-[~]
 └─# vi /etc/suricata/rules/local.rules 
 # SQL Injection
-alert tcp any any -> $HOME_NET any (msg:"## SQL Injection UNION SELECT ##"; flow:established,to_server; content:"UNION"; nocase; http_uri; content:"SELECT"; nocase; http_uri; pcre:"/UNION.+SELECT/Ui"; sid:3000041; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## SQL Injection USER in URI ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"USER"; nocase; http_uri; pcre:"/SELECT[^a-z].+USER/Ui"; sid:3000042; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SLEEP ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"SLEEP|28|"; nocase; http_uri; pcre:"/\bSELECT.*?\bSLEEP\x28/Ui"; sid:3000043; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## SQL Injection INFOMATION SCHEMA ##"; flow:established,to_server; content:"information_schema"; nocase; http_uri; sid:3000044; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"FROM"; nocase; http_uri; pcre:"/SELECT\b.*FROM/Ui"; sid:3000045; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection UNION SELECT ##"; flow:established,to_server; content:"UNION"; nocase; http_uri; content:"SELECT"; nocase; http_uri; pcre:"/UNION.+SELECT/Ui"; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection USER in URI ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"USER"; nocase; http_uri; pcre:"/SELECT[^a-z].+USER/Ui"; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SLEEP ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"SLEEP|28|"; nocase; http_uri; pcre:"/\bSELECT.*?\bSLEEP\x28/Ui"; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection INFOMATION SCHEMA ##"; flow:established,to_server; content:"information_schema"; nocase; http_uri; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:established,to_server; content:"SELECT"; nocase; http_uri; content:"FROM"; nocase; http_uri; pcre:"/SELECT\b.*FROM/Ui"; sid:1000001; rev:1;)
 
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
@@ -313,7 +313,7 @@ alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:
 ```
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/fast.log                                                                 
-[**] [1:3000041:1] ## SQL Injection UNION SELECT ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:42146 -> 192.168.20.134:80
+[**] [1:1000001:1] ## SQL Injection UNION SELECT ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:42146 -> 192.168.20.134:80
 ```
 
 ## XSS(Reflected) 공격 로그
@@ -322,8 +322,8 @@ alert tcp any any -> $HOME_NET any (msg:"## SQL Injection SELECT FROM ##"; flow:
 ┌──(root💀ids)-[~]
 └─# vi /etc/suricata/rules/local.rules 
 # XSS
-alert tcp any any -> $HOME_NET any (msg:"## XSS URI ##"; flow:established,to_server; content:"</script>"; nocase; http_uri; sid:3000051; rev:1;)
-alert tcp any any -> $HOME_NET any (msg:"## XSS POST ##"; flow:established,to_server; content:"%3c%2fscript%3e"; nocase; http_client_body; sid:3000052; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## XSS URI ##"; flow:established,to_server; content:"</script>"; nocase; http_uri; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"## XSS POST ##"; flow:established,to_server; content:"%3c%2fscript%3e"; nocase; http_client_body; sid:1000001; rev:1;)
 
 ┌──(root💀ids)-[~]
 └─# systemctl restart suricata
@@ -335,7 +335,7 @@ alert tcp any any -> $HOME_NET any (msg:"## XSS POST ##"; flow:established,to_se
 ```
 ┌──(root💀ids)-[~]
 └─# tail -f /var/log/suricata/fast.log                                                                 
-[**] [1:3000051:1] ## XSS URI ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:42230 -> 192.168.20.134:80
+[**] [1:1000001:1] ## XSS URI ## [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.20.50:42230 -> 192.168.20.134:80
 ```
 
 
