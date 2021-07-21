@@ -11,6 +11,8 @@
   담당 : API 서버, 서브 기능 메뉴 UI 및 로직 제작   
   AWS Serverless API : https://github.com/HarkjinDev/Security/tree/main/AWS_Serverless_RESTAPI   
   Game URL : 
+
+## Study Projects
 - Wargame Challenge   
   FTZ(Hackme) : https://github.com/HarkjinDev/Security/tree/main/Reverse/HackMe   
   LOB(The lord of BOF) : https://github.com/HarkjinDev/Security/tree/main/Reverse/LOB
@@ -20,9 +22,8 @@
   https://github.com/HarkjinDev/Security/tree/main/Write-up/RDP
 - Suricata IDS를 활용한 DOS/DDOS 공격 Snort 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/Suricata
-- ModSecurity Web방화벽을 활용한 Web 공격 탐지 연구   
+- ModSecurity WAF을 활용한 Web 공격 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/ModSecurity
-
 
 ## Certificate
 - Engineer Information Security(정보보안기사) - 2016.06.24
@@ -30,7 +31,7 @@
 - CCNP - 2008.03.08(expried, 만료)
 
 ## Education
-- Security with Penetration testing (21.03.09~21.08.24 / 6month)   
+- Security with Penetration testing (21.03.09~21.09.07 / 6month)   
   모의해킹 침해대응 정보보안 전문가 과정
 - BCIT(British Columbia Institute of Technology,Canada) (Aircraft Maintenance) - 2020-2020(0.5 year)   
   BCIT 항공정비학과 2학기 중퇴
