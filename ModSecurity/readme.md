@@ -18,3 +18,13 @@ Firewall(CentOS) : 192.168.20.200 (eth1)
 Modsecurity+Apache Server(CentOS) : 192.168.20.203 (eth0) 
 
 ## ModSecurity 설치
+- Apache version 확인
+```
+[root@modsecurity ~]# httpd -v
+Server version: Apache/2.4.6 (CentOS)
+Server built:   Nov 16 2020 16:18:20
+```
+- ModSecurity 설치
+```
+[root@modsecurity ~]# yum install mod_security -y
+```
