@@ -28,6 +28,8 @@ Server built:   Nov 16 2020 16:18:20
 ```
 [root@modsecurity ~]# yum install mod_security -y
 ```
+
+## ModSecurity 설정
 - /etc/httpd/conf.d/mod_security.conf : modsecurity 주설정 파일
 - /etc/httpd/modsecurity.d/*.conf : CSR(Core Rule Set) 파일들
 - /etc/httpd/modsecurity.d/activated_rules/*.conf : CSR(Core Rule Set) 파일들
@@ -40,6 +42,8 @@ Server built:   Nov 16 2020 16:18:20
 │   ├── activated_rules
 │   └── modsecurity_crs_10_config.conf
 ```
+
+## ModSecurity 로그 확인
 - /var/log/httpd/modsec_debug.log : 디버그 로그 파일
 - /var/log/httpd/modsec_audit.log : 감사 로그 파일
 ```
