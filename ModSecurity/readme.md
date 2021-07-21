@@ -211,5 +211,5 @@ Action: Intercepted (phase 2)
 
 ## ModSecurity 가이드 (By Kisa)
 https://www.boho.or.kr/data/secNoticeView.do?bulletin_writing_sequence=21488   
-Kisa Rule1 (소기업) :    
-Kisa Rule2 (중기업) :   
+Kisa Rule1 (소기업) : https://github.com/HarkjinDev/Security/blob/main/ModSecurity/kisa1.conf   
+Kisa Rule2 (중기업) : https://github.com/HarkjinDev/Security/blob/main/ModSecurity/kisa2.conf
