@@ -209,7 +209,7 @@ Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 192.168.20.50
 Action: Intercepted (phase 2)
 ```
 
-## Modsecutiry 가이드 (By Kisa)
+## ModSecurity 가이드 (By Kisa)
 https://www.boho.or.kr/data/secNoticeView.do?bulletin_writing_sequence=21488   
 Kisa Rule1 (소기업) :    
 Kisa Rule2 (중기업) :   
