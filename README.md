@@ -1,5 +1,5 @@
 ## Skills
-- IPS, IDS, VPN, Firewall, NAC, WAF, NMS
+- Infra (IPS, IDS, VPN, Firewall, NAC, WAF, NMS)
 - Penetration Test
 - Network Traffic Security
 - Python Server Programming(Flask)
