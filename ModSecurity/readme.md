@@ -93,7 +93,7 @@ SecRuleEngine On
 - SecTmpDir /var/lib/mod_security   
   : 임시 파일이 생성될 디렉토리를 설정한다.
 
-## ModeSecurity 모듈 적용
+## ModeSecurity OWASP 모듈 적용
 - OWASP crs 다운 및 적용
 ```
 [root@modsecurity ~]# cd /etc/httpd/modsecurity.d
