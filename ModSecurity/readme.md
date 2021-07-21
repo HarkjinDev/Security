@@ -208,3 +208,8 @@ Message: Access denied with code 403 (phase 2). Pattern match "<[[:space:]]*scri
 Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 192.168.20.50] ModSecurity: Access denied with code 403 (phase 2). Pattern match "<[[:space:]]*script*>.*script[[:space:]]*>" at ARGS:name. [file "/etc/httpd/modsecurity.d/local.conf"] [line "11"] [id "0000000004"] [rev "1"] [msg "XSS Attack"] [hostname "192.168.20.203"] [uri "/dvwa/vulnerabilities/xss_r/"] [unique_id "YPfIGLmZmWlJiU4mqBa6hgAAAAE"]
 Action: Intercepted (phase 2)
 ```
+
+## Modsecutiry 가이드 (By Kisa)
+https://www.boho.or.kr/data/secNoticeView.do?bulletin_writing_sequence=21488   
+Kisa Rule1 (소기업) :    
+Kisa Rule2 (중기업) :   
