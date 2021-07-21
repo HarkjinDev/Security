@@ -103,6 +103,7 @@ SecRuleEngine On
 [root@modsecurity /etc/httpd/modsecurity.d/owasp-modsecurity-crs]# vi crs-setup.conf
 SecDefaultAction “phase:1,log,auditlog,deny”
 SecDefaultAction “phase:2,log,auditlog,deny”
+
 [root@modsecurity ~]# vi /etc/httpd/conf.d/mod_security.conf 
 Include modsecurity.d/owasp-modsecurity-crs/crs-setup.conf
 Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
