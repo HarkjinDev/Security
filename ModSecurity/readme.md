@@ -28,3 +28,12 @@ Server built:   Nov 16 2020 16:18:20
 ```
 [root@modsecurity ~]# yum install mod_security -y
 ```
+```
+[root@modsecurity ~]# tree /etc/httpd/
+/etc/httpd/
+├── conf.d
+│   ├── mod_security.conf
+├── modsecurity.d
+│   ├── activated_rules
+│   └── modsecurity_crs_10_config.conf
+```
