@@ -166,7 +166,7 @@ SecDebugLogLevel 5
 [root@modsecurity /etc/httpd/modsecurity.d]# mv modsecurity_crs_10_config.conf modsecurity_crs_10_config.conf.old
 [root@modsecurity /etc/httpd/modsecurity.d]# touch local.conf
 
-[root@
+[root@modsecurity ~]# systemctl restart httpd.service
 ```
 - Command Injection 룰 설정
 ```
