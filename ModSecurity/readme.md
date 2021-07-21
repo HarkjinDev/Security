@@ -64,13 +64,24 @@ SecRuleEngine On
 
 ## ModSecurity Rule
 - /etc/httpd/conf.d/mod_security.conf
-- SecRuleEngine On | Off | DetectionOnly
-- SecAuditEngine On | Off | RelevantOnly
-- SecAuditLog /var/log/httpd/modsec_audit.log
-- SecAuditLogParts ABIJDEFHZ
-- SecAuditLogRelevantStatus REGEX
-- SecAuditLogType Serial | Concurrent 
-- SecDefaultAction "phase:1,deny,log"
+- SecRuleEngine On | Off | DetectionOnly   
+  : ModSecurity 기능을 활성화 시킨다.   
+  + DectectionOnly : 활성화는 하지만 차단하지 않고 탐지만 한다.
+- SecAuditEngine On | Off | RelevantOnly   
+  : 감사 로깅에 대한 설정을 구성한다.   
+  + RelevantOnly : Error 또는 Warning의 트랜젝션, 그리고 SecAuditLogRelevantStatus에 정의된 상태코드와 일치하는 트렌젝션만 로깅
+- SecAuditLog /var/log/httpd/modsec_audit.log   
+  : 감사 로그 파일의 경로를 정의한다.
+- SecAuditLogParts ABIJDEFHZ   
+  : 로그 파일에 기록할 항목을 정의한다.
+- SecAuditLogRelevantStatus REGEX   
+  : 감사로깅의 목적과 관련된 response 상태코드의 값을 설정한다.
+- SecAuditLogType Serial | Concurrent   
+  : 감사로깅 구조의 타입을 설정한다.   
+  + Serial : 모든 로그는 메인 로그파일에 저장된다. 하나의 파일에만 기록되기 때문에 느려질 수 있다.
+  + Concurrent : 로그가 각 트랜젝션 별로 나누어 저장된다. 이 방식은 로그파일을 원격 ModSecurity Console Host로 보낼 때 사용하는 방식이다.
+- SecDefaultAction "phase:1,deny,log"   
+  : 룰이 매칭되면 기본적인 취할 행동을 정의한다.
   + Disruptive actions : ModSecurity가 데이터를 중간에서 가로챌 때 일어나는 행위이다. 하나의 체인에 첫 번째 룰에만 나타낼 수 있다. allow, deny, drop 등이 있다.
   + Non-Disruptive actions : 어디에나 나타날 수 있다. capture, ctl, exec, initcol 등이 있다.
   + Flow actions : 하나의 체인에 첫번째 rule에만 나타낼 수 있다. chain 등이 있다.
