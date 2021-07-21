@@ -1,6 +1,6 @@
 # DVWA를 활용한 SQL Injection 실습
 
-## Source code
+## Source code(Level : lovw)
 ```php
 <?php
 
