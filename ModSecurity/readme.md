@@ -110,6 +110,8 @@ Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
 SecRuleEngine On
 SecAuditEngine On
 SecDebugLogLevel 5
+
+[root@modsecurity ~]# systemctl restart httpd.service
 ```
 - Host IP 접속 제한 풀기
 ```
@@ -148,4 +150,34 @@ Action: Intercepted (phase 2)
 Message: Access denied with code 403 (phase 2). detected SQLi using libinjection with fingerprint '1&1' [file "/etc/httpd/modsecurity.d/owasp-modsecurity-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "68"] [id "942100"] [msg "SQL Injection Attack Detected via libinjection"] [data "Matched Data: 1&1 found within ARGS:id: 1\x19 or \x181\x19=\x191"] [severity "CRITICAL"] [ver "OWASP_CRS/3.2.0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/WEB_ATTACK/SQL_INJECTION"] [tag "WASCTC/WASC-19"] [tag "OWASP_TOP_10/A1"] [tag "OWASP_AppSensor/CIE1"] [tag "PCI/6.5.2"]
 Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 192.168.20.50] ModSecurity: Access denied with code 403 (phase 2). detected SQLi using libinjection with fingerprint '1&1' [file "/etc/httpd/modsecurity.d/owasp-modsecurity-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "68"] [id "942100"] [msg "SQL Injection Attack Detected via libinjection"] [data "Matched Data: 1&1 found within ARGS:id: 1\\\\x19 or \\\\x181\\\\x19=\\\\x191"] [severity "CRITICAL"] [ver "OWASP_CRS/3.2.0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/WEB_ATTACK/SQL_INJECTION"] [tag "WASCTC/WASC-19"] [tag "OWASP_TOP_10/A1"] [tag "OWASP_AppSensor/CIE1"] [tag "PCI/6.5.2"] [hostname "192.168.20.203"] [uri "/dvwa/vulnerabilities/sqli/"] [unique_id "YPfA5WF6mFOASudccjwUjAAAAAQ"]
 Action: Intercepted (phase 2)
+```
+
+## ModSecurity Rule 개발
+- 로컬 룰을 위한 설정(local.conf)
+```
+[root@modsecurity ~]# vi /etc/httpd/conf.d/mod_security.conf
+Include modsecurity.d/*.conf
+#Include modsecurity.d/activated_rules/*.conf
+SecRuleEngine On
+SecDefaultAction "phase:1,deny,log"
+SecDebugLogLevel 5
+
+[root@modsecurity ~]# cd /etc/httpd/modsecurity.d
+[root@modsecurity /etc/httpd/modsecurity.d]# mv modsecurity_crs_10_config.conf modsecurity_crs_10_config.conf.old
+[root@modsecurity /etc/httpd/modsecurity.d]# touch local.conf
+
+[root@
+```
+- Command Injection 룰 설정
+```
+[root@modsecurity ~]# vi /etc/httpd/modsecurity.d/local.conf 
+SecRule ARGS ";[[:space:]]*(ls|pwd|wget|cd|id|cat)" "phase:2,deny,rev:'2',msg:'Command execution attack',id:'0000000001',skipAfter:END_COMMAND_INJECTION1"
+SecMarker END_COMMAND_INJECTIOON1
+
+[root@modsecurity ~]# systemctl restart httpd.service
+```
+- Command Injection 공격 및 로그 확인
+```
+[root@modsecurity ~]# tail -f /var/log/httpd/modsec_audit.log 
+Message: Access denied with code 403 (phase 2). Pattern match ";[[:space:]]*(ls|pwd|wget|cd|id|cat)" at ARGS:ip. [file "/etc/httpd/modsecurity.d/local.conf"] [line "1"] [id "0000000001"] [rev "2"] [msg "Command execution attack"]
 ```
