@@ -42,6 +42,11 @@ Server built:   Nov 16 2020 16:18:20
 │   ├── activated_rules
 │   └── modsecurity_crs_10_config.conf
 ```
+- WAF 기능 ON
+```
+[root@modsecurity ~]# vi /etc/httpd/conf.d/mod_security.conf 
+SecRuleEngine On
+```
 
 ## ModSecurity 로그 확인
 - /var/log/httpd/modsec_debug.log : 디버그 로그 파일
