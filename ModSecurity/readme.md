@@ -1,7 +1,7 @@
 # ModSecurity
 
 ## ModSecurity 소개
-- 공개웹방화벽이며 오픈소스입니다. 
+- 공개 웹방화벽이며 오픈소스입니다. 
 - 세계적으로 널리쓰이는 Apache 웹서버 모듈로서 통합되어 동작합니다.
 - CLI(Command Line Interface) 기반입니다. 
 - KISA에서 추천할 정도로 믿을만하고 지속적으로 업데이트가 잘 되고 있습니다.
