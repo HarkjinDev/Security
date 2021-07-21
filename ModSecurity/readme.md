@@ -28,6 +28,9 @@ Server built:   Nov 16 2020 16:18:20
 ```
 [root@modsecurity ~]# yum install mod_security -y
 ```
+- /etc/httpd/conf.d/mod_security.conf : modsecurity 주설정 파일
+- /etc/httpd/modsecurity.d/*.conf : CSR(Core Rule Set) 파일들
+- /etc/httpd/modsecurity.d/activated_rules/*.conf : CSR(Core Rule Set) 파일들
 ```
 [root@modsecurity ~]# tree /etc/httpd/
 /etc/httpd/
