@@ -190,6 +190,7 @@ SecMarker END_SQL_INJECTION1
 ```
 - SQL Injection 공격 및 로그 확인
 ```
+[root@modsecurity ~]# tail -f /var/log/httpd/modsec_audit.log 
 Message: Access denied with code 403 (phase 2). Pattern match "\\' or \\'1=1" at ARGS:id. [file "/etc/httpd/modsecurity.d/local.conf"] [line "6"] [id "0000000002"] [rev "1"] [msg "SQL Injection Attack"]
 Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 192.168.20.50] ModSecurity: Access denied with code 403 (phase 2). Pattern match "\\\\\\\\' or \\\\\\\\'1=1" at ARGS:id. [file "/etc/httpd/modsecurity.d/local.conf"] [line "6"] [id "0000000002"] [rev "1"] [msg "SQL Injection Attack"] [hostname "192.168.20.203"] [uri "/dvwa/vulnerabilities/sqli/"] [unique_id "YPfHg4y0-@-IOi7ehZyMIwAAAAE"]
 Action: Intercepted (phase 2)
@@ -202,6 +203,7 @@ SecMarker END_XSS_ATTACK1
 ```
 - XSS 공격 및 로그 확인
 ```
+[root@modsecurity ~]# tail -f /var/log/httpd/modsec_audit.log 
 Message: Access denied with code 403 (phase 2). Pattern match "<[[:space:]]*script*>.*script[[:space:]]*>" at ARGS:name. [file "/etc/httpd/modsecurity.d/local.conf"] [line "11"] [id "0000000004"] [rev "1"] [msg "XSS Attack"]
 Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 192.168.20.50] ModSecurity: Access denied with code 403 (phase 2). Pattern match "<[[:space:]]*script*>.*script[[:space:]]*>" at ARGS:name. [file "/etc/httpd/modsecurity.d/local.conf"] [line "11"] [id "0000000004"] [rev "1"] [msg "XSS Attack"] [hostname "192.168.20.203"] [uri "/dvwa/vulnerabilities/xss_r/"] [unique_id "YPfIGLmZmWlJiU4mqBa6hgAAAAE"]
 Action: Intercepted (phase 2)
