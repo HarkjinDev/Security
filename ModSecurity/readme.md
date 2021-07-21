@@ -89,6 +89,7 @@ SecRuleEngine On
   + Data actions : 전면적으로 수동적이고 다른 행위에서 사용된 데이터를 운반하는 역할뿐이다.
 
 ## ModeSecurity 모듈 적용
+- OWASP-crs 다운 및 적용
 ```
 [root@modsecurity ~]# cd /etc/httpd/modsecurity.d
 [root@modsecurity /etc/httpd/modsecurity.d]# git clone https://github.com/spiderLabs/owasp-modsecurity-crs.git
@@ -103,4 +104,28 @@ Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
 SecRuleEngine On
 SecAuditEngine On
 SecDebugLogLevel 5
+```
+- Host IP 접속 제한 풀기
+```
+[root@modsecurity ~]#vi /etc/httpd/modsecurity.d/owasp-modsecurity-crs/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf
+#SecRule REQUEST_HEADERS:Host "@rx ^[\d.:]+$" \
+#    "id:920350,\
+#    phase:2,\
+#    block,\
+#    t:none,\
+#    msg:'Host header is a numeric IP address',\
+#    logdata:'%{MATCHED_VAR}',\
+#    tag:'application-multi',\
+#    tag:'language-multi',\
+#    tag:'platform-multi',\
+#    tag:'attack-protocol',\
+#    tag:'paranoia-level/1',\
+#    tag:'OWASP_CRS',\
+#    tag:'OWASP_CRS/PROTOCOL_VIOLATION/IP_HOST',\
+#    tag:'WASCTC/WASC-21',\
+#    tag:'OWASP_TOP_10/A7',\
+#    tag:'PCI/6.5.10',\
+#    ver:'OWASP_CRS/3.2.0',\
+#    severity:'WARNING',\
+#    setvar:'tx.anomaly_score_pl1=+%{tx.warning_anomaly_score}'"
 ```
