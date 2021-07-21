@@ -57,3 +57,7 @@ SecRuleEngine On
 ├── modsec_audit.log
 ├── modsec_debug.log
 ```
+```
+[root@modsecurity ~]# tail -f /var/log/httpd/modsec_audit.log
+[root@modsecurity ~]# tail -f /var/log/httpd/modsec_debug.log
+```
