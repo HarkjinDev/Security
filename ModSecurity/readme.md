@@ -74,12 +74,6 @@ SecRuleEngine On
   : 감사 로그 파일의 경로를 정의한다.
 - SecAuditLogParts ABIJDEFHZ   
   : 로그 파일에 기록할 항목을 정의한다.
-- SecAuditLogRelevantStatus REGEX   
-  : 감사로깅의 목적과 관련된 response 상태코드의 값을 설정한다.
-- SecAuditLogType Serial | Concurrent   
-  : 감사로깅 구조의 타입을 설정한다.   
-  + Serial : 모든 로그는 메인 로그파일에 저장된다. 하나의 파일에만 기록되기 때문에 느려질 수 있다.
-  + Concurrent : 로그가 각 트랜젝션 별로 나누어 저장된다. 이 방식은 로그파일을 원격 ModSecurity Console Host로 보낼 때 사용하는 방식이다.
 - SecDefaultAction "phase:1,deny,log"   
   : 룰이 매칭되면 기본적인 취할 행동을 정의한다.
   + Disruptive actions : ModSecurity가 데이터를 중간에서 가로챌 때 일어나는 행위이다. 하나의 체인에 첫 번째 룰에만 나타낼 수 있다. allow, deny, drop 등이 있다.
@@ -87,9 +81,20 @@ SecRuleEngine On
   + Flow actions : 하나의 체인에 첫번째 rule에만 나타낼 수 있다. chain 등이 있다.
   + Meta-data actions : 하나의 체인에 첫번째 rule에만 나타낼 수 있다. id,rev,severity,msg 등이 있다.
   + Data actions : 전면적으로 수동적이고 다른 행위에서 사용된 데이터를 운반하는 역할뿐이다.
+  + allow : rule에 매칭되면 처리를 멈추고 트랜젝션을 허가한다.
+  + drop : FIN 패킷을 보내 TCP 연결을 끊어서 연결을 종료시킨다.
+  + deny : rule이 일치할 경우 요청 처리를 차단한다.
+  + exec : 필터가 일치하면 파라미터를 지원하는 외부 스크립트/바이너리를 실행시킨다.
+  + log : 필터가 일치하였을 때 로그를 남긴다.
+- SecDebugLogLevel 0|1|2|3|4|5|6|7|8|9   
+  : 디버그 로그의 상세 수준을 결정한다.
+- SecDataDir /var/lib/mod_security   
+  : 영구적 데이터를 저장할 경로를 지정한다.
+- SecTmpDir /var/lib/mod_security   
+  : 임시 파일이 생성될 디렉토리를 설정한다.
 
 ## ModeSecurity 모듈 적용
-- OWASP-crs 다운 및 적용
+- OWASP crs 다운 및 적용
 ```
 [root@modsecurity ~]# cd /etc/httpd/modsecurity.d
 [root@modsecurity /etc/httpd/modsecurity.d]# git clone https://github.com/spiderLabs/owasp-modsecurity-crs.git
