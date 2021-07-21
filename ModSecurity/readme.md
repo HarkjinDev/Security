@@ -95,7 +95,7 @@ SecRuleEngine On
   : 임시 파일이 생성될 디렉토리를 설정한다.
 
 ## ModeSecurity OWASP 모듈 적용
-- OWASP crs 다운 및 적용
+- OWASP crs 다운 및 적용 (By SpiderLabs)
 ```
 [root@modsecurity ~]# cd /etc/httpd/modsecurity.d
 [root@modsecurity /etc/httpd/modsecurity.d]# git clone https://github.com/spiderLabs/owasp-modsecurity-crs.git
