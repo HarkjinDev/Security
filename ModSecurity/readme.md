@@ -61,3 +61,18 @@ SecRuleEngine On
 [root@modsecurity ~]# tail -f /var/log/httpd/modsec_audit.log
 [root@modsecurity ~]# tail -f /var/log/httpd/modsec_debug.log
 ```
+
+## ModSecurity Rule
+- /etc/httpd/conf.d/mod_security.conf
+- SecRuleEngine On | Off | DetectionOnly
+- SecAuditEngine On | Off | RelevantOnly
+- SecAuditLog /var/log/httpd/modsec_audit.log
+- SecAuditLogParts ABIJDEFHZ
+- SecAuditLogRelevantStatus REGEX
+- SecAuditLogType Serial | Concurrent 
+- SecDefaultAction "phase:1,deny,log"
+  + Disruptive actions : ModSecurity가 데이터를 중간에서 가로챌 때 일어나는 행위이다. 하나의 체인에 첫 번째 룰에만 나타낼 수 있다. allow, deny, drop 등이 있다.
+  + Non-Disruptive actions : 어디에나 나타날 수 있다. capture, ctl, exec, initcol 등이 있다.
+  + Flow actions : 하나의 체인에 첫번째 rule에만 나타낼 수 있다. chain 등이 있다.
+  + Meta-data actions : 하나의 체인에 첫번째 rule에만 나타낼 수 있다. id,rev,severity,msg 등이 있다.
+  + Data actions : 전면적으로 수동적이고 다른 행위에서 사용된 데이터를 운반하는 역할뿐이다.
