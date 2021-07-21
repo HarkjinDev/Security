@@ -183,6 +183,7 @@ Message: Access denied with code 403 (phase 2). Pattern match ";[[:space:]]*(ls|
 ```
 - SQL Injection 룰 설정
 ```
+[root@modsecurity ~]# vi /etc/httpd/modsecurity.d/local.conf
 SecRule ARGS "\' or \'1=1" "phase:2,deny,rev:'1',msg:'SQL Injection Attack',id:'0000000002',skipAfter:END_SQL_INJECTION1"
 SecRule ARGS "\'[[:space:]].*or.*\'1[[:space:]]*=[[:space:]]*1" "phase:2,deny,rev:'1',msg:'SQL Injection Attack',id:'0000000003',skipAfter:END_SQL_INJECTION1"
 SecMarker END_SQL_INJECTION1
@@ -191,5 +192,17 @@ SecMarker END_SQL_INJECTION1
 ```
 Message: Access denied with code 403 (phase 2). Pattern match "\\' or \\'1=1" at ARGS:id. [file "/etc/httpd/modsecurity.d/local.conf"] [line "6"] [id "0000000002"] [rev "1"] [msg "SQL Injection Attack"]
 Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 192.168.20.50] ModSecurity: Access denied with code 403 (phase 2). Pattern match "\\\\\\\\' or \\\\\\\\'1=1" at ARGS:id. [file "/etc/httpd/modsecurity.d/local.conf"] [line "6"] [id "0000000002"] [rev "1"] [msg "SQL Injection Attack"] [hostname "192.168.20.203"] [uri "/dvwa/vulnerabilities/sqli/"] [unique_id "YPfHg4y0-@-IOi7ehZyMIwAAAAE"]
+Action: Intercepted (phase 2)
+```
+- XSS 룰 설정
+```
+[root@modsecurity ~]# vi /etc/httpd/modsecurity.d/local.conf 
+SecRule ARGS "<[[:space:]]*script*>.*script[[:space:]]*>" "phase:2,deny,rev:'1',msg:'XSS Attack',id:'0000000004',skipAfter:END_XSS_ATTACK1"
+SecMarker END_XSS_ATTACK1
+```
+- XSS 공격 및 로그 확인
+```
+Message: Access denied with code 403 (phase 2). Pattern match "<[[:space:]]*script*>.*script[[:space:]]*>" at ARGS:name. [file "/etc/httpd/modsecurity.d/local.conf"] [line "11"] [id "0000000004"] [rev "1"] [msg "XSS Attack"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 192.168.20.50] ModSecurity: Access denied with code 403 (phase 2). Pattern match "<[[:space:]]*script*>.*script[[:space:]]*>" at ARGS:name. [file "/etc/httpd/modsecurity.d/local.conf"] [line "11"] [id "0000000004"] [rev "1"] [msg "XSS Attack"] [hostname "192.168.20.203"] [uri "/dvwa/vulnerabilities/xss_r/"] [unique_id "YPfIGLmZmWlJiU4mqBa6hgAAAAE"]
 Action: Intercepted (phase 2)
 ```
