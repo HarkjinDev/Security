@@ -87,3 +87,20 @@ SecRuleEngine On
   + Flow actions : 하나의 체인에 첫번째 rule에만 나타낼 수 있다. chain 등이 있다.
   + Meta-data actions : 하나의 체인에 첫번째 rule에만 나타낼 수 있다. id,rev,severity,msg 등이 있다.
   + Data actions : 전면적으로 수동적이고 다른 행위에서 사용된 데이터를 운반하는 역할뿐이다.
+
+## ModeSecurity 모듈 적용
+```
+[root@modsecurity ~]# cd /etc/httpd/modsecurity.d
+[root@modsecurity /etc/httpd/modsecurity.d]# git clone https://github.com/spiderLabs/owasp-modsecurity-crs.git
+[root@modsecurity /etc/httpd/modsecurity.d]# cd owasp-modsecurity-crs/
+[root@modsecurity /etc/httpd/modsecurity.d/owasp-modsecurity-crs]# cp crs-setup.conf.example crs-setup.conf
+[root@modsecurity /etc/httpd/modsecurity.d/owasp-modsecurity-crs]# vi crs-setup.conf
+SecDefaultAction “phase:1,log,auditlog,deny”
+SecDefaultAction “phase:2,log,auditlog,deny”
+[root@modsecurity ~]# vi /etc/httpd/conf.d/mod_security.conf 
+Include modsecurity.d/owasp-modsecurity-crs/crs-setup.conf
+Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
+SecRuleEngine On
+SecAuditEngine On
+SecDebugLogLevel 5
+```
