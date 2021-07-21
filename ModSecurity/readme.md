@@ -129,3 +129,10 @@ SecDebugLogLevel 5
 #    severity:'WARNING',\
 #    setvar:'tx.anomaly_score_pl1=+%{tx.warning_anomaly_score}'"
 ```
+- Attacker Command Injection 진행 및 로그 확인
+```
+[root@modsecurity ~]# tail -f /var/log/httpd/modsec_audit.log 
+Message: Access denied with code 403 (phase 2). Matched phrase "etc/passwd" at ARGS:ip. [file "/etc/httpd/modsecurity.d/owasp-modsecurity-crs/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf"] [line "99"] [id "930120"] [msg "OS File Access Attempt"] [data "Matched Data: etc/passwd found within ARGS:ip: & cat /etc/passwd"] [severity "CRITICAL"] [ver "OWASP_CRS/3.2.0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-lfi"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/WEB_ATTACK/FILE_INJECTION"] [tag "WASCTC/WASC-33"] [tag "OWASP_TOP_10/A4"] [tag "PCI/6.5.4"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 192.168.20.50] ModSecurity: Access denied with code 403 (phase 2). Matched phrase "etc/passwd" at ARGS:ip. [file "/etc/httpd/modsecurity.d/owasp-modsecurity-crs/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf"] [line "99"] [id "930120"] [msg "OS File Access Attempt"] [data "Matched Data: etc/passwd found within ARGS:ip: & cat /etc/passwd"] [severity "CRITICAL"] [ver "OWASP_CRS/3.2.0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-lfi"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/WEB_ATTACK/FILE_INJECTION"] [tag "WASCTC/WASC-33"] [tag "OWASP_TOP_10/A4"] [tag "PCI/6.5.4"] [hostname "192.168.20.203"] [uri "/dvwa/vulnerabilities/exec/"] [unique_id "YPe@z8Z98KBfm1XIsBoc-gAAAAI"]
+Action: Intercepted (phase 2)
+```
