@@ -40,3 +40,11 @@ Server built:   Nov 16 2020 16:18:20
 │   ├── activated_rules
 │   └── modsecurity_crs_10_config.conf
 ```
+- /var/log/httpd/modsec_debug.log : 디버그 로그 파일
+- /var/log/httpd/modsec_audit.log : 감사 로그 파일
+```
+[root@modsecurity ~]# tree /var/log/httpd/
+/var/log/httpd/
+├── modsec_audit.log
+├── modsec_debug.log
+```
