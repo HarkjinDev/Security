@@ -86,6 +86,7 @@ SecRuleEngine On
   + deny : rule이 일치할 경우 요청 처리를 차단한다.
   + exec : 필터가 일치하면 파라미터를 지원하는 외부 스크립트/바이너리를 실행시킨다.
   + log : 필터가 일치하였을 때 로그를 남긴다.
+  + phase : rule이나 chain이 속하게 되는 1~5까지의 처리 단계
 - SecDebugLogLevel 0|1|2|3|4|5|6|7|8|9   
   : 디버그 로그의 상세 수준을 결정한다.
 - SecDataDir /var/lib/mod_security   
