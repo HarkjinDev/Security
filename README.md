@@ -6,7 +6,7 @@
 - AWS(Gamelift,Dynamodb,API Gateway, EC2)
 - Unreal Engine
 
-## Projects
+## Personal Projects
 - Mobile Game(Fishing Spot)  
   담당 : API 서버, 서브 기능 메뉴 UI 및 로직 제작   
   AWS Serverless API : https://github.com/HarkjinDev/Security/tree/main/AWS_Serverless_RESTAPI   
