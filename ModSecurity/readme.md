@@ -26,7 +26,7 @@ Server built:   Nov 16 2020 16:18:20
 ```
 - ModSecurity 설치
 ```
-[root@modsecurity ~]# yum install mod_security -y
+[root@modsecurity ~]# yum install mod_security mod_security_crs -y
 ```
 
 ## ModSecurity 설정
