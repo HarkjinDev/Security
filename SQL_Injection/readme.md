@@ -28,8 +28,8 @@ if( isset( $_REQUEST[ 'Submit' ] ) ) {
 ?> 
 ```
 
-## Injection
+## SQL Injection
 
-## Union Injection
+## SQL Union Injection
 
 ## SQL Injection blind
