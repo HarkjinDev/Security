@@ -20,9 +20,9 @@
   https://github.com/HarkjinDev/Security/tree/main/VulnerabilityAnalysis
 - RDP Vulnerability (RDP 취약점 분석 연구)   
   https://github.com/HarkjinDev/Security/tree/main/Write-up/RDP
-- Suricata IDS를 활용한 DOS/DDOS 공격 Snort 탐지 연구   
+- Suricata IDS를 활용한 DOS 및 Web 공격 Snort 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/Suricata
-- ModSecurity WAF을 활용한 Web 공격 탐지 연구   
+- ModSecurity WAF를 활용한 Web 공격 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/ModSecurity
 
 ## Certificate
