@@ -31,6 +31,8 @@ if( isset( $_REQUEST[ 'Submit' ] ) ) {
 ## SQL Injection
 
 ## SQL Union Injection
+- SQL Union 키워드는 두 개의 쿼리문에 대한 결과를 통합해서 하나의 테이블로 보여주게 하는 키워드 입니다. 정상적인 쿼리문에 Union 키워드를 사용하여 인젝션에 성공하면, 원하는 쿼리문을 실행할 수 있게 됩니다. 
+- Union 하는 두 테이블의 컬럼 수가 같아야 하고, 데이터 형이 같아야 합니다. 
 
 ## SQL Injection blind
 - 데이터베이스 조회 후 결과를 직접적으로 확인할 수 없는 경우 사용하는 공격 기법
