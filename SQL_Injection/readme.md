@@ -33,3 +33,4 @@ if( isset( $_REQUEST[ 'Submit' ] ) ) {
 ## SQL Union Injection
 
 ## SQL Injection blind
+- 데이터베이스 조회 후 결과를 직접적으로 확인할 수 없는 경우 사용하는 공격 기법
