@@ -28,7 +28,7 @@
 ## Certificate
 - Engineer Information Security(정보보안기사) - 2016.06.24
 - Industrial Engineer Information Processing(정보처리산업기사) - 2012.09.25
-- CCNP - 2008.03.08(expried, 만료)
+- CCNP - 2008.03.08(expired, 만료)
 
 ## Education
 - Security with Penetration testing (21.03.09~21.09.07 / 6month)   
