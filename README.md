@@ -31,7 +31,7 @@
 - CCNP - 2008.03.08(expired, 만료)
 
 ## Education
-- Security with Penetration testing (21.03.09~21.09.07 / 6month)   
+- Information Security Professional Course (21.03.09~21.09.07 / 6month)   
   모의해킹 침해대응 정보보안 전문가 과정
 - BCIT(British Columbia Institute of Technology,Canada) (Aircraft Maintenance) - 2020-2020(0.5 year)   
   BCIT 항공정비학과 2학기 중퇴
