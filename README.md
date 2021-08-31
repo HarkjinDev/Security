@@ -8,7 +8,7 @@
 
 ## Personal Projects
 - Mobile Game(Fishing Spot)  
-  담당 : 마이크로 서비스 기반 API 서버, 서브 메뉴 인터페이스 개발
+  담당 : 마이크로 서비스 기반 API 서버, 서브 메뉴 인터페이스 개발   
   AWS Serverless API : https://github.com/HarkjinDev/Security/tree/main/AWS_Serverless_RESTAPI   
   Game URL : 
 
