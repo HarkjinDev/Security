@@ -1,7 +1,7 @@
 # AWS Serverless RestAPI (API Gateway + Lambda with python + DynamoDB)
 
 ## Purpose
-To get the notice for mobile game when a user enter the game.
+To get the notice for mobile game when the user enter the game.
 
 ## AWS Structure
 - API Gateway
