@@ -38,8 +38,8 @@
   UTM / ClamAV / Cuckoo Sandbox를 이용한 랜섬웨어(Wannacry) 분석 및 차단 연구
   https://github.com/HarkjinDev/Security/tree/main/Write-up/Ransomware
   
-- SIEM Implementation (통합관제시스템 구축) 
-  Security Onion v2 / ELK / Splunk를 사용한 대용량 보안이벤트 분석 및 시각화 연구
+- SIEM Implementation (통합관제시스템 구축)   
+  Security Onion v2 / ELK / Splunk를 사용한 대용량 보안이벤트 분석 및 시각화 연구   
   https://github.com/HarkjinDev/Security/tree/main/Write-up/SIEM
   
 
