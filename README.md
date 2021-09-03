@@ -59,7 +59,7 @@
   포항제철공업고등학교 컴퓨터네트워크과 졸업 
 
 ## Career
-- Electricity Maintenance - POSCO   
+- Electricity Maintenance, POSCO   
   Organize and operate electricity and equipment systems, preventive inspections, periodic inspections, planned preventive maintenance, troubleshooting, and facility improvement.   
   2013.07.16 ~ 2017.01.30
 
