@@ -60,7 +60,7 @@
 
 ## Career
 - POSCO   
-  Electricity Maintenance : Organize and operate electricity and equipment systems, preventive inspections, periodic inspections, planned preventive maintenance, troubleshooting, and facility improvement.
+  Electricity Maintenance : Organize and operate electricity and equipment systems, preventive inspections, periodic inspections, planned preventive maintenance, troubleshooting, and facility improvement.   
   2013.07.16 ~ 2017.01.30
 
 ## Award-Winning Carrer
