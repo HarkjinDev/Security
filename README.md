@@ -25,7 +25,9 @@
   https://github.com/HarkjinDev/Security/tree/main/Suricata
 - ModSecurity WAF를 활용한 Web 공격 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/ModSecurity
-- SIEM Implementation (통합관제시스템 구축)   
+- Ransomeware Analysist (랜섬웨어 분석 및 차단 연구)   
+  https://github.com/HarkjinDev/Security/tree/main/Write-up/Ransomware
+- SIEM Implementation (통합관제시스템 구축 및 대용량 보안이벤트 분석/시각화)
   https://github.com/HarkjinDev/Security/tree/main/SIEM
   
 
