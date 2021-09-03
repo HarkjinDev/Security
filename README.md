@@ -18,19 +18,19 @@
   FTZ(Hackme) : https://github.com/HarkjinDev/Security/tree/main/Reverse/HackMe   
   LOB(The lord of BOF) : https://github.com/HarkjinDev/Security/tree/main/Reverse/LOB
   
-- Vulnerability Analysis(주요통신기반시설 기술적 취약점 분석/평가 스크립트 제작)   
+- Vulnerability Analysis (주요통신기반시설 기술적 취약점 분석/평가 스크립트 제작)   
   CentOS7의 주요통신기반시설 기술적 취약점 분석 및 평가 Bash Script 제작
   https://github.com/HarkjinDev/Security/tree/main/VulnerabilityAnalysis
   
-- RDP Vulnerability Analysis(RDP 취약점 분석 연구)   
+- RDP Vulnerability Analysis (RDP 취약점 분석 연구)   
   CVE-2019-0708 Bluekeep RDP 취약점에 대한 분석 및 모의해킹   
   https://github.com/HarkjinDev/Security/tree/main/Write-up/RDP
   
-- Suricata NIDS Implementation   
+- Suricata NIDS Implementation (NIDS 구축)   
   Suricata IDS를 활용한 DOS 및 Web 공격 Snort 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/Suricata
   
-- ModSecurity WAF Implementation   
+- ModSecurity WAF Implementation (WAF 구축)   
   ModSecurity WAF를 활용한 Web 공격 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/ModSecurity
   
