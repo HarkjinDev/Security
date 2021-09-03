@@ -1,5 +1,5 @@
 ## Skills
-- Infra (IPS, IDS, VPN, Firewall, NAC, WAF, NMS)
+- Infra (IPS, IDS, VPN, Firewall, NAC, WAF, NMS, Cisco)
 - Penetration Test(MetaSploit)
 - Network Traffic Security(ELK, Splunk)
 - Python Server Programming(Flask)
@@ -17,18 +17,29 @@
 - Wargame Challenge   
   FTZ(Hackme) : https://github.com/HarkjinDev/Security/tree/main/Reverse/HackMe   
   LOB(The lord of BOF) : https://github.com/HarkjinDev/Security/tree/main/Reverse/LOB
+  
 - Vulnerability Analysis(주요통신기반시설 기술적 취약점 분석/평가 스크립트 제작)   
   https://github.com/HarkjinDev/Security/tree/main/VulnerabilityAnalysis
-- RDP Vulnerability (RDP 취약점 분석 연구)   
+  
+- RDP Vulnerability Analysis(RDP 취약점 분석 연구)   
+  CVE-2019-0708 Bluekeep RDP 취약점에 대한 분석 및 모의해킹   
   https://github.com/HarkjinDev/Security/tree/main/Write-up/RDP
-- Suricata IDS를 활용한 DOS 및 Web 공격 Snort 탐지 연구   
+  
+- Suricata NIDS Implementation   
+  Suricata IDS를 활용한 DOS 및 Web 공격 Snort 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/Suricata
-- ModSecurity WAF를 활용한 Web 공격 탐지 연구   
+  
+- ModSecurity WAF Implementation   
+  ModSecurity WAF를 활용한 Web 공격 탐지 연구   
   https://github.com/HarkjinDev/Security/tree/main/ModSecurity
-- Ransomeware Analysist (랜섬웨어 분석 및 차단 연구)   
+  
+- Ransomeware Analysis (랜섬웨어 분석 및 차단 연구)   
+  UTM / ClamAV / Cuckoo Sandbox를 이용한 랜섬웨어(Wannacry) 분석 및 차단 연구
   https://github.com/HarkjinDev/Security/tree/main/Write-up/Ransomware
-- SIEM Implementation (통합관제시스템 구축 및 대용량 보안이벤트 분석/시각화)
-  https://github.com/HarkjinDev/Security/tree/main/SIEM
+  
+- SIEM Implementation (통합관제시스템 구축) 
+  Security Onion v2 / ELK / Splunk를 사용한 대용량 보안이벤트 분석 및 시각화 연구
+  https://github.com/HarkjinDev/Security/tree/main/Write-up/SIEM
   
 
 ## Certificate
