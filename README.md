@@ -1,10 +1,10 @@
 ## Skills
 - Infra (IPS, IDS, VPN, Firewall, NAC, WAF, NMS)
-- Penetration Test
-- Network Traffic Security
+- Penetration Test(MetaSploit)
+- Network Traffic Security(ELK, Splunk)
 - Python Server Programming(Flask)
 - AWS(Gamelift,Dynamodb,API Gateway, EC2)
-- Unreal Engine
+- Unreal Engine(C++, Blueprint)
 
 ## Personal Projects
 - Mobile Game(Fishing Spot)  
