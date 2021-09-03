@@ -9,7 +9,7 @@
 ## Personal Projects
 - Mobile Game(Fishing Spot)  
   설명 : 상용화를 목표로 3d 모바일 게임(FishingSpot) 2인 개발   
-  담당 : 마이크로 서비스 기반 API 서버(Flask), 언리얼 클라이언트 서브 메뉴 인터페이스 개발, AWS DynamoDB 구축 및 관리, Google Play 관리   
+  담당 : 마이크로 서비스 기반 API 서버(Flask) 및 AWS Serverless API 개발, 언리얼 클라이언트 서브 메뉴 인터페이스 개발, AWS DynamoDB 구축 및 관리, Google Play 관리   
   AWS Serverless rest API : https://github.com/HarkjinDev/Security/tree/main/AWS_Serverless_RESTAPI   
   Game URL : 
 
