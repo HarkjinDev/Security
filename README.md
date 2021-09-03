@@ -3,7 +3,7 @@
 - Penetration Test(MetaSploit)
 - Network Traffic Security(ELK, Splunk)
 - Programming(Python, Bash, Powershell, C++)
-- AWS(Gamelift,Dynamodb,API Gateway, EC2)
+- AWS(Gamelift, DynamoDB, API Gateway, EC2, LightSail)
 - Unreal Engine(C++, Blueprint)
 
 ## Personal Projects
