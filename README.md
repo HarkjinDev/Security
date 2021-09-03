@@ -1,5 +1,5 @@
 ## Skills
-- Infra (IPS, IDS, VPN, Firewall, NAC, WAF, NMS, Cisco router/switch)
+- Infra (IPS, IDS, VPN, Firewall, NAC, WAF, NMS, Cisco Router/Switch)
 - Penetration Test(MetaSploit)
 - Network Traffic Security(ELK, Splunk)
 - Programming(Python, Bash, Powershell, C++)
