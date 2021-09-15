@@ -8,7 +8,7 @@
 
 Pfsense (Firewall)
 - WAN-em0(ens33) : 192.168.10.3
-- Lan-em1(ens34) : 192.168.20.3
+- LAN-em1(ens34) : 192.168.20.3
 
 SeucrityOnion v2
 - em0(ens33) : 192.168.10.5/24
