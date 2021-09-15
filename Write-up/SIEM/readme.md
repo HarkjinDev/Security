@@ -40,3 +40,23 @@ Splunk(Ubuntu)
 - Web tools allow access : Yes
 - CIDR Single IP range : 192.168.10.0/24
 - Reference : https://blog.securityonion.net/2020/12/security-onion-2321-now-available.html
+
+# Security Onion 설정
+## 방화벽 해제
+- sudo systemctl sotp firewalld
+
+## Suricata
+- sudo so-suricata-start
+- sudo so-suricata-stop
+- /opt/so/log/suricata/suricata.log
+- /opt/so/log/suricata/stats.log
+- /opt/so/conf/suricata/suricata.yaml
+- /opt/so/saltstack/default/salt/suricata/defaults.yaml
+- HOMENET 설정
+```
+[analyst@so-eval ~]$ sudo vim /opt/so/saltstack/local/pillar/global.sls
+global:
+3   hnmanager: '192.168.10.0/24, 192.168.20.0/24'
+
+[analyst@so-eval ~]$ sudo salt-call state.apply suricata
+```
