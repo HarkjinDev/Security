@@ -4,8 +4,5 @@
 - ELK 및 Splunk를 이용하여 보안 이벤트 분석 및 시각화
 
 # 네트워크 구성도
-
-
-
-
+![network](/Write-up/SIEM/networkdiagram.png)
 
