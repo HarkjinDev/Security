@@ -26,7 +26,7 @@ Splunk(Ubuntu)
 - Hostname : so-eval
 - Network Configuration : ens33
 - IP : 192.168.10.5/24
-- Gateway : 192.168.10.1
+- Gateway : 192.168.10.3
 - DNS : 8.8.8.8
 - Internet connect : Direct
 - Monitor Interface Network Configuration : ens34
