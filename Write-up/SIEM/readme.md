@@ -19,3 +19,25 @@ Splunk(Ubuntu)
 - em0(ens33) : 192.168.10.6/24
 - em1(ens34) : 192.168.20.6/24
 
+# Security Onion 설치
+- Administrative username : analyst
+- Choose install type : EVAL (Evaluation mode)
+- Elastic Stack Lincense: AGREE
+- Manager install : Standard
+- Hostname : so-eval
+- Network Configuration : ens33
+- IP : 192.168.10.5/24
+- Gateway : 192.168.10.1
+- DNS : 8.8.8.8
+- Internet connect : Direct
+- Monitor Interface Network Configuration : ens34
+- OS patch schedule : Automatic
+- Home network : (default)
+- Components Install : ALL Check (default)
+- Default Docker IP range : Yes
+- Web Interface : analyst@example.com
+- Web Interface access : HOSTNAME
+- NTP Sever : Yes
+- Web tools allow access : Yes
+- CIDR Single IP range : 192.168.10.0/24
+- Reference : https://blog.securityonion.net/2020/12/security-onion-2321-now-available.html
