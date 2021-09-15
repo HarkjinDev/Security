@@ -69,3 +69,8 @@ global:
     ├── extraction.rules
     └── filters.rules
 ```
+- Rule 수정
+```
+[analyst@so-eval ~]$ sudo vim /opt/so/saltstack/local/salt/idstools/local.rules
+[analyst@so-eval ~]$ sudo so-rule-update
+```
