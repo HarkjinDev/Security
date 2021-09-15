@@ -7,9 +7,8 @@
 ![network](/Write-up/SIEM/networkdiagram.png)
 
 Pfsense (Firewall)
-- WAN-em0Wan-em0(ens33) : 192.168.10.3
+- WAN-em0(ens33) : 192.168.10.3
 - Lan-em1(ens34) : 192.168.20.3
-- Em2(ens35) : 192.168.30.3
 
 SeucrityOnion v2
 - em0(ens33) : 192.168.10.5/24
