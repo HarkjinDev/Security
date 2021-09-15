@@ -60,3 +60,12 @@ global:
 
 [analyst@so-eval ~]$ sudo salt-call state.apply suricata
 ```
+- Rule 파일
+```
+[analyst@so-eval ~]$ sudo tree /opt/so/saltstack/local/salt/suricata/rules
+├── all.rules
+├── local.rules
+└── sorules
+    ├── extraction.rules
+    └── filters.rules
+```
