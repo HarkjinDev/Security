@@ -81,4 +81,4 @@ global:
 
 # Splunk 설치
 
-# Splunk 
+# Splunk 시각화
