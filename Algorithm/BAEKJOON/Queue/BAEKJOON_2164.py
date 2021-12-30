@@ -12,6 +12,7 @@ for i in range(1, N+1):
 
 while(len(queue) > 1):
     queue.popleft()
+    # 역순 회전
     queue.rotate(-1)
 
 print(*queue)
