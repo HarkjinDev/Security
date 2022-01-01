@@ -28,6 +28,7 @@ for _ in range(T):
           q.popleft()
           idx.popleft()
       else:
+        # q.rotate(-1)
         q.append(q.popleft())
         idx.append(idx.popleft())
       
