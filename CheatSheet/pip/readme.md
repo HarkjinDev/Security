@@ -9,3 +9,8 @@ pip install --no-index --find-links <url> <packagename>
 ```
 pip download -d <url> <packagename>
 ```
+
+# pip requirements output
+```
+pip freeze > requirements.txt
+```
