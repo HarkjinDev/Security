@@ -14,3 +14,8 @@ pip download -d <url> <packagename>
 ```
 pip freeze > requirements.txt
 ```
+
+# pip install with requirements
+```
+pip install -r requirements.txt
+```
