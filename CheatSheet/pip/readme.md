@@ -10,22 +10,22 @@ pip install --no-index --find-links <url> <packagename>
 pip download -d <url> <packagename>
 ```
 
-# pip requirements output
+## pip requirements output
 ```
 pip freeze > requirements.txt
 ```
 
-# pip install with requirements
+## pip install with requirements
 ```
 pip install -r requirements.txt
 ```
 
-# pip upgrade package
+## pip upgrade package
 ```
 pip install --upgrade <packagename>
 ```
 
-# pip uninstall package
+## pip uninstall package
 ```
 pip uninstall <packagename>
 ```
