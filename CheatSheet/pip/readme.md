@@ -29,3 +29,9 @@ pip install --upgrade <packagename>
 ```
 pip uninstall <packagename>
 ```
+
+## pip package dependency
+```
+pip install pipdeptree
+pipdeptree -fl
+```
