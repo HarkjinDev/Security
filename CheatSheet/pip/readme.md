@@ -20,7 +20,12 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
-# pip upgrade
+# pip upgrade package
 ```
 pip install --upgrade <packagename>
+```
+
+# pip uninstall package
+```
+pip uninstall <packagename>
 ```
